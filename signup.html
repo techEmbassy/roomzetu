@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Management System</title>
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/text-color.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet" type="text/css" />
+    <!-- <object type="text/html" data="includes/styles.html"></object>-->
+</head>
+
+<body>
+
+
+    <div class="container">
+        <br/>
+        <p class="text-center animated fadeInDown"><img src="img/logo-white.png" width="100px" /></p>
+        <fieldset>
+            <div class="card p-3 animated fadeIn">
+                <!-- Form Name -->
+                <div class="col-md-12">
+                    <legend class="mb-3">Create account</legend>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group mb-0">
+
+                    <div class="col-md-12">
+                        <div class="form-group row">
+                            <label class="col-md-12 control-label" for="passwordinput">Your Name</label>
+                            <div class="col-md-6">
+                                <input placeholder="first name" class="form-control input-md">
+
+                            </div>
+                            <div class="col-md-6">
+                                <input placeholder="last name" class="form-control input-md">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input id="prependedtext" name="prependedtext" class="form-control" placeholder="email" type="text">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Prepended text-->
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            <input id="" name="" class="form-control" placeholder="password" type="password">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            <input id="" name="" class="form-control" placeholder="confirm password" type="password">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <div class="col-md-12 checkbox">
+                        <a><input type="checkbox" class="styled mt-3" id="rem" /> <label for="rem">I accept Texrms of use</label></a> <button id="button1id" name="button1id" class="btn btn-primary pull-right" onclick="login()">Create Account</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="line animated zoomIn infinite hide"></div>
+
+            <p class="text-center mb-0 mt-5">Already a customer? <small><a href="login.html">Login</a></small></p>
+            <p class="text-center text-disabled">&copy; Copyright 2017. <b>Lacel Technologies LLC</b></p>
+        </fieldset>
+    </div>
+
+
+
+
+
+
+
+</body>
+<script>
+    if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }
+
+</script>
+    
+<script src="js/jquery.min.js"></script>
+<script src="js/wow.min.js"></script>
+    
+<script>
+    if (window.module) {
+       
+        module =window.module;
+    }
+
+</script>
+<script>
+    function login() {
+        $(".line").toggleClass("hide");
+        setTimeout(function() {
+            location.href = 'company-signup.html'
+        }, 2000);
+    }
+    // You can also require other files to run in this process
+    require('./renderer.js');
+    //alert(3);
+
+</script>
+
+</html>

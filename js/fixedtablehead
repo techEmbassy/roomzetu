@@ -1,0 +1,44 @@
+function fixTableHead(id){
+    
+        var table = $(id), thead = table.find('thead'), theadClone, window = $(window);
+        thead.find('th').each(function(){
+            var th = $(this);
+            th.css('width', th.innerWidth())
+        })
+        
+     theadClone = thead.clone();
+        thead.after(theadClone);
+       var top  =  thead.offset().top;
+       var left  =  thead.offset().left;
+        theadClone.css({
+            top:top,
+            left:left,
+            width:thead.outerWidth(),
+            position:'fixed'
+           
+        });
+        
+        
+        
+        
+       thead.css('display', none); 
+    }
+    
+    
+    function fixSubStrip(){
+        
+        var ss = $(".substrip"), w = ss.innerWidth(), h=ss.innerHeight(), top=ss.offset().top;
+         //alert(999)
+        ss.css({
+            position:'fixed',
+            top:'top',
+            width:w,
+            height:h,
+            background:'#fff'
+        });
+        
+        
+        
+       
+    }
+    

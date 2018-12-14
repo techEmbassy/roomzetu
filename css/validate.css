@@ -1,0 +1,33 @@
+  .shakeme {
+    -webkit-animation: shake 0.1s 3;
+    animation-timing-function: ease-out;
+    position: relative;
+}
+
+
+.error-alert{
+    font-size: 11px;
+    color: firebrick;
+/*    background: firebrick;*/
+/*    position: absolute;*/
+/*    z-index: 100;*/
+/*    bottom: -6px;*/
+/*    right: 10px;*/
+/*    display: block;*/
+  
+/*   padding:1px 2px;*/
+    
+    
+}
+
+@keyframes shake {
+    0% {
+        left: -10px;
+    }
+    50% {
+        left: 10px;
+    }
+    100% {
+        left: 0px;
+    }
+}

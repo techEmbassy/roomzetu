@@ -1,0 +1,38 @@
+.actionbar li a, .sticky{
+    transition-duration: 0.4s;
+}
+.sticky{
+     transition-duration: 0.2s;
+}
+.sticky.fixed{
+   
+   
+}
+
+.sticky.fixed.actionbar{
+    background: #fff !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4)
+    
+}
+
+.sticky.fixed.actionbar.navbar .navbar-nav li.nav-item a:hover{
+   color: #444 !important; 
+}
+.sticky.fixed.actionbar li a{
+    font-size: 10pt !important;
+    color: #777 !important;
+}
+
+
+.sticky.fixed .navbar-brand{
+   height: 50px;
+   
+    
+}.sticky.fixed .navbar-brand img{
+   height: 40px;
+   
+    
+}
+
+.sticky.fixed .navbar-brand img.dark{opacity: 1}
+.sticky.fixed  .navbar-brand img.light{opacity: 0}

@@ -1,0 +1,6 @@
+[08-Feb-2018 06:13:14 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'DB' not found in /home/roomzetu/public_html/app/site/billing.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/roomzetu/public_html/app/site/billing.php on line 9
+[08-Feb-2018 06:14:05 CST6CDT] PHP Fatal error:  require_once(): Failed opening required 'meekrodb.php' (include_path='.:/usr/local/php70/pear') in /home/roomzetu/public_html/app/site/src/config.php on line 2
+[08-Feb-2018 06:15:02 CST6CDT] PHP Fatal error:  require_once(): Failed opening required '../scrmeekrodb.php' (include_path='.:/usr/local/php70/pear') in /home/roomzetu/public_html/app/site/src/config.php on line 2

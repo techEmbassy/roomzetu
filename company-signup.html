@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Roomzetu | Hotel Management System</title>
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/text-color.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet" type="text/css" />
+    <!-- <object type="text/html" data="includes/styles.html"></object>-->
+</head>
+
+
+<body>
+
+    <div class="container">
+        <br/>
+        <p class="text-center animated fadeInDown"><img src="img/logo-white.png" width="60px" /></p>
+        <fieldset style="width:600px">
+            <div class="card p-3 animated fadeIn">
+                <!-- Form Name -->
+                <div class="col-md-12">
+                    <legend class="mb-0">Provide organisation details</legend>
+                    <p class="text-disabled mt-1">Please provide your hotel/lodge/company details</p>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group mb-0">
+
+                    <div class="col-md-12">
+                        <div class="form-group row">
+                           
+                            <div class="col-md-6">
+                                <b>Basic info</b><br/>
+                                 <label class="control-label" for="passwordinput">Company Name</label>
+                                <input placeholder="" class="form-control input-md">
+                                
+                                <label class="control-label " for="passwordinput">Country</label>
+                                <select class="form-control input-md">
+                                     
+                                 <option value="0">Select Country</option>
+                                </select>   
+                                
+                                <label class="control-label " for="passwordinput">City</label>
+                                 <input placeholder="City" class="form-control input-md">
+                                
+                                <label class="control-label " for="passwordinput">TimeZone</label>
+                                <select class="form-control input-md">
+                                     
+                                 <option value="0">Select Timezone</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-6">
+                                 <b>Contact info</b><br/>
+                                 <label class="control-label">Address</label>
+                                <input placeholder="" class="form-control input-md">
+                                
+                                <label class="control-label ">Phone</label>
+                                <input placeholder="" class="form-control input-md">  
+                                
+                                <label class="control-label " >Email</label>
+                                 <input placeholder="" class="form-control input-md">
+                                
+                                <label class="control-label">website link</label>
+                                 <div class="input-group">
+                            <span class="input-group-addon"><small>www.</small></span>
+                                <input placeholder="mycompany.com" class="form-control input-md">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <div class="col-md-12 checkbox">
+                       <button id="button1id" name="button1id" class="btn btn-primary pull-right" onclick="login()">Get Started</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="line animated zoomIn infinite hide"></div>
+
+            <p class="text-center mb-0 mt-3">Already a customer? <small><a href="login.html">Login</a></small></p>
+<!--            <p class="text-center text-disabled">&copy; Copyright 2017. <b>Lacel Technologies LLC</b></p>-->
+        </fieldset>
+    </div>
+
+
+
+
+
+
+
+</body>
+<script>
+    if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }
+
+</script>
+    
+<script src="js/jquery.min.js"></script>
+<script src="js/wow.min.js"></script>
+    
+<script>
+    if (window.module) {
+       
+        module =window.module;
+    }
+
+</script>
+   
+    <script>
+    new WOW.init();
+
+    function login() {
+        
+        $(".line").toggleClass("hide");
+         setTimeout(function() {
+            location.href = 'welcome.html'
+        }, 2000);
+        
+    }
+    // You can also require other files to run in this process
+    require('./renderer.js');
+    //alert(3);
+
+</script>
+
+</html>

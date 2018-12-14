@@ -1,0 +1,119 @@
+/**
+	Usage (the label is required)
+	<input id="uid" type="checkbox" ... /><label for="uid">Label</label>
+	
+	Produces styled checkboxes in IE9+, current Firefox and Chrome
+
+	Demo here: http://jsfiddle.net/7Fggq/
+
+	@author	Bryan Elliott <ook@codemonkeybryan.com>
+*/
+
+body.styled-checkboxes input[type=checkbox]:nth-child(1n) {
+    /** Hides the original checkbox in IE9+, FF3.5+, WK, to enable partially transparent checkboxes */
+    visibility: hidden;
+}
+
+
+/* Sizing / positioning for real checkbox */
+
+body.styled-checkboxes input[type=checkbox] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    padding: 0;
+    top: 0.2em;
+}
+
+
+/** Allows absolute positioning for virtual elements */
+
+body.styled-checkboxes input[type=checkbox]+label {
+    position: relative;
+}
+
+
+/* Basics for the virtual checkbox */
+
+body.styled-checkboxes input[type=checkbox]+label::before,
+body.styled-checkboxes input[type=checkbox]+label::after {
+    display: block;
+    position: absolute;
+    content: " ";
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+/* outer borders */
+
+body.styled-checkboxes input[type=checkbox]+label::before {
+    top: 0.1em;
+    left: -1.25em;
+    width: 1em;
+    height: 1em;
+    border: 1px solid #8d8f8c;
+    background-color: background: #eee;
+    border-radius: 0px;
+}
+
+
+/** Inner border, gradient, and checkmark */
+
+body.styled-checkboxes input[type=checkbox]+label::after {
+    top: 0.225em;
+    left: -1.125em;
+    width: 0.75em;
+    height: 0.75em;
+    border: 0px solid green;
+    font-family: "Arial Unicode MS";
+    font-size: 1em;
+    line-height: 0.5em;
+    border-color: #b9bec1 #c2c7c9 #d0d5d7 #abb3bb;
+    background-color: #f2f4f1;
+    color: #4a5f97;
+}
+
+
+/** Hover state, outer borders */
+
+body.styled-checkboxes input[type=checkbox]+label:hover::before {
+    border-color: #5586a3;
+    background-color: #def9fa;
+}
+
+
+/** Hover state, inner border and checkmark */
+
+body.styled-checkboxes input[type=checkbox]+label:hover::after {
+    border-color: #79c6f9 #a5d9fa #d2edfd #7ecaf9;
+    box-shadow: inset 2px 2px 6px 0 #b1dffd;
+    background-color: #e7f7fe;
+    color: #8090FF;
+}
+
+
+/**Active (mouse-down) state, outer borders */
+
+body.styled-checkboxes input[type=checkbox]+label:active::before {
+    border-color: #2c628b;
+    background-color: #c2e4f6;
+}
+
+
+/** Active state, inner border and checkmark */
+
+body.styled-checkboxes input[type=checkbox]+label:active::after {
+    border-color: #5eb6f7 #66bcf7 #c7e9fc #64bbf7;
+    box-shadow: 2px 2px 6px 0 #9dd5fc;
+    background-color: #489;
+    color: #0000FF;
+}
+
+
+/** Checkmark character */
+
+body.styled-checkboxes input[type=checkbox][checked]+label::after {
+    content: "✓";
+}

@@ -1,0 +1,51 @@
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    RewriteCond %{HTTP_HOST} !^app\.roomzetu\.com$ [NC]
+    RewriteRule ^(.*)$ http://app\.roomzetu\.com/$1 [R=301,L]
+    
+   
+   
+RewriteRule ^home index.php
+RewriteRule ^dashboard dash.php
+RewriteRule ^reservations bookings.php
+RewriteRule ^bookings-calendar bookings-calendar.php
+
+RewriteRule ^rooms rooms.php
+RewriteRule ^rates rates.php
+RewriteRule ^room-availability room-availability.php
+RewriteRule ^room-prices room-prices.php
+RewriteRule ^room-types room-types.php
+RewriteRule ^room-allocation room-allocation.php
+RewriteRule ^seasons-calendar seasons-calendar.php
+RewriteRule ^agent-rates agent-rates.php
+RewriteRule ^kids-rates kids-rates.php
+RewriteRule ^extra-bed extra-bed.php
+
+
+RewriteRule ^connections-agents connections-agents.php
+RewriteRule ^connections-guests connections-guests.php
+
+RewriteRule ^summary reports.php [NC,L]
+
+
+RewriteRule ^setting settings.php
+
+RewriteRule ^login$ login.php
+RewriteRule ^signup$ signup.php
+RewriteRule ^company-signup$ company-signup.php
+RewriteRule ^password-recovery-enter-email$ password-recovery-enter-email.php
+RewriteRule ^welcome$ welcome.php
+RewriteRule ^invoice/([0-9]+)$ dompdf/export_pdf.php?id=$1
+   
+    ErrorDocument 404 /roomzetu.com/app/index.php
+   
+  
+   
+   <IfModule !mod_rewrite.c>
+     RewriteCond %{HTTPS} off
+   RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301]
+   #RewriteRule ^(.*)$ https://app.roomzetu.com/$1 [R=301,L]
+  
+</IfModule>

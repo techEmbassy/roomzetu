@@ -1,0 +1,9 @@
+=========
+Functions
+=========
+1. printHtml(<document title>, <html content>);
+   **js/custom.js
+   this prints html content.
+   
+2. 
+   

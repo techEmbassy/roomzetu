@@ -5,7 +5,7 @@
 
             <?php 
                 $menuArray = array();
-                $roles_array= array("Administrator","Reservations Manager","Lodge Manager","Receptionist","Sales Consultant,Accountant, Reservations");
+                $roles_array= array("Administrator","Reservations Manager","Lodge Manager","Receptionist","Sales Consultant","Accountant", "Reservations");
                 array_push($menuArray, array("title"=>"Dashboard", "link"=>'dashboard', 'icon'=>'dashboard'));
                 array_push($menuArray, array("title"=>"Reservations", "link"=>'reservations', 'icon'=>'circle-o'));
                 array_push($menuArray, array("title"=>"Rooms", "link"=>'rooms', 'icon'=>'hotel'));

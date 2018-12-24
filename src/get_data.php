@@ -1162,13 +1162,14 @@ function get_free_rooms(){
         $roomtypearray ["check_out"] = $check_out;
 
        
-
-        if($roomtype['used_as']!='' || $roomtype['used_as'] !='None' ){ 
-
-             $roomtypearray ["used_as"] =  DB::query("SELECT * FROM room_types_tb WHERE  id=%i", $roomtype['used_as']);
+        $rm_used=str_replace(array('[',']'),'',$roomtype['used_as']);
+        
+        if(preg_match('/\\d/',$rm_used)>0){ 
+            
+             $roomtypearray ["used_as"] = DB::query("SELECT * FROM room_types_tb WHERE  id IN (".$rm_used.")");
         }else{
 
-            $roomtypearray ["used_as"] =$roomtype['used_as'];
+            $roomtypearray ["used_as"] ="";
         }
 
         $roomtypearray["specifications"] = $roomtype['specifications'];

@@ -476,12 +476,6 @@ The field Object type makes sure that the object is described correctly in the b
                             <div class="m-0 mb-2">
                                 <div class="row">
 
-                                    <div class="col-md-6">
-                                        <label class="" for="used_as">Can be used as </label>
-                                        <select class="custom-select form-control" style=" font-size:12px;" id="used_as">
-                        <option selected>None</option>
-                        </select>
-                                    </div>
 
                                     <div class="col-md-6">
                                         <label>Max. Guests (Inc. Extra Beds)</label>
@@ -499,6 +493,24 @@ The field Object type makes sure that the object is described correctly in the b
 
                                 <input class="" type="text" id="facilities" data-role="tagsinput" value="">
                             </div>
+
+
+
+                             <div class=" mb-2">
+                                 <div class="row ">
+                                    <div class="col-md-6">
+                                    <label class="" >Can be used as </label>
+
+                                        <select class="custom-select form-control" style=" font-size:12px;" onchange="selectUsedAs(this);" id="used_as_select">
+                                        <option selected>None</option>
+                                        
+                                        </select>
+                                    </div>
+                                
+                                </div>
+                                <input class="" type="text" id="used_as" data-role="tagsinput" value="">
+                            </div>
+                            
 
 
 
@@ -542,6 +554,23 @@ The field Object type makes sure that the object is described correctly in the b
                 $('#uploadFile').trigger('click');
             }
 
+            $("#used_as").tagsinput({
+            itemValue: 'value',
+            itemText: 'text'
+            
+            });
+
+            function selectUsedAs(select){
+                var txt= select.options[select.selectedIndex].text;
+                var valtxt=$(select).val();
+                var used_as=JSON.stringify($("#used_as").val().split(','));
+
+                if(used_as.indexOf(valtxt) <= -1 && txt !="None"){
+                    $("#used_as").tagsinput('add', { value: valtxt, text: txt });
+                }
+              
+                
+            }
 
             document.getElementById('uploadFile').onchange = function(evt) {
                 var tgt = evt.target || window.event.srcElement,
@@ -724,11 +753,11 @@ The field Object type makes sure that the object is described correctly in the b
             var as_room_obj = {};
 
 
-            function onPropertyChange(context) {
+            function onPropertyChange(context) {              
                 var property_id = $(context).val();
+                $("#used_as").tagsinput('removeAll');
                 setRoomTypesAS(property_id);
-                //alert(property_id)
-
+                
             }
 
 
@@ -736,18 +765,30 @@ The field Object type makes sure that the object is described correctly in the b
                 // console.log(JSON.stringify(as_room_obj));
                 var as_rows = "<option selected>None</option>";
 
-                $.each(as_room_obj, function(i, roomType) {
-                    var room_id = roomType.room_type_id;
-                    // console.log(roomType.property_id);
-                    if (property_id == roomType.property_id) {
+                  $.get("src/get.php", {
+                    token: "get_room_types",
+                    property_id: property_id
+                }, function(response) {
+                    
+                    if (response != "[]") {
+                        data = JSON.parse(response);
+                        $.each(data, function(i, roomType) {
+                            var room_id = roomType.room_type_id;
+                            // console.log(roomType.property_id+","+property_id);
+                            as_rows += "<option value='" + room_id + "'>" + roomType.room_type_name + "</option>";
+                          
+                        });
 
-                        as_rows += "<option value='" + room_id + "'>" + roomType.room_type_name + "</option>";
+                      
 
-                    }
+                    } 
+                    // console.log(as_rows)
+                    $("#used_as_select").html(as_rows);
+
                 });
+             
 
-                console.log(as_rows)
-                $("#used_as").html(as_rows);
+                
             }
 
             function setRoomTypes(data) {
@@ -756,8 +797,8 @@ The field Object type makes sure that the object is described correctly in the b
                 var roomTypes = JSON.parse(data);
                 var rows = "";
                 as_room_obj = roomTypes;
-                var property_id = $("#property").val();
-
+                var property_id = $("select#properties option:selected").val();
+                
 
                 roomtypes = data; //global variable
                 setRoomTypesAS(property_id);
@@ -950,7 +991,7 @@ The field Object type makes sure that the object is described correctly in the b
                 try {
                     var d = new Array();
                     var modal = $("#new-px");
-                    var used_as = modal.find("#used_as option:selected").val();
+                    var used_as = JSON.stringify(modal.find("#used_as").val().split(',')); //to json string
                     var pid = modal.find('#property option:selected').val(),
                         room_type_id = modal.find("#room-type-id").val(),
                         rtn = modal.find("#name").val(),
@@ -983,29 +1024,49 @@ The field Object type makes sure that the object is described correctly in the b
                             used_as: used_as
                         };
 
-                    //alert(facilities)
-
+                        
                     var payload = JSON.stringify(d);
                     //alert(payload)
 
                     if (!(inputsEmpty("#form-new-roomtype"))) {
                         modal.modal('hide');
-                        $.post("src/save.php", {
-                            page: "room_types",
-                            id: room_type_id,
-                            result: payload
-                        }, function(response) {
-                            //alert(response)
-                            if (response == 1) {
 
-                               x0p("New RoomType Created", rtn + " has been sucessfully created","ok", function() {
-                                        //alertify.message('OK');
-                                        // window.location.reload();
-                                        getRoomTypes();
-                                    });
-                            }
+                        if(room_type_id>0){
 
-                        });
+                            $.post("src/update.php", {
+                                page: "room_types",
+                                room_type_id: room_type_id,
+                                result: payload
+                            }, function(response) {
+                                if (response == 'success') {
+                                    x0p("Done", "Your Changes have been Saved","ok", function() {
+                                        getRoomTypes(); 
+                                        });
+                                
+                                }
+                                else {
+                                    x0p("","An error occurred. please refresh page and try again.","error")
+                                }
+                            });
+
+                        }else{
+                            $.post("src/save.php", {
+                                page: "room_types",
+                                id: room_type_id,
+                                result: payload
+                            }, function(response) {
+                                //alert(response)
+                                if (response == 1) {
+
+                                x0p("New RoomType Created", rtn + " has been sucessfully created","ok", function() {
+                                            //alertify.message('OK');
+                                            // window.location.reload();
+                                            getRoomTypes();
+                                        });
+                                }
+
+                            });
+                        }
                     }
 
                 } catch (e) {
@@ -1288,6 +1349,7 @@ if (button == "warning") {
                 modal.find('.modal-title').text("New Room type");
                 modal.find('.btn-save').text("Save room type");
                 modal.find("#facilities").tagsinput("removeAll")
+                modal.find("#used_as").tagsinput("removeAll")
                 modal.modal('show');
             }
 
@@ -1338,7 +1400,7 @@ if (button == "warning") {
                         modal.find("#no-of-beds").val(room.number_of_beds);
                         modal.find("#bed-size").val(room.bed_size);
                         modal.find("#max-guests").val(room.maximum_guests_adults);
-                        modal.find("#used_as").val(room.used_as);
+                        modal.find("#used_as").tagsinput('removeAll');
                         modal.find("#facilities").tagsinput('removeAll');
 
                         if (room.specifications != "") {
@@ -1346,8 +1408,27 @@ if (button == "warning") {
                                 modal.find("#facilities").tagsinput('add', s);
 
                             })
+                      
                             // modal.find("#facilities").val('refresh,helllo,iipppe');
                             // modal.find("#facilities").tagsinput('refresh');
+                        }
+                        
+                        if(room.used_as != ""){
+                          
+                            
+                            $.each(JSON.parse(room.used_as), function(i, s) {
+                                
+                                $.each(as_room_obj, function(i, roomType) {
+                                    var name=roomType.room_type_name;
+                                    if (s == roomType.room_type_id) {
+                                        modal.find("#used_as").tagsinput('add', { value: s, text: name });
+                                    return false;
+                                    }
+                                });
+                                
+                            })
+                                
+                            
                         }
                         //  $("#facilities").tagsinput();
                         modal.modal('show');

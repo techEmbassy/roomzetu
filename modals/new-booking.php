@@ -32,6 +32,12 @@
         height: 10px;
     }
 
+     .data-used_as:hover {
+    background: #B8B8B8;
+    border-color: #a14108 !important;
+    color: #fff !important;
+    }
+
 </style>
 
 <?php include 'new-agent.php'; ?>
@@ -544,7 +550,15 @@
                                 </span>
                             </p>
 
-                            <p class="mt-2"><span style="font-size:14px">Total Cost:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>$<span id="s-total-cost-all">0</span></b>
+                             <p class="mt-2"><span style="font-size:14px">Cost of Extra Beds: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>$<span id="s-total-cost-beds">0</span></b>
+                                </span>
+                            </p>
+
+                             <p class="mt-2"><span style="font-size:14px">Cost of Extra Children: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<b>$<span id="s-total-cost-kids">0</span></b>
+                                </span>
+                            </p>
+
+                            <p class="mt-2"><span style="font-size:14px">Total Cost:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>$<span id="s-total-cost-all">0</span></b>
                                 </span>
                             </p>
 
@@ -2285,7 +2299,7 @@
         table.html("<tr><td><h6><i class='fa fa-spinner fa-spin'></i> Loading available rooms...</h6></td></tr>")
         var rooms = JSON.parse(data);
         if (rooms.length > 0) {
-            console.log(rooms[0]["rooms"])
+            // console.log(rooms[0]["rooms"])
             var rows = "";
 
             $.each(rooms, function(i, room) {
@@ -2302,7 +2316,7 @@
                 rows += "<input type='hidden' value='" + i + "' class='position'>";
                 rows += "<h5><b class='room-type-name'>" + room.name + " </b>";
 
-
+                // console.log(room.used_as)
                 if (room.used_as.length > 0) {
                     rows += "<span id='droplet_' style='font-size:9px !important; color:#D6DBDF;' class='dropdown m-0'><i class='fa fa-chevron-down m-0 btn btn-circle'  data-toggle='dropdown'></i>";
 
@@ -2310,7 +2324,7 @@
                     rows += "<div   class='dropdown-menu shadow pt-0 dropdown-menu-left'><p class='p-3 text-secondary'>Book as:</p>";
 
                     $.each(room.used_as, function(i, used_as) {
-                        rows += "<a class='dropdown-item py-2 ' data-used_as='" + used_as.id + "' onclick='usedAs(this)' >" + used_as.name + "</a>";
+                        rows += "<a class='dropdown-item py-2 data-used_as'  data-used_as='" + used_as.id + "' onclick='usedAs(this)' >" + used_as.name + "</a>";
                     });
                     //    rows += "<a class='dropdown-item'>Tripple</a>";
                     rows += "</div>";
@@ -2802,7 +2816,7 @@
         
         paymentMethod = paymentMethod == "Cheque" ? "Cheque(" + $("#reference-number").val() + ")" : paymentMethod;
 
-        var totalCost = parseFloat($("#s-total-cost-all").text()) - parseFloat($("#s-total-cost-extras").text()),
+        var totalCost = parseFloat($("#s-total-cost-all").text()) - parseFloat($("#s-total-cost-extras").text()) - parseFloat($("#s-total-cost-beds").text()) - parseFloat($("#s-total-cost-kids").text()),
             totalPaid = $("#ds-total-paid").text(),
             discount = $('#ds-discount').text(),
 
@@ -3584,10 +3598,22 @@
             totalExtras = stotal + totalExtras;
 
         });
-
         totalExtrasBox.text(totalExtras);
 
-        var totalAll = totalExtras + parseFloat(totalRoomsBox.text());
+        var total_kid_amount = 0;
+        $.each(json_children_obj, function (index, item) {
+            total_kid_amount += parseFloat(item.amount);
+            
+        });
+        $('#s-total-cost-kids').text(total_kid_amount);
+
+         var total_extra_bed = 0;
+        $.each(json_extra_bed_obj, function (index, item) {
+            total_extra_bed += parseFloat(item.amount);
+        });
+        $('#s-total-cost-beds').text(total_extra_bed);
+
+        var totalAll = totalExtras + parseFloat(totalRoomsBox.text()) + total_kid_amount + total_extra_bed;
 
         totalAllBox.text(totalAll);
         $('#ds-total-cost-all').text(totalAll);

@@ -256,6 +256,13 @@ $taxes =  $booking['taxes'] !="" ? json_decode($booking['taxes'], true) : array(
 $beds =  $booking['extra_beds'] !="" ? json_decode($booking['extra_beds'], true) : array();
 $kids = $booking['children_rates'];
 
+if($booking['prepared_by'] !=0){
+    $user =  DB::queryFirstRow("select name from users_tb where id=%i", $booking['prepared_by']);
+    $prepared_by=$user['name'];
+}else{
+    $prepared_by='--'; 
+}
+
 
 //booking payment options
 $invoice_payments = array();
@@ -780,8 +787,8 @@ $html.="</table>
 </td>
 <td class=\"text-right\">
 <br><br>
-<p class=\"m-0\">Authorized by:</p>
-<h4 class=\"m-0\">".$_SESSION['login']["user_name"]."</h4>
+<p class=\"m-0\">Prepared by:</p>
+<h4 class=\"m-0\">".$prepared_by."</h4>
 </td>
 </table>
 

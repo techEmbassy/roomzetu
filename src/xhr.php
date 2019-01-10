@@ -388,6 +388,7 @@ function addReservation(){
     $payment_method = $main_data['payment_method'];
     
     $main_data['company_id'] = $company_id;
+    $main_data['prepared_by'] = $user_id;
 
     $main_data['children_rates']=$_POST['children_rates'];
     

@@ -198,7 +198,7 @@ $parent_folder = "";
 
 $company_id = $_SESSION['login']["company_id"];
 
-$company=DB::queryFirstRow("select * from company_tb where id = %i", $company_id);
+$company=DB::queryFirstRow("select company_tb.*,hotel_policy_tb.policy as hotel_policy from company_tb join hotel_policy_tb on hotel_policy_tb.company_id = $company_id AND company_tb.id=$company_id");
 
 //company particulars;
 $company_name = $company['company_name'];
@@ -212,6 +212,10 @@ $company_bank_name = $company['bank'] !=""? $company['bank'] : "Not Added Yet" ;
 $company_bank_account_name = $company['bank_account_name'] !=""? $company['bank_account_name'] : "Not Added Yet" ;
 $company_bank_account_number = $company['bank_account'] !=""? $company['bank_account'] : "Not Added Yet" ;
 
+//hotel policy
+$policy = $company['hotel_policy'];
+$hotel_policy = $policy !="" ? "<br/><div class=\"hr\"></div><div class=\"text-justify notes\"><br><br><h4><b>Hotel policy</b></h4><small>". $policy."</small></div>" : "";
+
 //company invoice attributes
 $invoice = DB::queryFirstRow("select * from invoice_template_tb where company_id=%s", $company_id);
 $notes = $invoice['notes'] !="" ? "<br/><div class=\"hr\"></div><div class=\"text-justify notes\"><br><br><h4><b>Terms &amp; Notes</b></h4>". $invoice['notes']."</div>" : "";
@@ -221,7 +225,7 @@ $due_days = $invoice['due_date'] !="" ? $invoice['due_date'] : 0;
 $invoice_title = $invoice['title'] !="" ? $invoice['title'] : "INVOICE";
 
 
-
+$main_company_logo = "";
 
 //invoice variables
 /*booking*/
@@ -356,6 +360,7 @@ if($property['property_image'] != ""){
   //echo" 00000888";
   $company_logo = $property_logo;
  $company_name = "<b style='font-size:12pt;'>".$company_name."</b><br>".$property['property_name'];
+ $main_company_logo ="{$parent_folder}img/settings/{$company['logo']}";
 }
 
 }
@@ -397,7 +402,7 @@ $bill_address['address'] = $agent['address'];
 }
 
 
-$html.="<title>Invoice - {$bill_address['name'] }</title> <section class=\"paper-size p-5 invoice\" id=\"c-table\">
+$html.="<title>Invoice - ". strip_tags($bill_address['name'])."</title> <section class=\"paper-size p-5 invoice\" id=\"c-table\">
 <div id=\"divInv\" class=\"card-body p-0\">
 <!-- Invoice Company Details -->
 <div id=\"invoice-company-details\">
@@ -405,11 +410,15 @@ $html.="<title>Invoice - {$bill_address['name'] }</title> <section class=\"paper
 <table>
 <tr>
 <td width='1px' class='c-logo'>
-<img src='$company_logo' />
-</div>
+<img src='$company_logo' height='80px' alt='' />
+
 </td>
-<td  class='text-right v-b'>
-<h3 class=\"m-0\">$company_name</h3>
+<td  class='text-right v-b'>";
+
+if(isset($main_company_logo) && $main_company_logo != ""){
+$html.="<img height='50px' src='$main_company_logo' alt='' />";
+}
+$html.="<h3 class=\"m-0\">$company_name</h3>
 <p class=\"m-0\">$company_address</p>
 <p class=\"m-0\">$company_phone $company_email $company_website </p>
 
@@ -438,7 +447,7 @@ $html.="<title>Invoice - {$bill_address['name'] }</title> <section class=\"paper
 
 <td class=\"border-bottom\" width=\"150px\" style='padding-left:20px'>
 <p class=\"text-muted \">INVOICE TO:</p>
-<h5 class=\"m-0\"><b>{$bill_address['name']}</b>
+<h5 class=\"m-0\"><b>". strip_tags($bill_address['name'])."</b>
 </h5>
 <p class=\"m-0\">
 {$bill_address['address']}
@@ -497,7 +506,8 @@ $kidscost = 0;
 $bedcost = 0;
 
 $totaltax;
- //print_r($booked_rooms);
+ // print_r($booked_rooms);
+ //$booked_rooms = array();
 foreach($booked_rooms as $room){
 
 
@@ -790,14 +800,19 @@ $html.="</table>
 <p class=\"m-0\">Prepared by:</p>
 <h4 class=\"m-0\">".$prepared_by."</h4>
 </td>
+</td>
 </table>
 
 </div>
-$notes
+
+
+$notes<br>
+$hotel_policy<br>
 </section>";
 
 if(isset($_POST['preview'])){
 echo $html;
+    //print_r($company);
 }
 
 ?>

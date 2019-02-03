@@ -159,7 +159,7 @@ function get_free_rooms(){
                       $status='2';
                  }else if($check_in_db<= $check_in && $check_out_db >$check_in){
                       $status='3';
-                 }else if($check_in_db<= $check_out && $check_out_db >=$check_out){
+                 }else if($check_in_db< $check_out && $check_out_db >=$check_out){
                       $status='4';
                  }
 //                 else if($rm['booking_status'] !='cancelled'){

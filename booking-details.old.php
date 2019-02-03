@@ -289,7 +289,7 @@
                                         <div class="col-md-2 input-price hide">
 
                                             <select class="form-control" id="paymemt_mtd" required>
-                                                   <option value="" >Payment Method</option> 
+                                                   <option value="Cash" >Payment Method</option> 
                                                 <option value="Cash">Cash</option>
                                                 <option value="Cheque">Cheque</option>
                                                 <option value="Credit Card">Credit Card</option>

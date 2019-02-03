@@ -499,7 +499,8 @@
             $("#tt #title").val(title);
             $("#tt #prefix").val(prefix);
             $("#tt #due_date").val(due_date);
-            $("#tt #notes").val(notes);
+        //    $("#tt #notes").val(notes);
+            $("#tt #notes").summernote('code',notes);
 
             //            $("#tt #c-bank").val(payments.bank_name);
             //            $("#tt #c-account-name").val(payments.account_name);

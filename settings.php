@@ -236,7 +236,8 @@
         }, function(response) {
 
             var datau = JSON.parse(response);
-            $("#plcy_txt").val(datau.policy);
+//            $("#plcy_txt").val(datau.policy);
+            $("#plcy_txt").summernote('code',datau.policy);
             $("#id-hr").val(datau.holding_period);
 
         });

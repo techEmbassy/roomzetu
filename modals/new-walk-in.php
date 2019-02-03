@@ -372,7 +372,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <select class="form-control" id="paymemt_mtd-w">
-                                             <option value="method">Select Payment Method</option>
+                                             <option value="Cash">Select Payment Method</option>
                                              <option value="Cash">Cash</option>
                                              <option value="EFT">EFT</option>
                                              <option value="Cheque">Cheque</option>

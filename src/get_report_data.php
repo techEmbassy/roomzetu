@@ -42,6 +42,9 @@ switch ($_GET['token']) {
     case 'get_accomodations_data':
         echo json_encode(get_accomodations_data());
         break;
+        case 'get_uncleared_reservations':
+        echo json_encode(get_uncleared_reservations());
+        break;
         
       //start from here  
     case 'get_overview_data':
@@ -109,7 +112,11 @@ switch ($_GET['token']) {
             echo json_encode($overviewData);
       
         break;
-        
+
+        case 'get_agent_balances':
+       
+        echo json_encode(get_agent_balances());
+        break;
         
         default:
         # code...
@@ -1951,4 +1958,195 @@ for( $i=0; $i<count($revenueChart); $i++){
      return ($response);
     
   
+}
+
+ function get_uncleared_reservations(){
+    global $company_id;
+    $propertyId= $_GET['property'];
+    $period=get_period($_GET['period']);
+    $startDate=$period[0];
+    $endDate=$period[1];
+    
+    if($_GET['period']=="specificdate"){
+       $endDate= $startDate=date('Y-m-d', strtotime($_GET['pd']));
+       
+    } 
+    if($_GET['period']=="date_range"){
+         $startDate=date('Y-m-d', strtotime($_GET['startdate']));
+       $endDate= date('Y-m-d', strtotime($_GET['enddate']));
+        
+       
+    }
+    
+    
+    $where=new WhereClause("and");
+    $where->add("company_id=%s",$company_id);
+    if($propertyId!=0){
+        $where->add("property_id=%s",$propertyId);
+        }
+    $where->add("DATE(booking_date) >= %s", $startDate); 
+    $where->add("DATE(booking_date) <= %s", $endDate);
+    $where->add("booking_status != 'cancelled' && booking_status != 'deleted'");
+        
+    
+    
+    switch($_GET['period']){
+        case "this_today":
+        $where->add("DAY(booking_date) = %s", date('d'));
+        $where->add("MONTH(booking_date) = %s", date('m'));
+        
+        break;
+        
+        case "this_month":
+            $where->add("MONTH(booking_date) = %s", date('m'));
+            $where->add("YEAR(booking_date) = %s", date('Y'));
+        break;
+        
+        case "this_year":
+            $where->add("YEAR(booking_date) = %s", date('Y'));
+        break;
+        
+        case "lifetime":
+                    //$where->add("YEAR(date_paid) = %s", date('Y'));
+
+        break;
+        
+        case "specificdate":
+    // $where->add("DATE(date_paid) = %s", $_GET['pd']);
+           
+      
+        break; 
+        
+            case "date_range":
+ 
+        break;
+//            
+         default:
+        break;
+        
+            
+    }
+    
+   
+
+
+    $bookings = DB::query("SELECT *,
+     IFNULL((select sum(amount) from booking_payment  where booking_id=b.id),0) AS total_payment, 
+     IFNULL((select SUM(DATEDIFF(check_out_date,check_in_date) * IFNULL(price_per_night,0)) from booked_rooms_v where booking_id=b.id),0) AS rooms_cost,
+     IFNULL((select SUM(unit_price) from booked_extras_v where booking_id=b.id),0) AS extras_cost
+    FROM booking_tb b WHERE %l order by booking_date desc",$where);
+
+
+    $booking_array=array();
+    foreach($bookings as $b){  
+        $b["nights"] = (strtotime($b['check_out_date']) - strtotime($b['check_in_date'])) / 3600 / 24;
+        $b['booking_date']=date("d M Y", strtotime( $b['booking_date']));
+        $b['check_in_date']=date("d M Y", strtotime( $b['check_in_date']));
+        $b['check_out_date']=date("d M Y", strtotime( $b['check_out_date']));
+        
+        $total_payment=$b['total_payment'];
+        $discount=$b['discount'];
+        $extras_cost=$b['extras_cost'];
+        $rooms_cost=$b['rooms_cost'];
+        
+        
+        $total_kid_amount = 0;
+        $kids_rates = json_decode($b['children_rates'],true);
+        foreach($kids_rates as $k){
+            $total_kid_amount += (float) $k['amount'];
+        }
+        
+        $total_extra_bed = 0;
+        $extra_beds = json_decode($b['extra_beds'],true);
+        foreach($extra_beds as $x){
+            $total_extra_bed += (float) $x['amount'];
+        }
+        
+        $taxable_amount = $rooms_cost + $total_kid_amount + $total_extra_bed - $discount;
+        $total_taxes=0;
+        $taxes = json_decode($b['taxes'],true);
+        foreach($taxes as $t){
+            $total_taxes += ((float) $taxable_amount * (float) $t['taxamount'] /100);
+            // total_taxes += ((parseFloat(taxable_amount) * (parseFloat(tax.taxamount) / 100)));
+        }
+        $b['total_taxes']=$total_taxes;
+         $total_cost = round($rooms_cost + $total_kid_amount + $total_extra_bed + $extras_cost + $total_taxes - $discount);
+
+         $b['total_cost']=$total_cost;
+         $b['balance'] = $total_cost - $total_payment;
+        
+         if($b['balance']>0){
+            array_push($booking_array, $b);
+         }
+    }
+
+    
+  
+
+     return ($booking_array);
+    
+  
+}
+
+function get_agent_balances(){
+    global $company_id;
+    $agents=DB::query("SELECT DISTINCT a.* FROM agent_tb a INNER JOIN booking_tb b on b.agent_id=a.id  WHERE a.company_id=%i", $company_id);
+
+    $agent_array=array();
+    foreach ($agents as $a) {
+        $bookings = DB::query("SELECT *, 
+    IFNULL((select sum(amount) from booking_payment  where booking_id=b.id),0) AS total_payment, 
+    IFNULL((select SUM(DATEDIFF(check_out_date,check_in_date) * IFNULL(price_per_night,0)) from booked_rooms_v where booking_id=b.id),0) AS rooms_cost,
+    IFNULL((select SUM(unit_price) from booked_extras_v where booking_id=b.id),0) AS extras_cost
+    FROM booking_tb b  where agent_id = %i order by booking_date desc", $a['id']);
+
+        $no_bookings = DB::count();
+        $overall_cost=0;
+        $overall_payment=0;
+        foreach ($bookings as $b) {
+
+
+        
+            $discount=$b['discount'];
+            $extras_cost=$b['extras_cost'];
+            $rooms_cost=$b['rooms_cost'];
+            
+            
+            $total_kid_amount = 0;
+            $kids_rates = json_decode($b['children_rates'],true);
+            foreach($kids_rates as $k){
+                $total_kid_amount += (float) $k['amount'];
+            }
+            
+            $total_extra_bed = 0;
+            $extra_beds = json_decode($b['extra_beds'],true);
+            foreach($extra_beds as $x){
+                $total_extra_bed += (float) $x['amount'];
+            }
+            
+            $taxable_amount = $rooms_cost + $total_kid_amount + $total_extra_bed - $discount;
+            $total_taxes=0;
+            $taxes = json_decode($b['taxes'],true);
+            foreach($taxes as $t){
+                $total_taxes += ((float) $taxable_amount * (float) $t['taxamount'] /100);
+            }
+            $total_cost = round($rooms_cost + $total_kid_amount + $total_extra_bed + $extras_cost + $total_taxes - $discount);
+
+            $overall_cost += $total_cost ;
+
+            // $payments = DB::query("select * from booking_payment where booking_id = %i order by date_paid asc", $b['id']);
+            // foreach ($payments as $p) {
+            //     $overall_payment += (float) $p['amount'];
+               
+            // }
+            $overall_payment +=$b['total_payment'];
+            $a['overall_cost']=$overall_cost;
+            $a['overall_payment']=$overall_payment;
+            $a['balance']=$overall_cost-$overall_payment;
+            $a['no_bookings']=$no_bookings;
+        }
+        array_push($agent_array, $a);
+    }
+
+    return ($agent_array);
 }

@@ -1804,8 +1804,9 @@ function getBooking(){
 
             foreach($dates as $d){
                 $datesArray = array();
-
-                $nights = round((strtotime($d['check_out_date']) - strtotime($d['check_in_date']))/3600/24);
+               
+                $rend_date= date('Y-m-d', strtotime('-1 day', strtotime($d['check_out_date'])));
+                $nights = round((strtotime($d['check_out_date']) - strtotime( $rend_date))/3600/24);
                 $datesArray['checkIn'] = $d['check_in_date'];
                 $datesArray['checkOut'] = $d['check_out_date'];
                 $datesArray['nights'] = $nights;

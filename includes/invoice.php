@@ -312,8 +312,8 @@ $w->negateLast();
 $w ->add("booked_as =%s", ""); 
 $w->negateLast();
 $w->add("booking_id=%i", $id); 
-//$booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, count(booked_as) as units, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l group by booked_as", $w);
-$booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l", $w);
+$booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, count(id) as units, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l group by room_type_id,check_in_date, check_out_date", $w);
+// $booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l", $w);
 
 
 //get all rooms booked normally
@@ -324,9 +324,9 @@ $s ->add("booked_as = %s", "");
 $s ->add("booked_as is NULL");
 $w->add("booking_id=%i", $id);
 //$w=1;
-//$booked_rooms_normal = DB::query("select property_id, room_type_id, property_name, booking_id, room_type_name, count(room_type_id) as units, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l group by room_type_id", $w);
+$booked_rooms_normal = DB::query("select property_id, room_type_id, property_name, booking_id, room_type_name, count(id) as units, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l group by   room_type_id,check_in_date, check_out_date", $w);
 
-$booked_rooms_normal = DB::query("select property_id, room_type_id, property_name, booking_id, room_type_name, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l", $w);
+// $booked_rooms_normal = DB::query("select property_id, room_type_id, property_name, booking_id, room_type_name, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l", $w);
 
 
 //join the two arrays together
@@ -519,7 +519,7 @@ $nights = 0;
 
 $diff = strtotime($room['check_out_date']) - strtotime($room['check_in_date']);
 $nights = floor($diff/3600/24);
-$units = 1;//$room['units'];
+$units =$room['units'];
 $subtotal = $nights * $units * $room['price_per_night'];
 $roomcost += $subtotal;
 $meal_plan = $room['meal_plan'];

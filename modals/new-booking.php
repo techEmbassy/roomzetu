@@ -1724,9 +1724,9 @@
 
             var ddd = new Date(checkIn) - new Date(gettoday())
 
-            if (ddd < 0) {
-                errorMSG("#check-in", "this date should start from today to the future");
-            } else {
+            //if (ddd < 0) {
+              // errorMSG("#check-in", "this date should start from today to the future");
+            //} else {
                 if (nights > 0) {
                     $(btn).html("<i class='fa fa-spin fa-spinner'></i> Checking free rooms...");
 
@@ -1755,7 +1755,7 @@
                 } else {
                     errorMSG("#check-out", "This date should be greater than check-in");
                 }
-            }
+            //}
         }
 
     }

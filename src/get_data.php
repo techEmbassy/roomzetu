@@ -1201,9 +1201,12 @@ function get_free_rooms(){
             $rend_date=date_create($rend_date);
              date_add($rend_date,date_interval_create_from_date_string("1 day"));
              $rend_date = date_format($rend_date,"Y-m-d");
-
-              $rms = DB::query("select check_in_date,check_out_date,booking_status from booked_rooms_v where room_id=$r && check_out_date>='$today' && booking_status != 'cancelled' && booking_status != 'deleted' order by check_in_date");
-
+             $rms = array();
+             if(strtotime($check_out) <= strtotime($today)){
+               $rms = DB::query("select check_in_date,check_out_date,booking_status from booked_rooms_v where room_id=$r && check_out_date <= '$today' && booking_status != 'cancelled' && booking_status != 'deleted' order by check_in_date");
+             }else{
+                           $rms = DB::query("select check_in_date,check_out_date,booking_status from booked_rooms_v where room_id=$r && check_out_date>='$today' && booking_status != 'cancelled' && booking_status != 'deleted' order by check_in_date");
+             }
             $status='free';
              foreach($rms as $rm){
                  $check_in_db=$rm['check_in_date'];

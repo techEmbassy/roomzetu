@@ -131,12 +131,11 @@ $bname=$bp['title'];
 
 
 </body>
-<?php// include ('includes/footer.php');?>
     <script src="../js/jquery.min.js"></script>
 
     </html>
     <script>
-        var amount = '<?php echo $amount;?>';
+        var amount = "<?php echo $amount;?>";
 
         $(function() {
             calamount(1);

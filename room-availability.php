@@ -281,7 +281,7 @@
                                 cell += "<td colspan='" + colspan + "' class='on text-center " + item.status + "' title='" + item.name + "' onclick='viewBooking(" + item.booking_id + ")'> " + name_ + "</td>";
                                 j = j + colspan -1;//(parseInt(nights_) - 1);
 
-                            } else if (mCurrDate <= mCheckOut && mCurrDate > mCheckIn) {
+                            } else if (mCurrDate < mCheckOut && mCurrDate > mCheckIn) {
                                 var colspan = (mCheckOut - mCurrDate) / 1000 / 3600 / 24;
 
                                 if (colspan < 3) {

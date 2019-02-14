@@ -369,6 +369,37 @@ function generateRandomString() {
 }
 
 
+function generateNextInvoice(){
+    global $company_id;
+  
+      
+    $p= DB::queryFirstRow("SELECT prefix FROM invoice_template_v WHERE company_id=%i", $company_id);
+    $prefix=$p['prefix'];
+  
+    $sth= DB::queryFirstRow("SELECT MAX(invoice_no) as last_invoice FROM booking_tb WHERE invoice_no like '".$prefix."%' and company_id=%i", $company_id);
+    $last_invoice=$sth['last_invoice'];
+  
+    if($last_invoice == NULL){
+        $nextInvoice=1;
+        
+    }
+    else{
+        #get raw invoice number without prefix
+        #escape slashes incase there found in the invoice prefix 
+        $last_invoiceRaw = preg_replace("/^".preg_quote($prefix,'/')."/","",$last_invoice);
+        //print "Last:".$lastCustomerRaw;
+        #increment last number by 1 to get our next invoice No for this branch
+        $nextInvoice = intval($last_invoiceRaw) + 1;
+     
+  
+    }
+  
+    $str = str_pad($nextInvoice, 4, 0, STR_PAD_LEFT);
+    $invoice_no=$prefix.$str;
+    
+    return $invoice_no;
+    
+  }
 
 function addReservation(){
     global $company_id;
@@ -406,11 +437,11 @@ function addReservation(){
     
     //save main data and return
     $booking_id = save_data_id("booking_tb", json_encode($main_data));
-    
-     $prefix= DB::queryFirstRow("SELECT prefix FROM invoice_template_v WHERE company_id=%i", $company_id);
-    $p=$prefix['prefix'];
-    $str = str_pad($booking_id, 4, 0, STR_PAD_LEFT);
-    $invoice_no=$p.$str;
+  
+
+    $invoice_no=generateNextInvoice();
+     
+   
     //    
     $taxes = getTaxes();    
     $taxes_ = json_decode(getTaxes());

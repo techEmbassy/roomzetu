@@ -394,13 +394,13 @@ function get_period($period){
             break;
             
         case "this_month":
-                $startDate="01-$m-$y 00:00:00";
-                $endDate="$ldm-$m-$y 23:59:59";
+                $startDate="$y-$m-01 00:00:00";
+                $endDate="$y-$m-$ldm 23:59:59";
             break;
             
         case "this_year":
-        $startDate="01-01-$y 00:00:00";
-            $endDate="31-12-$y 23:59:59";     
+        $startDate="$y-01-01 00:00:00";
+            $endDate="$y-12-31 23:59:59";     
             break;
         
            
@@ -408,8 +408,8 @@ function get_period($period){
         
  
             default:
-            $startDate="01-$m-$y 00:00:00";
-                $endDate="$ldm-$m-$y 23:59:59";
+            $startDate="$y-$m-01 00:00:00";
+                $endDate="$y-$m-$ldm 23:59:59";
             break;
             
     }

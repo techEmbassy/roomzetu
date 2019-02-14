@@ -278,7 +278,7 @@
 
 
 
-            row = "<tr onclick='showDetails(" + i + ")'>";
+            row = "<tr onclick='previewInvoice(" + b.id + ")'>";
             row += "<td><b>" + b.booking_reference + "</b></td>";
             row += "<td><b>" + b.booking_name + "</b></td>";
             row += "<td>" + b.check_in_date + "</td>";

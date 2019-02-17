@@ -204,8 +204,8 @@ $company=DB::queryFirstRow("select company_tb.*,hotel_policy_tb.policy as hotel_
 $company_name = $company['company_name'];
 $company_address = $company['address'];
 $company_phone = $company['phone'] !=""? " <b>T:</b> ".$company['phone'] : "" ;
-$company_email = $company['email'] !=""? " | <b>E:</b> ".$company['email'] : "" ;
-$company_website = $company['website'] !=""? " | <b>W:</b> ".$company['website'] : "" ;
+$company_email = $company['email'] !=""? " <b>E:</b> ".$company['email'] : "" ;
+$company_website = $company['website'] !=""? " <b>W:</b> ".$company['website'] : "" ;
 //$company_logo = $company['logo'] !=""? "<img src='{$parent_folder}img/settings/".$company['logo']."' class='logo'/>" : "" ;
 $company_logo = $company['logo'] !=""? $parent_folder."img/settings/".$company['logo'] : "" ;
 $company_bank_name = $company['bank'] !=""? $company['bank'] : "Not Added Yet" ;
@@ -402,68 +402,48 @@ $bill_address['address'] = $agent['address'];
 }
 
 
-$html.="<title>Invoice - ". strip_tags($bill_address['name'])."</title> <section class=\"paper-size p-5 invoice\" id=\"c-table\">
-<div id=\"divInv\" class=\"card-body p-0\">
-<!-- Invoice Company Details -->
-<div id=\"invoice-company-details\">
-<div class=\"media-body \">
-<table>
-<tr>
-<td width='1px' class='c-logo'>
-<img src='$company_logo' height='80px' alt='' />
-
-</td>
-<td  class='text-right v-b'>";
-
-if(isset($main_company_logo) && $main_company_logo != ""){
-$html.="<img height='50px' src='$main_company_logo' alt='' />";
-}
-$html.="<h3 class=\"m-0\">$company_name</h3>
-<p class=\"m-0\">$company_address</p>
-<p class=\"m-0\">$company_phone $company_email $company_website </p>
-
-</td>
-</tr>
-</table>
-<br>
-
-</div>
-
-<div class=\"hr\"></div>
-<br>
-</div>
-</div>
-<div id=\"invoice-customer-details\" class=\"\">
-
-<table>
-<tr>
-<td class=\"border-bottom\" style='vertical-align:middle !important; width:200px; border-right:1px solid #bbb; padding-right:20px '>
-<h1 class='invoice-title' style=\"\">". strtoupper($invoice_title)."</h1>
-<p class=\"m-0\">Invoice Number: #<span style=\"font-size:15px\" id=\"t-receipt\">$invoice_number</span></p>
-<p class=\"m-0\"><b>Booking Name:</b> $booking_name</p>
-<p class='m-0'><b>Booking Reference:</b> $booking_number</p>
-</td>
+$html.="<title>Invoice - ". strip_tags($bill_address['name'])."</title>"; 
 
 
-<td class=\"border-bottom\" width=\"150px\" style='padding-left:20px'>
-<p class=\"text-muted \">INVOICE TO:</p>
-<h5 class=\"m-0\"><b>". strip_tags($bill_address['name'])."</b>
-</h5>
-<p class=\"m-0\">
-{$bill_address['address']}
-<br>{$bill_address['phone']}
-<br>{$bill_address['email']}
+$inv_desgin = $invoice['invoice_design'];
+    switch($inv_desgin){
+        case "inv1":
+            $inv_page = "invoice-1.php";
+            break;    
+        
+        case "inv2":
+            $inv_page = "invoice-2.php";
+            break;    
+        
+        case "inv2":
+            $inv_page = "invoice-2.php";
+            break;    
+        
+        case "inv3":
+            $inv_page = "invoice-3.php";
+            break;    
+        
+        case "inv4":
+            $inv_page = "invoice-4.php";
+            break;    
+        case "inv5":
+            $inv_page = "invoice-5.php";
+            break;    
+        
+       
+        default:
+            $inv_page = "invoice-1.php";
+            break;
+    }
+        
+    
+    
+   
 
-</p>
-</td>
+include 'invoice-design-template.php/'.$inv_page;
 
-<td style='width:1px; text-align:right; vertical-align:bottom !important'>
-<img src='{$parent_folder}img/qrcode.png' />
-</td>
 
-</tr>
-</table>
-<br>
+$html.="<br>
 <table class='tb-summary'>
 <td>
 <b>Issue Date: </b> $issue_date</td>
@@ -474,7 +454,7 @@ $due_date</td>
 $total_guests</td>
 </table>
 
-</div>
+
 
 <br>
 <div id=\"invoice-items-details\" class=\"pt-2\">

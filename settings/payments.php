@@ -53,6 +53,20 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row mb-2">
+                            <label class="col-md-3">Invoice Template</label>
+                            <div class="col-md-7">
+                                <select class="form-control tiny tiny-fluid" id="invoice-design-select"  style="text-transform: capitalize;" required>
+                                <option value='inv1'>Invoice one</option>
+                                <option value='inv2'>Invoice two</option>
+                                <option value='inv3'>Invoice three</option>
+                                <option value='inv4'>Invoice four</option>
+                                <option value='inv5'>Invoice five</option>
+                            </select>
+                          
+                            </div>
+                        </div>
                     </div>
 
 
@@ -300,7 +314,7 @@
 
     function saveInvoince() {
 
-        //alert(1)
+      
         var title = $("#tt #title").val();
         var prefix = $("#tt #prefix").val();
         var due_date = $("#tt #due_date").val();
@@ -313,6 +327,7 @@
         var bankCurrency = $("#tt #c-currency").val();
 
         var payments = JSON.stringify(getPayments());
+        var invoice_design= $('#invoice-design-select').val();
 
 
         var c = new Array();
@@ -336,7 +351,8 @@
             due_date: due_date,
             notes: notes,
             payments: JSON.stringify(payments),
-            taxes: JSON.stringify(c)
+            taxes: JSON.stringify(c),
+            invoice_design:invoice_design
         });
 
 
@@ -494,7 +510,9 @@
             var due_date = datau[0].due_date;
             var notes = datau[0].notes;
             //            var payments = JSON.parse(datau[0].payments);
-
+            var inv_d = datau[0].invoice_design;
+            $("#invoice-design-select").val(inv_d);
+            
 
             $("#tt #title").val(title);
             $("#tt #prefix").val(prefix);
@@ -559,6 +577,7 @@
             var dd = datau[0].due_date;
             var nd = datau[0].notes;
             var pd = datau[0].policy;
+           
             nd = nd.replace(new RegExp('\r?\n', 'g'), '<br />');
 
             $("#c-table #c-details").html("<b>" + cn + "</b><br>" + cad + "<br>" + cp + "<br>" + ce + "<br>" + cw);
@@ -598,4 +617,5 @@
 
     }
 
+ 
 </script>

@@ -440,7 +440,7 @@ $inv_desgin = $invoice['invoice_design'];
     
    
 
-include 'invoice-design-template.php/'.$inv_page;
+include 'invoice-design-template/'.$inv_page;
 
 
 $html.="<br>

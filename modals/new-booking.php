@@ -1789,7 +1789,7 @@
 
         var _id = $(el).attr("data-room_type_id");
 
-       // alert(id+" "+_id)
+    // alert(id+" "+_id)
 
         meal_selector_context = el;
 
@@ -1810,7 +1810,7 @@
             $.post('src/get_data.php', {
                 meal_plan: meal_plan,
                 property_id: property_id,
-                roomtypeId: id,
+                roomtypeId: _id,
                 checkIn: checkIn,
                 checkOut: checkOut,
                 token: "load_prices"
@@ -2438,7 +2438,7 @@
 
         var id = $(context).attr("data-used_as");
 
-        //alert(id);
+        id='u_'+id;
 
         var current_html = $(context).parents("tr.room-row");
 
@@ -2725,9 +2725,9 @@
     function changeUnitPrice(sel) {
 
         var opt = $(sel);
-        var s = opt.attr("id");
+        var s = opt.attr("id");     
         s = s.split("s");
-
+       
 
         var priceBox = $("#" + s[0] + "unit-price");
 
@@ -2850,7 +2850,7 @@
             discount: discount,
             invoice_payment_options: "[]"
         });
-        //        alert(r)
+          //        alert(r)       
 
         var g = JSON.stringify(getGuests());
         var e = JSON.stringify(getExtras());
@@ -3073,7 +3073,7 @@
             //alert(JSON.stringify(rooms))
             setPropertyId(propid)
             //=[];
-
+            room_type_id_=room_type_id_.replace('u_','');
             //get room equal to the selected rooms
             for (var r = 0; r < rms; r++) {
 
@@ -3288,7 +3288,7 @@
 
         roomsArray_ = c;
 
-        //        alert(JSON.stringify(roomsArray_));
+            //        alert(JSON.stringify(roomsArray_));
         if (c.length < 1) {
             alertify.error("<i class='fa fa-times-circle'></i> Select one or more rooms first");
 

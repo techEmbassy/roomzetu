@@ -4181,7 +4181,7 @@ function getRoomTypes_addRooms() {
             
             var price = $(tr).find("#" + room_type_id_ + "unit-price").val();
             var pricerate_ = $(tr).find(".rm-prices option:selected").text();
-
+            room_type_id_=room_type_id_.replace('u_','');
            //get room equal to the selected rooms
            for (var r = 0; r < rms; r++) {
 
@@ -4396,7 +4396,7 @@ function getRoomTypes_addRooms() {
         var meal_plan_per_day = JSON.stringify(meal_plan_tracker_days);
         var check_in_date = $("#ar_check-in").val();
          var check_out_date = $("#ar_check-out").val();
-
+        
 
         if (!($(btn).hasClass("loading"))) {
             var btnHtml = $(btn).html();

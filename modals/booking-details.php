@@ -1509,9 +1509,26 @@ foreach($p as $o){
                                 </div>
                                 <div class="col-6">
                                     <label>Price Rate</label>
-                                    <select class="form-control" id="price_rate" required data-empty-message="select price rate">
-                                <!-- <option>Select</option> -->
-                                </select>
+                                    <!-- <select class="form-control" id="price_rate" required data-empty-message="select price rate">
+                                
+                                </select> -->
+
+                              
+                                    <div class="input-group "> 
+                                        <select class="form-control" id="price_rate" required data-empty-message="select price rate" onchange="change_price_rate(value)">
+                                        </select> 
+                                        
+                                        <input type="number" class="form-control" id="price_rate_val" name="price_rate_val" value="0"   required>
+                                        <span class="input-group-addon fa fa-dollar"></span>
+
+                                    </div>
+                                
+
+
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -3232,8 +3249,7 @@ function getRoomTypes_addRooms() {
             $("#edit-room .modal-title small").text("Change Room Details");
             $("#edit-room .section-for-edit").show();
             $("#edit-room .section-for-new").hide();
-            $("#properties_edit").val(property_id);
-
+          
             $("#properties_edit").prop("required", false);
             $("#roomtypes_").prop("required", false);
 
@@ -3260,6 +3276,7 @@ function getRoomTypes_addRooms() {
 
             var meal_plan = tr.find(".meal_plan").text();
             var price_rate = tr.attr("data-price-rate");
+            var price_per_night = tr.attr("data-price_per_night");
             var room_type_id = tr.attr("data-rt-id");
             var room_id = tr.attr("data-r-id");
             var room_name = tr.find("#erm_name").text();
@@ -3267,8 +3284,8 @@ function getRoomTypes_addRooms() {
             $("#edit-room .section-for-edit #room-type-name_").html(room_type_name);
             $("#edit-room .section-for-edit #property-name_").text(property_name);
 
-            //            $("#properties_edit").val(property_id);
-
+            $("#properties_edit").val(property_id);
+            
             getRoomTypesForEdit(property_id, room_type_id);
 
             $("#check_in_date_").val(check_in);
@@ -3286,7 +3303,7 @@ function getRoomTypes_addRooms() {
             //            $("#price_rate_").val(meal_plan);
 
             // $('#meal_plan_').val(meal_plan);
-            //            alert(room_type_id);
+                    //    alert(price_rate);
 
 
             $.post('src/get_data.php', {
@@ -3334,15 +3351,18 @@ function getRoomTypes_addRooms() {
                 //alert(data)
                 var prices = JSON.parse(data);
 
-                var opt = "<option>Select</option>";
+                var opt = "<option value=''>Select</option>";
 
+                var selected=""
                 $.each(prices, function(i, item) {
-
-                    opt += "<option value='" + item.amount + "' >" + item.label + "</option>";
+                 
+                    var selected= (item.label.trim()==price_rate.trim())? 'selected':'';
+                    opt += "<option value='" + item.amount + "' "+selected+" >" + item.label + " </option>";
 
                 });
 
                 $('#price_rate').html(opt);
+                $('#price_rate_val').val(price_per_night);
 
             });
             //$(".chosen").chosen({ width:"110%", disable_search_threshold:10 });
@@ -3357,7 +3377,7 @@ function getRoomTypes_addRooms() {
                 var record_id = $("#record_id").val();
 
                 var b_id = $("#b_id").val();
-                //                alert(b_id)
+                            //    alert(record_id)
                 var property_id = $("#properties_edit").val();
 
                 var room_type_id = $("#roomtypes_ option:selected").val();
@@ -3369,15 +3389,15 @@ function getRoomTypes_addRooms() {
 
                 var meal_plan = $('#meal_plan_').val();
 
-                var price_rate = $('#price_rate').val();
+                var price_rate = $('#price_rate_val').val();
 
                 var price_name = $('#price_rate option:selected').text();
 
                 var booking_id = getBookingId();
-                //alert(booking_id)
+                // alert(property_id)
 
 
-                if (meal_plan !== 'Select' && price_rate !== 'Select' && room_id !== "Select" && check_in.length != 0 && check_out.length != 0) {
+                if (meal_plan !== 'Select' && price_name !== 'Select' && price_rate !== '' && room_id !== "Select" && check_in.length != 0 && check_out.length != 0) {
 
 
                     $.post('src/xhr.php', {
@@ -3397,7 +3417,7 @@ function getRoomTypes_addRooms() {
                     }, function(data) {
 
                         //location.reload();
-                        //                    alert(data)
+                                        //    alert(data)
                         $("#edit-room").modal("hide")
                         x0p("Done", "Booking has been upadted", "ok", false);
                         getBooking(BOOKING_ID);
@@ -4427,5 +4447,10 @@ function getRoomTypes_addRooms() {
        
     }
 
+function change_price_rate(amount){
+    $("#price_rate_val").val(amount);
+    // alert(amount)
+
+}
 
     </script>

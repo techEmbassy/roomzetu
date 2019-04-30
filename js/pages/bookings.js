@@ -263,7 +263,7 @@ function showDetails(i) {
         //        alert(JSON.stringify(g));
 
         //#ermtype_id").attr("data-room_type_id //check_in_date_
-        gRows += "<tr id='etr_id' data-rt-id='" + g.room_type_id + "' data-r-id='" + g.room_id + "' data-t_id='" + g.id + "' data-b_id='" + i + "' data-price-rate=''>";
+        gRows += "<tr id='etr_id' data-rt-id='" + g.room_type_id + "' data-r-id='" + g.room_id + "' data-t_id='" + g.id + "' data-b_id='" + i + "' data-price-rate='"+g.price_rate+"' data-price_per_night='"+g.price_per_night+"'>";
         gRows += "<td id='ep_id' data-property_id='" + g.property_id + "' >" + g.property_name + "</td>";
         var used_as = '';
         // alert(g.booked_as)

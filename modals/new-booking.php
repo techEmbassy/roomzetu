@@ -1955,7 +1955,7 @@
             //tr_html+='<option>Price 3</option>';
             tr_html += '</select>';
             tr_html += '</td>';
-            tr_html += '<td class="subttl"></td>';
+            tr_html += '<td class="subttl"><input class="form-control text-blue " type="number"  required style="background-color : #E6E7EF !important;"></td>';
             tr_html += '</tr>';
 
 
@@ -1975,7 +1975,7 @@
         var tr = $(context).parents("tr");
 
         // alert(.html()); subttl
-        subttl = tr.find(".subttl");
+        subttl = tr.find(".subttl input");
 
         property_id = tr.attr("data-property_id");
 
@@ -2027,7 +2027,7 @@
 
                     if (i == 0) {
 
-                        subttl.html(item.amount);
+                        subttl.val(item.amount);
                         /* $("#"+id+"unit-price").val(item.amount);
                          //setSubtotal(el);
                          days=  $(el).parent().parent().parent().parent().parent().find(".selected-nights").html();
@@ -2076,7 +2076,7 @@
         $(tb_r).each(function(i, tr) {
 
             day = i + 1;
-            subttl = $(tr).find(".subttl");
+            subttl = $(tr).find(".subttl input");
 
             property_id = $(tr).attr("data-property_id");
 
@@ -2090,7 +2090,7 @@
 
             meal_plan = select_.val();
 
-            unit_price = parseFloat(subttl.html());
+            unit_price = parseFloat(subttl.val());
 
 
             total += unit_price;
@@ -2160,10 +2160,10 @@
         var tr = $(context).parents("tr");
 
         // alert(.html()); subttl
-        subttl = tr.find(".subttl");
+        subttl = tr.find(".subttl input");
 
 
-        subttl.html($(context).val());
+        subttl.val($(context).val());
 
 
     }

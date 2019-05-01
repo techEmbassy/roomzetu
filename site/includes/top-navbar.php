@@ -7,6 +7,8 @@
                 <a class="p-2 text-dark" href="https://roomzetu.com">Features</a>
                 <a class="p-2 text-dark" href="mailto:support@laceltech.com">Support</a>
                 <a class="p-2 text-dark" href="https://roomzetu.com">Pricing</a>
+                <a class="p-2 text-dark" href="enter-license.php">Renew Licence</a>
+
             </nav>
             <a class="btn btn-outline-primary" href="../signup.php">Sign up</a>
         </div>

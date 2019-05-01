@@ -389,7 +389,8 @@ foreach($p as $o){
                                                 <a class="dropdown-item" data-status="check-in"><i class="fa fa-circle text-green"></i> In House</a>
                                                 <a class="dropdown-item" data-status="cancelled"><i class="fa fa-circle text-red"></i> Cancelled</a>
                                             </div>
-                                        </div>
+                                           
+                                        </div> <small class="text-red pull-right " id="b-period-message">Cannot change status for Booking in past</small>
 
                                         <div class="row mt-3 hide">
                                             <div class="col-md-6">

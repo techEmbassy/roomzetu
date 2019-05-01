@@ -5,7 +5,7 @@ var BOOKING_ID = 0;
 var single_booking_obj = {};
 var meal_plan_index = 0;
 
-var date_diff_indays = function (date1, date2) {
+var date_diff_indays = function(date1, date2) {
     dt1 = new Date(date1);
     dt2 = new Date(date2);
 
@@ -20,7 +20,7 @@ function getBooking(id) {
     $.post("src/get_data.php", {
         token: "booking",
         booking_id: id
-    }, function (data) {
+    }, function(data) {
         //console.log(data);
         showDetails(data);
     })
@@ -59,12 +59,14 @@ function showDetails(i) {
         for (var i = 0; i < x.length; i++) {
             x[i].disabled = true;
         }
+        document.getElementById('b-period-message').style.display = "block";
 
     } else {
         var x = document.querySelectorAll('.b-period');
         for (var i = 0; i < x.length; i++) {
             x[i].disabled = false;
         }
+        document.getElementById('b-period-message').style.display = "none";
     }
 
 
@@ -121,7 +123,7 @@ function showDetails(i) {
     // })
 
 
-    $.each(b.guests, function (i, g) {
+    $.each(b.guests, function(i, g) {
         // console.log("999")
         var age = (yr - parseInt(g.year_of_birth));
         if (isNaN(age) || age < 1) {
@@ -168,7 +170,7 @@ function showDetails(i) {
 
         //alert(temp_array_x.length)
 
-        $.each(temp_array_x, function (k, p) {
+        $.each(temp_array_x, function(k, p) {
 
             row_contact += '<tr>';
             row_contact += '<td class="icon"><span class="fa fa-user-o"></span></td>';
@@ -195,7 +197,7 @@ function showDetails(i) {
         });
     } catch (err) {
         row_contact = "";
-        $.each(b.guests, function (k, p) {
+        $.each(b.guests, function(k, p) {
 
 
             row_contact += '<tr>';
@@ -231,7 +233,7 @@ function showDetails(i) {
 
 
 
-    $.each(b.payments, function (i, g) {
+    $.each(b.payments, function(i, g) {
         if (g.payment_method !== "method") {
 
             gRows += "<tr>";
@@ -258,18 +260,18 @@ function showDetails(i) {
     gRows = "";
 
     var properties_affected = [];
-    $.each(b.rooms, function (k, g) {
+    $.each(b.rooms, function(k, g) {
 
         //        alert(JSON.stringify(g));
 
         //#ermtype_id").attr("data-room_type_id //check_in_date_
-        gRows += "<tr id='etr_id' data-rt-id='" + g.room_type_id + "' data-r-id='" + g.room_id + "' data-t_id='" + g.id + "' data-b_id='" + i + "' data-price-rate='"+g.price_rate+"' data-price_per_night='"+g.price_per_night+"'>";
+        gRows += "<tr id='etr_id' data-rt-id='" + g.room_type_id + "' data-r-id='" + g.room_id + "' data-t_id='" + g.id + "' data-b_id='" + i + "' data-price-rate='" + g.price_rate + "' data-price_per_night='" + g.price_per_night + "'>";
         gRows += "<td id='ep_id' data-property_id='" + g.property_id + "' >" + g.property_name + "</td>";
         var used_as = '';
         // alert(g.booked_as)
         if (g.booked_as != 0) {
 
-            $.each(b.room_types, function (h, z) {
+            $.each(b.room_types, function(h, z) {
 
                 if (z.id == g.booked_as) {
 
@@ -335,7 +337,7 @@ function showDetails(i) {
     })
 
     var row_p = "";
-    $.each(properties_affected, function (k, g) {
+    $.each(properties_affected, function(k, g) {
         row_p += '<span class="tag">' + g + '</span>';
     })
 
@@ -355,7 +357,7 @@ function showDetails(i) {
     cost = parseFloat(b.cost);
     $('#sub_ttl').val(cost);
 
-    $.each(b.extras, function (i, g) {
+    $.each(b.extras, function(i, g) {
 
         // alert(JSON.stringify(g));
 
@@ -385,7 +387,7 @@ function showDetails(i) {
 
     taxes_array = b.taxes;
 
-    $.each(b.taxes, function (taxes_index, tax) {
+    $.each(b.taxes, function(taxes_index, tax) {
         total_taxes = total_taxes + (parseInt(cost) * (parseFloat(tax.taxamount) / 100));
         //alert(tax.taxamount);
 
@@ -403,7 +405,7 @@ function showDetails(i) {
 
     var opt = "";
 
-    $.each(extras_drop_box, function (i, item) {
+    $.each(extras_drop_box, function(i, item) {
 
         var id = item.id;
         if (extras_temp_array.indexOf(id) == -1) {
@@ -425,7 +427,7 @@ function showDetails(i) {
     //kids rates
     var $kRows = "";
     var kidsRates = JSON.parse(b.children_rates);
-    $.each(kidsRates, function (i, rate) {
+    $.each(kidsRates, function(i, rate) {
 
         $kRows += "<tr>";
         $kRows += "<td>" + rate.age_bracket + "</td>";
@@ -447,7 +449,7 @@ function showDetails(i) {
     var bedRows = '';
     var extraBeds = JSON.parse(b.extra_beds);
     // var extraBeds = b.extra_beds;
-    $.each(extraBeds, function (i, bed) {
+    $.each(extraBeds, function(i, bed) {
         // alert(JSON.alert(bed))
         bedRows += "<tr>";
         bedRows += "<td>" + bed.bed_name + "</td>";
@@ -467,7 +469,7 @@ function showDetails(i) {
 
     $('[data-toggle="popover"]').popover({
         html: true,
-        content: function () {
+        content: function() {
             return $('#popover-content').html();
         }
     });
@@ -489,7 +491,7 @@ function getAllBookings() {
         filter: filter,
         property_id: pId,
         room_type_id: rtId
-    }, function (data) {
+    }, function(data) {
         hidelazyload();
 
         bookings = data;
@@ -508,7 +510,7 @@ function setBookings(data) {
     var bs = JSON.parse(data);
     var rows = [];
     var row = ''
-    $.each(bs, function (i, b) {
+    $.each(bs, function(i, b) {
 
         var bal = parseFloat(b.cost) - parseFloat(b.total_paid);
         bal = bal < 0 ? 0 : bal;
@@ -702,7 +704,7 @@ function getPropertyId() {
 function searchBooking(s) {
     var filter = s.toUpperCase();
 
-    $("#tb-reservations tbody tr").each(function (i, tr) {
+    $("#tb-reservations tbody tr").each(function(i, tr) {
 
         var b_ref = $(tr).find("td:eq(1)").html();
         var b_name = $(tr).find("td:eq(2)").html();
@@ -743,7 +745,7 @@ function f_bookingStatus(status) {
         filter: status,
         property_id: pId,
         room_type_id: rtId
-    }, function (data) {
+    }, function(data) {
         bookings = data;
         //            alert(bookings);
         setBookings(bookings);
@@ -771,30 +773,30 @@ function calculateBookingTotals(single_booking_obj) {
     var rooms = single_booking_obj.rooms;
     var rooms = rooms.length;
     var rooms_cost = 0 //parseFloat(single_booking_obj.cost);
-    $.each(single_booking_obj.rooms, function (i, g) {
-        //alert(JSON.stringify(g));
-        //extras_temp_array.push(g.extra_id);
-        var cin = new Date(g.check_in_date);
-        var cout = new Date(g.check_out_date);
-        var nights = Math.ceil((cout-cin)/1000/3600/24);
-        rooms_cost += parseFloat(g.price_per_night) * nights;
-    })
-    // alert(rooms_cost)
+    $.each(single_booking_obj.rooms, function(i, g) {
+            //alert(JSON.stringify(g));
+            //extras_temp_array.push(g.extra_id);
+            var cin = new Date(g.check_in_date);
+            var cout = new Date(g.check_out_date);
+            var nights = Math.ceil((cout - cin) / 1000 / 3600 / 24);
+            rooms_cost += parseFloat(g.price_per_night) * nights;
+        })
+        // alert(rooms_cost)
     var taxable_amount = rooms_cost;
     var discount = parseFloat(single_booking_obj.discount);
     var amount_paid = parseFloat(single_booking_obj.total_paid)
     var extras_cost = 0;
     var extras_temp_array = [];
-    $.each(single_booking_obj.extras, function (i, g) {
-        // alert(JSON.stringify(g));
-        extras_temp_array.push(g.extra_id);
-        extras_cost += parseFloat(g.unit_price);
+    $.each(single_booking_obj.extras, function(i, g) {
+            // alert(JSON.stringify(g));
+            extras_temp_array.push(g.extra_id);
+            extras_cost += parseFloat(g.unit_price);
 
-    })
-    //alert(JSON.stringify(single_booking_obj.children_rates));
+        })
+        //alert(JSON.stringify(single_booking_obj.children_rates));
     var total_kid_amount = 0;
     var kids_rates = JSON.parse(single_booking_obj.children_rates);
-    $.each(kids_rates, function (index, item) {
+    $.each(kids_rates, function(index, item) {
         total_kid_amount += parseFloat(item.amount);
         //alert(tax.taxamount);
     });
@@ -804,7 +806,7 @@ function calculateBookingTotals(single_booking_obj) {
     var total_extra_bed = 0;
     //   var extra_beds_obj=[];
     var extra_beds_obj = JSON.parse(single_booking_obj.extra_beds);
-    $.each(extra_beds_obj, function (index, item) {
+    $.each(extra_beds_obj, function(index, item) {
         total_extra_bed += parseFloat(item.amount);
         //alert(tax.taxamount);
     });
@@ -816,7 +818,7 @@ function calculateBookingTotals(single_booking_obj) {
     var total_taxes = 0;
     taxes_array = single_booking_obj.taxes;
     taxable_amount -= discount;
-    $.each(single_booking_obj.taxes, function (taxes_index, tax) {
+    $.each(single_booking_obj.taxes, function(taxes_index, tax) {
         total_taxes += ((parseFloat(taxable_amount) * (parseFloat(tax.taxamount) / 100)));
 
     });

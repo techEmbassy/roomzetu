@@ -1,4 +1,12 @@
-<?php include('../src/config.php');?>
+<?php include('../src/config.php');
+
+if(!isset($_SESSION['login']["user_id"]) ){        
+    header("Location: ../login?logout=1");
+    exit;
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 

@@ -115,7 +115,7 @@ $bname=$bp['title'];
                         <!--                        <br>-->
                         <!--                        <label><a href="#"><small>Terms & Conditions</small></a></label>-->
                         <!--                        <a type="submit" value="submit" class="btn btn-outline-success mt-3">Continue & Subscribe</a>-->
-                        <input class="btn btn-success mt-2" style="width:40%" type="submit" value="Submit">
+                        <!-- <input class="btn btn-success mt-2" style="width:40%" type="submit" value="Submit"> -->
 
                     </form>
 
@@ -142,7 +142,7 @@ $bname=$bp['title'];
         });
 
         function calamount(v) {
-            var total = parseFloat(amount) * parseInt(v);
+            var total = (parseFloat(amount) * parseInt(v)).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             $('#amount-total').text(total)
             $('#i-amount').val(total)
         }

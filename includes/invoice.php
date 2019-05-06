@@ -312,9 +312,9 @@ $w->negateLast();
 $w ->add("booked_as =%s", ""); 
 $w->negateLast();
 $w->add("booking_id=%i", $id); 
-$booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, count(id) as units, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l group by room_type_id,check_in_date, check_out_date", $w);
+//$booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, count(id) as units, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l group by room_type_id,check_in_date, check_out_date", $w);
 // $booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l", $w);
-
+$booked_rooms_as = DB::query("select property_id, booked_as as room_type_id, property_name, booking_id, room_type_name, count(booked_as) as units, check_in_date, check_out_date, price_per_night, meal_plan, meal_plan_per_day ,booked_as from booked_rooms_v where %l group by booked_as,check_in_date, check_out_date", $w);
 
 //get all rooms booked normally
 $w  = new WhereClause('and');

@@ -81,8 +81,27 @@ function showDetails(i) {
     p.find("#d-booking-reference").text(b.booking_reference);
     p.find("#d-name-title").text(b.booking_name);
     p.find("#d-name").val(b.source);
-    var x_email = b.agent == null || b.agent.length < 1 ? b.guests[0]['email'] : b.agent['email'];
-    var x_phone = b.agent == null || b.agent.length < 1 ? b.guests[0]['phone'] : b.agent['phone'];
+//     var x_email = b.agent == null || b.agent.length < 1 ? b.guests[0]['email'] : b.agent['email'];
+//     var x_phone = b.agent == null || b.agent.length < 1 ? b.guests[0]['phone'] : b.agent['phone'];
+    
+    var x_email = "";// b.agent == null || b.agent == undefined || b.agent.length < 1 ? b.guests[0]['email'] : b.agent['email'];
+    var x_phone = "";// b.agent == null || b.agent == undefined || b.agent.length < 1 ? b.guests[0]['phone'] : b.agent['phone'];
+    
+    if(b.agent == null || b.agent == undefined || b.agent.length < 1){
+    
+       if(b.guests[0] !=undefined){
+        x_email = b.guests[0]['email'];
+    x_phone = b.guests[0]['phone'];
+       
+       }
+       
+       
+    }
+    else{
+    x_email = b.agent['email'];
+    x_phone = b.agent['phone'];
+    }
+    
     p.find("#d-email").val(x_email);
     p.find("#d-discount").val(b.discount);
     p.find("#d-taxes-includes").html(b.taxes);

@@ -15,7 +15,7 @@ function login(){
     $result = DB::query($sql);
     print_r($result);
     if($result){
-        echo $name;
+        // echo $name;
 
         $_SESSION['login']["user_id"]= $result[0]['id'];
         $_SESSION['login']["company_id"]= $result[0]['company_id'];

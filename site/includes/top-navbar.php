@@ -5,9 +5,9 @@
             </h5>
             <nav class="my-2 my-md-0 mr-md-3">
                 <a class="p-2 text-dark" href="enter-license.php">Renew Licence</a>
+                <a class="p-2 text-dark" href="billing.php">Pricing</a>
                 <a class="p-2 text-dark" href="https://roomzetu.com">Features</a>
                 <a class="p-2 text-dark" href="mailto:support@laceltech.com">Support</a>
-                <a class="p-2 text-dark" href="https://roomzetu.com">Pricing</a>
                 
 
             </nav>

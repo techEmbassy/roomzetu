@@ -25,6 +25,7 @@ if(!isset($_SESSION['login']["user_id"]) ){
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/text-color.css" rel="stylesheet" type="text/css" />
     <link href="../css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="../img/logo.png" type="image/png" rel="shortcut icon">
 
 
 </head>

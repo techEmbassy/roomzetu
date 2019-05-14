@@ -232,25 +232,25 @@
 <p >Call the Lacel Help Line <b>(+256 312 175512)</b> and give them your Company name which is shown in <font color='red'>red </font> below and Billing Plan of your Choice, and Lacel in turn will give you a License Key: </p>
 
 <center class="text-red" style='font-weight: bold;'>CLIENT NAME:<?php echo $company_name; ?></center>
-<p >Enter the License Key aquired from FLT, and click the 'Activate' button. </p>
+<p >Enter the License Key aquired from LACEL, and click the 'Activate' button. </p>
    
 							
                         <div class="row mb-2 ml-2 mb-5">
-                        <div class="col-md-3 p-0"><input type='text'  maxlength='4' id='key1' name='key1' class="form-control" value="Q3E5"> &nbsp;<b>-</b>&nbsp;</div>   
+                        <div class="col-md-3 p-0"><input type='text'  maxlength='4' id='key1' name='key1' class="form-control" > &nbsp;<b>-</b>&nbsp;</div>   
                         
-                        <div class="col-md-3 p-0"><input type='text'  maxlength='4' id='key2' name='key2' class="form-control" value="6D4K">
+                        <div class="col-md-3 p-0"><input type='text'  maxlength='4' id='key2' name='key2' class="form-control" >
                         &nbsp;<b>-</b>&nbsp;</div>   
                         
                         
                         <div class="col-md-3 p-0">
-                        <input type='text'  maxlength='4' id='key3' name='key3' class="form-control" value="BXUT">
+                        <input type='text'  maxlength='4' id='key3' name='key3' class="form-control" >
                         &nbsp;<b>-</b>&nbsp;</div>
                         <div class="col-md-3 p-0">
-                        <input type='text'  maxlength='4' id='key4' name='key4' class="form-control" value="GI2N">
+                        <input type='text'  maxlength='4' id='key4' name='key4' class="form-control" >
                         </div>
                         </div>
                     <!-- <input type='submit' name='Submit' value='  Activate   ' style='background:url(img/but.gif); color:#FFFFFF'  \"> -->
-                    <button type="submit" class="btn btn-outline btn-sm pull-left" name="emailForm" onclick="license1()"><i class="fa fa-times" ></i> Cancel</button>
+                    <a type="submit" class="btn btn-outline btn-sm pull-left" name="emailForm" href="billing.php"><i class="fa fa-times" ></i> Cancel</a>
                     <button type="submit" class="btn btn-success btn-sm pull-right" name="emailForm" onclick="license()"><i class="fa fa-check" ></i> Activate</button>
 
 
@@ -295,23 +295,6 @@
         });
   }
 
-  function license1(){
-      var company_id_=26;
-     var billing_plan_id = 3;
-        var amount_paid = 300;
-     var   number_of_days  = 30;
-    $.post("../src/license.php", {
-        action: "get_license",
-        company_id_ : company_id_,
-        billing_plan_id :billing_plan_id,
-        amount_paid : amount_paid,
-        number_of_days :number_of_days
-        },
-        function(data) {
-            alert(data);
-        });
-    // alert(2)
-  }
 </script>
 
 

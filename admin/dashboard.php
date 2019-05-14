@@ -1,31 +1,25 @@
+<?php 
+include 'includes/config.php';
+if(!isset($_SESSION["authenticated"])){
+    header('Location: login.php');
+ }
+
+ $companies = DB::query("select * from company_tb");
+$count_company= DB::count();
+
+ $properties = DB::query("select * from property_tb");
+$count_property= DB::count();
+
+ $revenue = DB::query("select IFNULL(SUM(amount_paid),0) as amount from billing_tb where used_at IS NOT NULL");
+$tot_revenue= $revenue[0]['amount'];
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <?php include 'includes/styles.php';?>
 
-
-    <!-- Title Page-->
-    <title>Dashboard</title>
-
-    <!-- Fontfaces CSS-->
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <link href="css/text-color.css" rel="stylesheet" media="all">
     <style>
         .box {
             background-color: #fff;
@@ -67,8 +61,8 @@
                     <div class="image img-cir img-120">
                         <img src="images/avatar.jpg" alt="John Doe" />
                     </div>
-                    <h4 class="name">Lacel Technologies</h4>
-                    <a href="#">Sign out</a>
+                    <h4 class="name"><?php echo  $user_name; ?></h4>
+                    <a href="login.php?logout=1">Sign out</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
@@ -200,8 +194,8 @@
                         <div class="image img-cir img-120">
                             <img src="images/avatar.jpg" alt="John Doe" />
                         </div>
-                        <h4 class="name">Lacel Technologies</h4>
-                        <a href="#">Sign out</a>
+                        <h4 class="name"><?php echo  $user_name; ?></h4>
+                        <a href="login?logout=1">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
@@ -234,7 +228,7 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>10</h2>
+                                                <h2><?php echo $count_company; ?></h2>
                                                 <span>Companies</span>
                                             </div>
                                         </div>
@@ -252,7 +246,7 @@
                                                 <i class="zmdi zmdi-home"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388</h2>
+                                            <h2><?php echo $count_property; ?></h2>
                                                 <span>Properties</span>
                                             </div>
                                         </div>
@@ -270,7 +264,7 @@
                                                 <i class="zmdi zmdi-accounts"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>23</h2>
+                                            <h2><?php echo $count_user; ?></h2>
                                                 <span>Users</span>
                                             </div>
                                         </div>
@@ -288,7 +282,7 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060</h2>
+                                            <h2><?php echo $tot_revenue; ?></h2>
                                                 <span>Revenue</span>
                                             </div>
                                         </div>
@@ -618,10 +612,10 @@
                             <div class="col-lg-12">
                                 <h2 class="title-1 m-b-25">Companies</h2>
                                 <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
+                                    <table class="table table-borderless table-striped table-earning" id="company_tb">
                                         <thead>
                                             <tr>
-                                                <th>Date Joined</th>
+                                                <th onclick="get_companies()">Date Joined</th>
                                                 <th class="text-center">Name</th>
                                                 <th class="text-center">Email</th>
                                                 <th class="text-right">Users</th>
@@ -779,33 +773,12 @@
     </div>
     <!-- end modal scroll -->
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-    <script src="vendor/vector-map/jquery.vmap.js"></script>
-    <script src="vendor/vector-map/jquery.vmap.min.js"></script>
-    <script src="vendor/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="vendor/vector-map/jquery.vmap.world.js"></script>
+ <!-- Main JS-->
+ <script src="js/main.js"></script>
+    
 
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
+
+    
 
 </body>
 
@@ -813,6 +786,10 @@
 <!-- end document-->
 
 <script type="text/javascript">
+
+$(function() {
+    // get_companies()
+})
     function get_license() {
         var company_id_ = $('#company').val();
         var billing_plan_id = $('#billing_plan :selected').data('id');
@@ -842,26 +819,66 @@
 
         amount = parseFloat(amount).toFixed(2);
         amount = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        $('#amount').html(amount)
+        $('#amount').html(amount);
 
     }
+
+    function get_companies(){
+       
+        $.post("includes/get_data.php", {
+            token: "companies",
+        }, function(data) {
+            setcompanies(data)
+        })
+    
+    }
+
+    function setcompanies(data){
+       
+     
+            var data = JSON.parse(data);
+            var rows = "";
+            var table = $("#company_tb");
+            var tableBody = table.find('tbody');
+            tableBody.html("<tr><td colspan=6>Loading...</td></tr>");
+            $.each(data, function(i, item) {
+                // var rtn = item.room_type_name;
+                // var rtid = item.room_type_id;
+                // var rooms = item.rooms;
+                // var rc = item.rooms.length;
+             
+                
+                rows += "<tr data-placement='top' title='Generate License for Gollira Safaris' data-toggle='modal' data-target='#licensemodal'>" +
+                       " <td>2018-09-29 05:57</td>"+
+                        "<td class='text-center'>Gollira Safaris</td>"+
+                        "<td class='text-center'>galai@gmail.com</td>"+
+                        "<td class='text-right'>12</td>"+
+                        "<td class='text-center'>Standard</td>"+
+                        "<td class='text-center'>LI6EH6YH7HR73FFF</td>"+
+                        "<td class='text-center'>2019-09-29 05:57"+
+                            "<p><span class='badge badge-success'>Active</span></p>"+
+                        "</td>"+
+                    "</tr>";
+
+
+                
+
+
+            })
+
+            tableBody.html(rows);
+            // fixTableHead(".table-primary");
+            
+            // if(rows==""){
+               
+            // tableBody.html("<tr><td colspan='7' style='background-color:#fff'><p class='text-muted p-5'>Looks like you have no rooms set up. Go to <br><b>manage rooms</b> to set up. </p></td></tr>");
+           
+
+            //    }
+            console.log(rows)
+        
+
+
+    }
+
 </script>
-<?php
- $company = DB::query("SELECT c.id,c.company_name, c.billing_plan FROM company_tb c LEFT JOIN billing_tb b on b.id=c.billing_plan ");
-
- $companyOptions ="";
-foreach($company as $c){
-    
-    $companyOptions .="<option value='".$c['id']."'>".$c['company_name']."</option>";
-};
-
- $billing = DB::query("SELECT * FROM billing_plan_tb ");
-
- $billingOptions ="";
-foreach($billing as $b){
-    
-    $billingOptions .="<option value='".$b['price']."' data-id='".$b['id']."'>".$b['code']."-".$b['title']."</option>";
-};
-
-
-?>

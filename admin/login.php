@@ -1,36 +1,45 @@
+<?php
+ include 'includes/config.php';
+$email = null;
+$password = null;
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if(!empty($_POST["email"]) && !empty($_POST["password"])) {
+        $email = $_POST["email"];
+        $password =sha1($_POST['password']);
+        $result = DB::queryFirstRow("SELECT id, name FROM admin_users_tb WHERE email = '$email' and password = '$password'");
+        
+        if($result) {
+           
+            session_start();
+            $_SESSION["authenticated"] = "TRUE";
+            $_SESSION["user_name"] = $result['name'];
+            $_SESSION["user_id"] = $result['id'];
+            header('Location: dashboard.php');
+            
+        }
+    }
+    $msg = "Wrong Email or Password"; 
+   
+} 
+if(isset($_GET['logout'])&& $_GET['logout']==1){
+    unset($_SESSION["authenticated"]);
+}
+
+if(isset($_SESSION["authenticated"]) ){
+   header('Location: dashboard.php');
+   
+}
+else{
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
-
-    <!-- Title Page-->
-    <title>Login</title>
-
-    <!-- Fontfaces CSS-->
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
+   
+    <?php include 'includes/styles.php';?>
 
 </head>
 
@@ -46,15 +55,19 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                        
+                                    <small class=" float-right text-red mb-2"><?php echo $msg; ?></small>
+                           
+                            <form action="login.php" method="post">
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email"  required data-empty-message="provide email">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password" required data-empty-message="provide password">
                                 </div>
+                               
                                 <div class="login-checkbox">
                                     <label>
                                         <input type="checkbox" name="remember">Remember Me
@@ -74,32 +87,15 @@
         </div>
 
     </div>
-
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
+<?php } ?>
+ <!-- Main JS-->
+ <script src="js/main.js"></script>
 
 </body>
 
 </html>
 <!-- end document-->
+
+<script>
+  
+</script>

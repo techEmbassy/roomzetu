@@ -7,12 +7,15 @@ if(!isset($_SESSION["authenticated"])){
  $companies = DB::query("select * from company_tb");
 $count_company= DB::count();
 
+ $users = DB::query("select * from users_tb");
+$count_user= DB::count();
+
  $properties = DB::query("select * from property_tb");
 $count_property= DB::count();
 
  $revenue = DB::query("select IFNULL(SUM(amount_paid),0) as amount from billing_tb where used_at IS NOT NULL");
 $tot_revenue= $revenue[0]['amount'];
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -321,115 +324,62 @@ $tot_revenue= $revenue[0]['amount'];
                                                     <span>2</span> expired Lisence
                                                 </p>
                                             </div>
-                                            <div class="au-message-list">
-                                                <div class="au-message__item unread" data-toggle="tooltip" data-placement="auto" title="License Expired">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap">
-                                                                <div class="avatar">
-                                                                    <img src="images/avatar.jpg" alt="John Doe" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Gorilla Safaries</h5>
-                                                                <p><span class="badge badge-warning">Standard</span></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>$5,990</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item unread">
-                                                    <div class="au-message__item-inner" data-toggle=" tooltip" data-placement="auto" title="License Expires in 6 Days">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap online">
-                                                                <div class="avatar">
-                                                                    <img src="images/avatar.jpg" alt="John Doe" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Gorilla Safaries</h5>
-                                                                <p><span class="badge badge-secondary">Standard</span></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>$5,990</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap online">
-                                                                <div class="avatar">
-                                                                    <img src="images/avatar.jpg" alt="John Doe" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Gorilla Safaries</h5>
-                                                                <p><span class="badge badge-info">Standard</span></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <h4>$5,990</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap">
-                                                                <div class="avatar">
-                                                                    <img src="images/avatar.jpg" alt="John Doe" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Michelle Sims</h5>
-                                                                <p>Purus feugiat finibus</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>Sunday</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item js-load-item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap online">
-                                                                <div class="avatar">
-                                                                    <img src="images/avatar.jpg" alt="John Doe" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Michelle Sims</h5>
-                                                                <p>Lorem ipsum dolor sit amet</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>Yesterday</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item js-load-item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap">
-                                                                <div class="avatar">
-                                                                    <img src="images/avatar.jpg" alt="John Doe" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Michelle Sims</h5>
-                                                                <p>Purus feugiat finibus</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>Sunday</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="au-message-list" id="top-companies">
+                                                <?php
+                                                $cc = DB::query("select *, IFNULL(b.title,'N/A') as bill_name, 
+                                                IFNULL((select sum(amount_paid) from billing_tb where company_id=c.id),0) as amount_paid
+                                                from company_tb c LEFT JOIN billing_plan_tb b on b.id=c.billing_plan ORDER BY amount_paid DESC LIMIT 20");
+                                                $i=1;
+                                                foreach($cc as $c){
+                                                    $class="";
+                                                    $b_id= $c['billing_plan'];
+
+                                                    if($b_id>0){
+                                                        if($b_id % 3==0)
+                                                            $class="badge badge-info";
+                                                        if($b_id%3==1)
+                                                            $class="badge badge-warning";
+                                                        if($b_id%3==2)
+                                                            $class="badge badge-secondary";
+                                                    }
+
+                                                    if($i>4)
+                                                        $more="js-load-item";
+                                
+                                                    $online=""; 
+                                                    $diff=  strtotime($c['expiry_date'])-time() ;            
+                                                if($diff>0) {
+                                                        $online="online";
+                                                        $toolTip="License Expires in ". round($diff/(60*60*24))." Days";
+                                                }else{
+                                                    $toolTip="License Expired On ".date('l, d F Y H:i A',strtotime($c['expiry_date']));
+                                                }
+
+                                                                    echo "<div class='au-message__item ".$more."' data-toggle='tooltip' data-placement='auto' title='".$toolTip."'>".
+                                                    "<div class='au-message__item-inner'>".
+                                                        "<div class='au-message__item-text'>".
+                                                            "<div class='avatar-wrap ".$online."'>".
+                                                                "<div class='avatar'>".
+                                                                    "<img src='images/avatar.jpg' alt='John Doe' />".
+                                                                "</div>".
+                                                            "</div>".
+                                                            "<div class='text'>".
+                                                                "<h5 class='name'>".$c['company_name']."</h5>".
+                                                                "<p><span class='".$class."'>".$c['bill_name']."</span></p>".
+                                                            "</div>".
+                                                    " </div>".
+                                                        "<div class='au-message__item-time'>".
+                                                            "<h4>$".$c['amount_paid']."</h4>".
+                                                        "</div>".
+                                                    "</div>".
+                                                "</div>";
+                                                $i++;
+                                            }
+
+                                            ?>
+
+
+
                                             </div>
                                             <div class="au-message__footer">
                                                 <button class="au-btn au-btn-load js-load-btn">load more</button>
@@ -559,35 +509,34 @@ $tot_revenue= $revenue[0]['amount'];
                                             <p>Top Billing Plan Subscriptions</p>
                                         </div>
                                         <div class="au-task-list js-scrollbar3">
-                                            <div class="au-task__item au-task__item--danger">
+
+                                        <?php 
+                                            $billing_plans = DB::query("select *,
+                                            (select COUNT(amount_paid)  from billing_tb where billing_plan_id= p.id and used_at IS NOT NULL) as subscriptions
+                                            from  billing_plan_tb p where enabled=1 order by subscriptions DESC");
+                                            $i=0;
+                                            foreach($billing_plans as $b){
+                                                $name=$b['title']."-".$b['code'];
+                                                if($i%3==0)
+                                                    $class="au-task__item--danger";
+                                                if($i%3==1)
+                                                    $class="au-task__item--warning";
+                                                if($i%3==2)
+                                                    $class="au-task__item--primary";
+                                                ?>
+                                            <div class="au-task__item <?php echo $class;?>">
                                                 <div class="au-task__item-inner">
                                                     <label class="task">
-                                                        <a href="#">Standard</a>
+                                                        <a href="#"><?php echo $b['title'];?> </a>
+                                                        - <small href="#"><?php echo $b['code'];?> </small>
                                                     </label>
-                                                    <span class="badge badge-success float-right" style="font-size: 23px;">20</span><br>
-                                                    <span class="time">$49.99/mo</span>
+                                                    <span class="badge badge-success float-right" style="font-size: 23px;"><?php echo $b['subscriptions']; ?></span><br>
+                                                    <span class="time">$<?php echo $b['price'];?>/mo</span>
                                                 </div>
 
+                                                </div>
 
-                                            </div>
-                                            <div class="au-task__item au-task__item--warning">
-                                                <div class="au-task__item-inner">
-                                                    <label class="task">
-                                                        <a href="#">Standard</a>
-                                                    </label>
-                                                    <span class="badge badge-success float-right" style="font-size: 23px;">20</span><br>
-                                                    <span class="time">$49.99/mo</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--primary">
-                                                <div class="au-task__item-inner">
-                                                    <label class="task">
-                                                        <a href="#">Standard</a>
-                                                    </label>
-                                                    <span class="badge badge-success float-right" style="font-size: 23px;">20</span><br>
-                                                    <span class="time">$49.99/mo</span>
-                                                </div>
-                                            </div>
+                                            <?php $i++; }?>
 
                                         </div>
                                         <div class="au-task__footer">
@@ -788,7 +737,7 @@ $tot_revenue= $revenue[0]['amount'];
 <script type="text/javascript">
 
 $(function() {
-    // get_companies()
+    get_companies()
 })
     function get_license() {
         var company_id_ = $('#company').val();
@@ -834,48 +783,50 @@ $(function() {
     }
 
     function setcompanies(data){
-       
-     
             var data = JSON.parse(data);
             var rows = "";
             var table = $("#company_tb");
             var tableBody = table.find('tbody');
             tableBody.html("<tr><td colspan=6>Loading...</td></tr>");
             $.each(data, function(i, item) {
-                // var rtn = item.room_type_name;
-                // var rtid = item.room_type_id;
-                // var rooms = item.rooms;
+                var c_id = item.id;
+                var c_name = item.company_name;
+                var date = item.time_stamp;
+                var email = item.email;
+                var users = item.user_count;
+                var bill = item.bill_name;
+                var license = item.license;
+                var expiry_date = item.expiry_date;
                 // var rc = item.rooms.length;
              
                 
                 rows += "<tr data-placement='top' title='Generate License for Gollira Safaris' data-toggle='modal' data-target='#licensemodal'>" +
-                       " <td>2018-09-29 05:57</td>"+
-                        "<td class='text-center'>Gollira Safaris</td>"+
-                        "<td class='text-center'>galai@gmail.com</td>"+
-                        "<td class='text-right'>12</td>"+
-                        "<td class='text-center'>Standard</td>"+
-                        "<td class='text-center'>LI6EH6YH7HR73FFF</td>"+
-                        "<td class='text-center'>2019-09-29 05:57"+
-                            "<p><span class='badge badge-success'>Active</span></p>"+
-                        "</td>"+
+                       " <td>"+date+"</td>"+
+                        "<td class='text-center'>"+c_name+"</td>"+
+                        "<td class='text-center'>"+email+"</td>"+
+                        "<td class='text-right'>"+users+"</td>"+
+                        "<td class='text-center'>"+bill+"</td>"+
+                        "<td class='text-center'><span class='badge badge-success'>Active</span></td>"+
+                        "<td class='text-center'>"+expiry_date+"</td>"+
                     "</tr>";
 
-
+                   
                 
 
 
             })
 
             tableBody.html(rows);
+            // $('#top-companies').html(div);
             // fixTableHead(".table-primary");
             
-            // if(rows==""){
+            if(rows==""){
                
-            // tableBody.html("<tr><td colspan='7' style='background-color:#fff'><p class='text-muted p-5'>Looks like you have no rooms set up. Go to <br><b>manage rooms</b> to set up. </p></td></tr>");
+            tableBody.html("<tr><td colspan='7' style='background-color:#fff'><p class='text-muted p-5'>Looks like you have no rooms set up. Go to <br><b>manage rooms</b> to set up. </p></td></tr>");
            
 
-            //    }
-            console.log(rows)
+               }
+            // console.log(rows)
         
 
 

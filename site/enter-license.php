@@ -251,7 +251,7 @@
                         </div>
                     <!-- <input type='submit' name='Submit' value='  Activate   ' style='background:url(img/but.gif); color:#FFFFFF'  \"> -->
                     <a type="submit" class="btn btn-outline btn-sm pull-left" name="emailForm" href="billing.php"><i class="fa fa-times" ></i> Cancel</a>
-                    <button type="submit" class="btn btn-success btn-sm pull-right" name="emailForm" onclick="license()"><i class="fa fa-check" ></i> Activate</button>
+                    <button type="submit" class="btn btn-success btn-sm pull-right" name="emailForm" onclick="license(this)"><i class="fa fa-check" ></i> Activate</button>
 
 
 </div>
@@ -273,7 +273,9 @@
 <?php include ('includes/footer.php');?>
 
 <script type="text/javascript">
-  function license(){
+  function license(btn){
+   
+    
       var key1 = $('#key1').val();
       var key2 = $('#key2').val();
       var key3 = $('#key3').val();
@@ -282,7 +284,10 @@
       if (key1.length != 4 || key2.length != 4 || key3.length != 4 || key4.length != 4 ) {
 		alert( "Please enter the full key." );
 		return false;
-	}
+    }
+    var btn_html =  $(btn).html();
+        $(btn).html("<i class='fa fa-spin fa-spinner'></i> Renewing License...");
+        $(btn).prop("disabled", true);
     $.post("../src/license.php", {
         action: "auth_license",
         key1 :key1,
@@ -291,7 +296,16 @@
         key4 :key4,
         },
         function(data) {
-            alert(data);
+            if(data=='success')
+                 x0p('License Accepted', 'You have Sucessfully Renewed your License. Click okay to login', 'ok', function() {
+                 window.location.href = "../dashboard";
+                 });
+            else
+                x0p('Invalid License',
+                    'License You have Entered is invalid, Copy and Paste the correct one.',
+                    'error', false);
+            $(btn).html(btn_html);
+            $(btn).prop("disabled", false);
         });
   }
 

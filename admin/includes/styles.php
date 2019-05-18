@@ -19,6 +19,8 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
     <link href="css/text-color.css" rel="stylesheet" media="all">
+     <!--//beautiful alert-->
+     <link href="../css/x0popup.min.css" rel="stylesheet" type="text/css" />
 
     
        <!-- Jquery JS-->
@@ -31,4 +33,5 @@
       <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/animsition/animsition.min.js"></script>
     <script src="vendor/select2/select2.min.js"></script>
+    <script src="../js/x0popup.min.js"></script>
     

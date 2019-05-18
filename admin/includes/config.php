@@ -1,8 +1,8 @@
 <?php
 require_once 'meekrodb.php';
 DB::$user = 'root';
-DB::$password = 'r5HvPVg9D4tRrd2C3FVzM86B4WwFQn9Q';
-DB::$dbName = 'reservations_db';
+DB::$password = '';
+DB::$dbName = 'roomzetu';
 
 
 //some constants

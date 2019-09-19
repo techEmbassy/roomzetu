@@ -9,28 +9,9 @@ $bname=$bp['title'];
 ?>
 
 <body>
-
-    <div class="row page-head mt-0 mb-0" style="background-color:#f4f6f7">
-        <div class="col-md-1">
-            <img style="width:70px;" src="../img/logo.png">
-        </div>
-        <div class="col-md-7 page-head-heading">
-            <h3 class="mt-3 mb-3">Choose a Subscription Plan</h3>
-            <!--            <span class="mt-0"><small>Choose a payment plan</small></span>-->
-        </div>
-        <div class="col-md-4 page-head-desc">
-            <br>
-            <h3>
-                <!--                Hello-->
-            </h3>
-        </div>
-    </div>
-
-    <hr class="mt-0">
-    <br>
-
-
-
+<?php $pos=2; include 'includes/top-navbar.php'?>
+   
+    <h3 class="mt-3 mb-3 text-center"><b>Rates of Subscription Plan Per Period</b></h3>
 
     <!--    for checkout-->
     <section class="container">
@@ -81,8 +62,15 @@ $bname=$bp['title'];
                         </div>
                     </div>
                 </div>
+                
 
-                <a class="btn btn-link text-warning">Terms & Conditions</a>
+                <a class="btn btn-link text-info pull-left" href="billing.php">
+                    <i class="fa fa-long-arrow-left fa-2x"></i><br> Back</a>
+
+                <a class="btn btn-link text-success  pull-right"  href="enter-license.php">
+                <i class="fa fa-long-arrow-right fa-2x"></i><br>Enter License</a>
+                 <br>
+                
 
             </div>
 
@@ -98,7 +86,12 @@ $bname=$bp['title'];
                         </div>
                         <div class="plan-selection">
                             <div class="plan-data">
-                                <input id="opt-6" name="period" type="radio" class="with-font" value=6 onchange="calamount(value)" /> <label for="opt-12" class="ml-2"><label for="opt-6" class="ml-2">6 Months Subscription</label>
+                                <input id="opt-3" name="period" type="radio" class="with-font" value=3 onchange="calamount(value)" /> <label for="opt-3" class="ml-2">3 Months Subscription</label>
+                            </div>
+                        </div>
+                        <div class="plan-selection">
+                            <div class="plan-data">
+                                <input id="opt-6" name="period" type="radio" class="with-font" value=6 onchange="calamount(value)" /> <label for="opt-6" class="ml-2">6 Months Subscription</label>
                             </div>
                         </div>
                         <div class="plan-selection">
@@ -116,12 +109,12 @@ $bname=$bp['title'];
                         <!--                        <label><a href="#"><small>Terms & Conditions</small></a></label>-->
                         <!--                        <a type="submit" value="submit" class="btn btn-outline-success mt-3">Continue & Subscribe</a>-->
                         <!-- <input class="btn btn-success mt-2" style="width:40%" type="submit" value="Submit"> -->
-
+                       
                     </form>
-
+                    <a class="btn btn-link text-warning pull-right">Terms & Conditions</a>
                 </div>
             </div>
-
+            
 
             <!--            <a href="#" class="btn btn-primary btn-lg mb30">Continue With Plans</a>-->
         </div>

@@ -29,5 +29,11 @@ if(!isset($_SESSION['login']["user_id"]) ){
     <!--//beautiful alert-->
     <link href="../css/x0popup.min.css" rel="stylesheet" type="text/css" />
 
-
+    
+<style>
+    .navactive{
+        background-color: #fd4b0d !important;
+    color: #fff !important;
+    }
+</style>
 </head>

@@ -15,13 +15,14 @@
                 
                 
                 if(!($role==3)){
-                array_push($menuArray, array("title"=>"Profiles", "link"=>'connections-agents', 'icon'=>'users'));
+                    array_push($menuArray, array("title"=>"Profiles", "link"=>'connections-agents', 'icon'=>'users'));
                 }
-                array_push($menuArray, array("title"=>"Reports", "link"=>'summary', 'icon'=>'pie-chart'));
-            
-            if(!($role==3||$role==5||$role==6)){
-                array_push($menuArray, array("title"=>"Settings", "link"=>'setting', 'icon'=>'cog'));
-            }
+                if(!($role==4)){
+                    array_push($menuArray, array("title"=>"Reports", "link"=>'summary', 'icon'=>'pie-chart'));
+                }
+                if(!($role==3||$role==5||$role==6 || $role==4)){
+                    array_push($menuArray, array("title"=>"Settings", "link"=>'setting', 'icon'=>'cog'));
+                }
                 
                 $menu ="";
                 $i=1;

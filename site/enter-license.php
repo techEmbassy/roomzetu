@@ -35,7 +35,7 @@
 <body style="background-color: #f5f7fb">
 
    
-   <?php include 'includes/top-navbar.php'?>
+   <?php $pos=1; include 'includes/top-navbar.php'?>
 
 
 

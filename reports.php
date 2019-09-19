@@ -1,4 +1,7 @@
 <?php include 'includes/auth.php'?>
+<?php if($role==4){
+     header("Location: dash.php");
+}?>
 <!DOCTYPE html>
 <html>
 

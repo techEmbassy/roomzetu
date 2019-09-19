@@ -1,5 +1,5 @@
 <?php include 'includes/auth.php'?>
-<?php if(($role==3)||$role==5||$role==6){
+<?php if(($role==3)||$role==5||$role==6||$role==4){
      header("Location: dash.php");
 }?>
 <!DOCTYPE html>

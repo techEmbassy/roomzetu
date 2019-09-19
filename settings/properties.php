@@ -237,7 +237,7 @@
 
         $("#tb-properties tbody tr").each(function(i, tr) {
 
-            var b_ref = $(tr).find("td:eq(0)").html();
+            var b_ref = $(tr).find("td:eq(1)").html();
             if (b_ref.toUpperCase().indexOf(filter) > -1) {
                 tr.style.display = "";
 

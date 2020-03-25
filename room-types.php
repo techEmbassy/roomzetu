@@ -1,3 +1,8 @@
+<?php include 'includes/auth.php'?>
+<?php if(($role==3)||$role==5){
+     header("Location: rooms.php");
+}?>
+
 <style>
     .acc_type,
     .extras_type {
@@ -195,10 +200,7 @@
 
 
 
-<?php include 'includes/auth.php'?>
-<?php if(($role==3)||$role==5){
-     header("Location: rooms.php");
-}?>
+
 <!DOCTYPE html>
 <html>
 

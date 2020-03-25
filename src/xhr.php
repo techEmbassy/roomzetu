@@ -373,10 +373,10 @@ function generateNextInvoice(){
     global $company_id;
   
       
-    $p= DB::queryFirstRow("SELECT prefix FROM invoice_template_v WHERE company_id=%i", $company_id);
+    $p= DB::queryFirstRow("SELECT UPPER(prefix) FROM invoice_template_v WHERE company_id=%i", $company_id);
     $prefix=$p['prefix'];
   
-    $sth= DB::queryFirstRow("SELECT MAX(invoice_no) as last_invoice FROM booking_tb WHERE invoice_no like '".$prefix."%' and company_id=%i", $company_id);
+    $sth= DB::queryFirstRow("SELECT UPPER(MAX(invoice_no)) as last_invoice FROM booking_tb WHERE invoice_no like '".$prefix."%' and company_id=%i", $company_id);
     $last_invoice=$sth['last_invoice'];
   
     if($last_invoice == NULL){

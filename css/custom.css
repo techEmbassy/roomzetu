@@ -130,7 +130,7 @@ a[href] {
 label {
     margin-top: 7px;
     margin-bottom: 4px;
-    font-size: 10pt;
+    font-size: 13pt;
     color: #555;
 }
 
@@ -330,9 +330,9 @@ label {
     display: block;
     padding: 5px 10px;
     border-radius: 4px !important;
-    margin-top: 5px;
+    margin-top: 6px;
     position: relative;
-    font-size: 10pt;
+    font-size: 13pt;
     color: #777;
 }
 
@@ -424,9 +424,7 @@ label {
 }
 
 .table-primary thead th {
-    /*    text-transform: uppercase;*/
-    /*    font-weight: 700;*/
-    font-size: 9pt;
+    font-size: 12pt;
     cursor: default;
 
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.08));
@@ -665,7 +663,7 @@ a[href] {
     /*background-color: #fff;*/
     padding: 6px 10px !important;
     vertical-align: middle !important;
-    font-size: 9pt;
+    font-size: 11pt;
 }
 
 .border-right {
@@ -685,7 +683,7 @@ input.tiny {
 .input-group-addon.tiny {
     font-size: 10pt;
     padding: 0 10px;
-    height: 35px !important;
+    /*    height: 35px !important;*/
 }
 
 .tiny-fluid {
@@ -711,10 +709,24 @@ input.tiny {
 }
 
 
+.input-group-addon {
+    /* padding: 0.5rem 0.75rem; */
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #464a4c;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #868686;
+    /* border-radius: 0.25rem; */
+}
 
+/*
 .modal .input-group .input-group-addon {
     height: 35px !important;
 }
+*/
 
 .price {
     color: darkgoldenrod;
@@ -900,6 +912,19 @@ p {
     font-size: 16px;
     line-height: 1.4em;
 }
+
+.bootstrap-tagsinput input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0 40px;
+    margin: 0;
+    width: auto;
+    max-width: inherit;
+}
+
+
 
 .attachement-holder .tag {
     display: inline-block;
@@ -1368,7 +1393,8 @@ select.form-control:not([size]):not([multiple]) {
     border-radius: 0.375rem !important;
     color: rgb(40, 62, 89) !important;
     background-color: rgb(255, 255, 255);
-    border-color: rgb(227, 235, 246);
+    /*    border-color: rgb(227, 235, 246);*/
+    border-color: #9C9A99;
     cursor: pointer;
     margin-bottom: 5px;
 }

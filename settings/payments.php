@@ -7,8 +7,8 @@
             </div>
             <div class="col-md-9">
                 <a title="preview" class="btn btn-sm btn-secondary pull-right mb-1" onclick="previewInvoice(0)">
-                        <i class="fa fa-eye"></i> preview sample
-                    </a>
+                    <i class="fa fa-eye"></i> preview sample
+                </a>
                 <a title="save" class="btn btn-sm btn-primary pull-right mr-2 " onclick="saveInvoince()">
                     <i class="fa fa-check-circle"></i> save changes
                 </a>
@@ -57,14 +57,14 @@
                         <div class="row mb-2">
                             <label class="col-md-3">Invoice Template</label>
                             <div class="col-md-7">
-                                <select class="form-control tiny tiny-fluid" id="invoice-design-select"  style="text-transform: capitalize;" required>
-                                <option value='inv1'>Invoice one</option>
-                                <option value='inv2'>Invoice two</option>
-                                <option value='inv3'>Invoice three</option>
-                                <option value='inv4'>Invoice four</option>
-                                <option value='inv5'>Invoice five</option>
-                            </select>
-                          
+                                <select class="form-control tiny tiny-fluid" id="invoice-design-select" style="text-transform: capitalize;" required>
+                                    <option value='inv1'>Invoice one</option>
+                                    <option value='inv2'>Invoice two</option>
+                                    <option value='inv3'>Invoice three</option>
+                                    <option value='inv4'>Invoice four</option>
+                                    <option value='inv5'>Invoice five</option>
+                                </select>
+
                             </div>
                         </div>
                     </div>
@@ -75,22 +75,22 @@
                     <div class="col-md-6">
 
                         <div class="row mb-2 p-2">
-                            <label class="h6" style="color: #154360">Taxes  <span><a class="btn btn-sm btn-rounded-circle element-white" onclick="addTax()">
-                    +
-                  </a></span></label>
+                            <label class="h6" style="color: #154360">Taxes <span><a class="btn btn-sm btn-rounded-circle element-white" onclick="addTax()">
+                                        +
+                                    </a></span></label>
                             <!--                                    <div class="col-md-12">-->
                             <table class="table table-bordered table-editable" id="tb-tax">
                                 <thead>
                                     <tr>
-                                        <th>Tax</th>
-                                        <th>%</th>
+                                        <th style="font-size:14px;">Tax</th>
+                                        <th style="font-size:14px;">%</th>
                                         <th style="width:30px"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input value="" style="text-transform: capitalize;" required/></td>
-                                        <td><input value="" required/></td>
+                                        <td><input value="" style="text-transform: capitalize;" required /></td>
+                                        <td><input value="" required /></td>
                                         <td><i class="btn btn-circle fa fa-remove" title="delete this tax" onclick="remove(this)"></i></td>
                                     </tr>
                                 </tbody>
@@ -115,8 +115,8 @@
                 <!--                <hr>-->
 
                 <h6 class="pt-4" style="color: #154360">Payment Options <span><a onclick="newBank()" class="btn btn-sm btn-rounded-circle element-white">
-                    +
-                  </a></span></h6>
+                            +
+                        </a></span></h6>
 
                 <style>
                     .btn-rounded-circle {
@@ -191,7 +191,7 @@
 
                 <div class="modal" id="add-bankaccount">
 
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
 
                             <div class="modal-header">
@@ -249,8 +249,10 @@
                             </div>
 
                             <div class="modal-footer">
-                                <a class="element-white btn-sm" onclick="addTempPayment()">Add bank Account</a>
-                                <a class="btn element-white btn-sm" data-dismiss="modal">Cancel</a>
+
+                                <a class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                                <a class="btn btn-primary" onclick="addTempPayment()">Add bank Account</a>
+
                             </div>
 
 
@@ -314,7 +316,7 @@
 
     function saveInvoince() {
 
-      
+
         var title = $("#tt #title").val();
         var prefix = $("#tt #prefix").val();
         var due_date = $("#tt #due_date").val();
@@ -327,7 +329,7 @@
         var bankCurrency = $("#tt #c-currency").val();
 
         var payments = JSON.stringify(getPayments());
-        var invoice_design= $('#invoice-design-select').val();
+        var invoice_design = $('#invoice-design-select').val();
 
 
         var c = new Array();
@@ -352,7 +354,7 @@
             notes: notes,
             payments: JSON.stringify(payments),
             taxes: JSON.stringify(c),
-            invoice_design:invoice_design
+            invoice_design: invoice_design
         });
 
 
@@ -512,13 +514,13 @@
             //            var payments = JSON.parse(datau[0].payments);
             var inv_d = datau[0].invoice_design;
             $("#invoice-design-select").val(inv_d);
-            
+
 
             $("#tt #title").val(title);
             $("#tt #prefix").val(prefix);
             $("#tt #due_date").val(due_date);
-        //    $("#tt #notes").val(notes);
-            $("#tt #notes").summernote('code',notes);
+            //    $("#tt #notes").val(notes);
+            $("#tt #notes").summernote('code', notes);
 
             //            $("#tt #c-bank").val(payments.bank_name);
             //            $("#tt #c-account-name").val(payments.account_name);
@@ -577,7 +579,7 @@
             var dd = datau[0].due_date;
             var nd = datau[0].notes;
             var pd = datau[0].policy;
-           
+
             nd = nd.replace(new RegExp('\r?\n', 'g'), '<br />');
 
             $("#c-table #c-details").html("<b>" + cn + "</b><br>" + cad + "<br>" + cp + "<br>" + ce + "<br>" + cw);
@@ -617,5 +619,4 @@
 
     }
 
- 
 </script>

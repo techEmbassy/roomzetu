@@ -6,7 +6,7 @@
     <title>Hotel Management System</title>
     <link href="css/animate.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
-    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <!--    <link href="css/custom.css" rel="stylesheet" type="text/css" />-->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="css/text-color.css" rel="stylesheet" type="text/css" />
     <link href="css/animate.css" rel="stylesheet" type="text/css" />
@@ -43,41 +43,63 @@
     <div class="container mt-5">
         <br />
 
-        <fieldset style="width:650px;">
+        <div class="row">
 
-            <div class="card p-4" id="login-form">
-                <!-- Form Name -->
-                <div class="col-md-12 pt-3">
-                    <legend class="mb-3 tile">Enter Your Email</legend>
-                </div>
+            <div class="col-md-2">
 
-                <!-- Prepended text-->
-                <div class="form-group">
+            </div>
 
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-                            <input id="email" name="email" class="form-control" placeholder="email" type="text" required data-empty-message="provide email">
+            <div class="col-md-8 d-flex justify-content-center">
+
+                <fieldset style="width:650px;">
+
+                    <div class="card p-4" id="login-form">
+                        <!-- Form Name -->
+                        <div class="col-md-12 pt-3">
+                            <legend class="mb-3 tile">Enter Your Email</legend>
                         </div>
 
-                    </div>
-                </div>
+                        <!-- Prepended text-->
+                        <div class="form-group">
 
-                <!-- Button (Double) -->
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <button class="btnx" onclick="pass_recovery()">Submit</button>
-                    </div>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    <input id="email" name="email" class="form-control" placeholder="email" type="text" required data-empty-message="provide email">
+                                </div>
 
-                </div>
+                            </div>
+                        </div>
+
+                        <!-- Button (Double) -->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button class="btnx" onclick="pass_recovery()">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--            </form>-->
+
+                    <br>
+                    <p class="text-center mb-0 mt-5">Not yet a customer? <small><a href="signup">Create account</a></small></p>
+                    <p class="text-center text-disabled">&copy; Copyright
+                        <?php echo date('Y');?>. <b>Lacel Technologies LLC</b></p>
+
+
+                </fieldset>
+
+
+
             </div>
-            <!--            </form>-->
 
-            <Br>
-            <p class="text-center mb-0 mt-5">Not yet a customer? <small><a href="signup">Create account</a></small></p>
-            <p class="text-center text-disabled">&copy; Copyright
-                <?php echo date('Y');?>. <b>Lacel Technologies LLC</b></p>
-        </fieldset>
+            <div class="col-md-2">
+
+            </div>
+
+        </div>
+
+
     </div>
 
 

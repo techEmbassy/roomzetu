@@ -29,7 +29,7 @@ function redirect_to( $location = NULL ) {
     <title>Roomzetu | Hotel Management System</title>
     <link href="css/animate.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
-    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <!--    <link href="css/custom.css" rel="stylesheet" type="text/css" />-->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="css/text-color.css" rel="stylesheet" type="text/css" />
     <link href="css/animate.css" rel="stylesheet" type="text/css" />
@@ -59,136 +59,136 @@ function redirect_to( $location = NULL ) {
 
     <div class="container-fluid pl-5 pr-5">
 
-<div class="row pl-5 pr-5">
+        <div class="row pl-5 pr-5">
 
-    <div class="col-md-5 col-12">
+            <div class="col-md-5 col-12">
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="pt-5">
-
-
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="pt-5">
 
 
-            <div class="">
-                <h5 class="">
-                    <p class="font-g-b" style="font-size:23px;color:#D96403"><img src="img/logo.png" width="50px" /> Roomzetu RPM</p>
-                </h5>
+
+
+                    <div class="">
+                        <h5 class="">
+                            <p class="font-g-b" style="font-size:23px;color:#D96403"><img src="img/logo.png" width="50px" /> Roomzetu RPM</p>
+                        </h5>
+
+                    </div>
+
+                    <div class="fade_rule mt-3 mb-3"></div>
+
+                    <h5 class="my-0 mr-md-auto font-g-b" style="">
+                        <!--                        <small class="text-dark;" style="font-size:20px;">Haloo,</small><br>-->
+
+                        <span class="" style="font-size:33px;color:#6F6F6F;">Tukwaniriza ku Roomzetu System</span>
+                    </h5>
+
+
+                    <div class="pt-2">
+                        <p class="mb-0 mt-5">Not yet a customer? <small><a href="signup">Request For an account</a></small></p>
+                        <p class="text-disabled">&copy; Copyright
+                            <?php echo date('Y');?>. <b>Lacel Technologies LLC</b></p>
+                    </div>
+
+
+                </div>
+
 
             </div>
 
-            <div class="fade_rule mt-3 mb-3"></div>
+            <div class="col-md-2 col-12">
 
-            <h5 class="my-0 mr-md-auto font-g-b" style="">
-                <!--                        <small class="text-dark;" style="font-size:20px;">Haloo,</small><br>-->
-
-                <span class="" style="font-size:33px;color:#6F6F6F;">Tukwaniriza ku Roomzetu System</span>
-            </h5>
+            </div>
 
 
-            <div class="pt-2">
-                <p class="mb-0 mt-5">Not yet a customer? <small><a href="signup">Request For an account</a></small></p>
-                <p class="text-disabled">&copy; Copyright
-                    <?php echo date('Y');?>. <b>Lacel Technologies LLC</b></p>
+            <div class="col-md-5 col-12">
+                <br>
+
+                <br />
+                <br />
+                <!--            <p class="text-center"><img src="img/logo.png" width="100px" /></p>-->
+
+
+                <style>
+
+                </style>
+
+
+                <div class="card p-3" id="login-form">
+
+                    <img class="" src="img/login-icon.svg">
+                    <p class="text-center mt-4 mb-4 fs-20">Login to your Account</p>
+
+
+                    <div class="pl-4 pr-4">
+                        <!-- Prepended text-->
+                        <div class="form-group">
+
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    <input id="email" name="prependedtext" class="form-control" placeholder="email" type="text" required data-empty-message="provide username">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- Prepended text-->
+                        <div class="form-group">
+
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                    <input id="pwd" name="" class="form-control" placeholder="password" type="password" required data-empty-message="provide password">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Button (Double) -->
+                        <div class="form-group">
+
+                            <div>
+
+                            </div>
+
+                            <div class="col-md-12 checkbox">
+                                <a><input type="checkbox" class="styled" id="rem" /> <label for="rem">Remember me</label></a><br>
+                                <p class="mt-4"><button id="button1id" name="button1id" class="btnx" onclick="login()">Login &nbsp;<i class="fa fa-terminal"></i></button></p>
+                            </div>
+
+                            <bR>
+                            <hr class='mt-3 mb-3' />
+                            <p class="text-center text-tiny"><a href="password-recovery-enter-email">Forgot password?</a></p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="line animated zoomIn infinite hide"></div>
+
+
+
+
+
+
+
+
             </div>
 
 
         </div>
-
-
-    </div>
-
-    <div class="col-md-2 col-12">
-
-    </div>
-
-
-    <div class="col-md-5 col-12">
-        <br>
-
-        <br />
-        <br />
-        <!--            <p class="text-center"><img src="img/logo.png" width="100px" /></p>-->
-
-
-        <style>
-
-        </style>
-
-
-        <div class="card p-3" id="login-form">
-
-            <img class="" src="img/login-icon.svg">
-            <p class="text-center mt-4 mb-4 fs-20">Login to your Account</p>
-
-
-            <div class="pl-4 pr-4">
-                <!-- Prepended text-->
-                <div class="form-group">
-
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input id="email" name="prependedtext" class="form-control" placeholder="email" type="text" required data-empty-message="provide username">
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-                <!-- Prepended text-->
-                <div class="form-group">
-
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                            <input id="pwd" name="" class="form-control" placeholder="password" type="password" required data-empty-message="provide password">
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Button (Double) -->
-                <div class="form-group">
-
-                    <div>
-
-                    </div>
-
-                    <div class="col-md-12 checkbox">
-                        <a><input type="checkbox" class="styled" id="rem" /> <label for="rem">Remember me</label></a><br>
-                        <p class="mt-4"><button id="button1id" name="button1id" class="btnx" onclick="login()">Login &nbsp;<i class="fa fa-terminal"></i></button></p>
-                    </div>
-
-                    <bR>
-                    <hr class='mt-3 mb-3' />
-                    <p class="text-center text-tiny"><a href="password-recovery-enter-email">Forgot password?</a></p>
-
-                </div>
-            </div>
-
-
-        </div>
-        <div class="line animated zoomIn infinite hide"></div>
-
-
-
-
-
-
-
-
-    </div>
-
-
-</div>
 
     </div>
 

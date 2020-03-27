@@ -6,7 +6,7 @@
     <title>Roomzetu | Hotel Management System</title>
     <link href="css/animate.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
-    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <!--    <link href="css/custom.css" rel="stylesheet" type="text/css" />-->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="css/text-color.css" rel="stylesheet" type="text/css" />
     <link href="css/animate.css" rel="stylesheet" type="text/css" />

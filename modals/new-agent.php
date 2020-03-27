@@ -50,7 +50,7 @@
                 <div class="row form-group">
                     <label class="col-md-3">Email(s)</label>
                     <div class="col-md-9">
-                        <input class="form-control" id="a-email" type="text" data-role="tagsinput" value="">
+                        <input class="form-control" id="a-email" type="text" data-role="tagsinput" value="" style="min-height:50px;">
                     </div>
                 </div>
 

@@ -5,14 +5,14 @@
 
                 <h4 class="modal-title"><i class="fa fa-user"></i> New Agent</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body" id="form-new-agent">
                 <div class="row form-group">
                     <label class="col-md-3">Name: </label>
                     <div class="col-md-9">
-                        <input id="a-name" class="form-control" placeholder="" style="text-transform: capitalize;" required/>
+                        <input id="a-name" class="form-control" placeholder="" style="text-transform: capitalize;" required />
 
                     </div>
 
@@ -86,14 +86,14 @@
                 <div class="row form-group">
                     <label class="col-md-3">Address: </label>
                     <div class="col-md-9">
-                        <input class="form-control" placeholder="" id="a-address" style="text-transform: capitalize;" required/>
+                        <input class="form-control" placeholder="" id="a-address" style="text-transform: capitalize;" required />
                     </div>
 
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button onclick="save_agent();" type="button" class="btn btn-primary btn-sm savebtn"><i class="fa fa-check-circle"></i> Save Agent</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button onclick="save_agent();" type="button" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Save Agent</button>
             </div>
         </div>
         <!-- /.modal-content -->

@@ -5,14 +5,14 @@
 
                 <h4 class="modal-title"><i class="fa fa-cube"></i> New Service/Extra</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body" id="form-new-extra">
                 <div class="row form-group">
                     <label class="col-md-3">Name: </label>
                     <div class="col-md-9">
-                        <input id="e-name" class="form-control" placeholder="" style="text-transform: capitalize;" required/>
+                        <input id="e-name" class="form-control" placeholder="" style="text-transform: capitalize;" required />
                     </div>
 
                 </div>
@@ -38,8 +38,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button onclick="save_extra();" type="button" class="btn btn-primary btn-sm savebtn"><i class="fa fa-check-circle"></i> Save Extra</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button onclick="save_extra();" type="button" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Save Extra</button>
             </div>
         </div>
         <!-- /.modal-content -->

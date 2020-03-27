@@ -7,17 +7,17 @@
 //      $file_tmp = $_FILES['image']['tmp_name'];
 //      $file_type = $_FILES['image']['type'];
 //      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-//      
+//
 //      $expensions= array("jpeg","jpg","png");
-//      
+//
 //      if(in_array($file_ext,$expensions)=== false){
 //         $errors[]="extension not allowed, please choose a JPEG or PNG file.";
 //      }
-//      
+//
 //      if($file_size > 2097152) {
 //         $errors[]='File size must be excately 2 MB';
 //      }
-//      
+//
 //      if(empty($errors)==true) {
 //         move_uploaded_file($file_tmp,"images/".$file_name);
 //         echo "Success";
@@ -38,8 +38,8 @@
 
                 <h4 class="modal-title"><i class="fa fa-envelope"></i> Send Mail</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <form method="post" action="" enctype="multipart/form-data">
                 <div class="modal-body">
@@ -49,8 +49,8 @@
                         <div class="col-md-9">
                             <div class="jumbotron p-2 m-0 dropdown advance ">
                                 <label id="receipients">
-                                0 receipients
-                            </label>
+                                    0 receipients
+                                </label>
                                 <a class="dropdown-toggle pull-right" href="#" data-toggle="dropdown">View all</a>
                                 <div class="dropdown-menu" id="reloadmenu">
                                     <div class="attachement-holder p-2 m-0">
@@ -70,9 +70,9 @@
 
                         <div class="col-md-9">
                             <select class="form-control" name="template">
-                   <option>Simba</option>
-                   <option>Primate</option>
-               </select>
+                                <option>Simba</option>
+                                <option>Primate</option>
+                            </select>
 
                         </div>
 
@@ -117,8 +117,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary btn-sm" name="emailForm"><i class="fa fa-send"></i> Send Mail</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" name="emailForm"><i class="fa fa-send"></i> Send Mail</button>
                 </div>
             </form>
         </div>

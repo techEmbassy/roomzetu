@@ -1,11 +1,11 @@
 <style>
-        .steps-w {
+    .steps-w {
             height: 70vh;
             width: 96%;
             margin: auto;
             position: relative;
         }
-        
+
         .steps-w .step-item {
             position: absolute;
             top: 0;
@@ -14,7 +14,7 @@
             left: 0;
             display: none;
         }
-        
+
         .steps-w .step-item.active {
             display: block;
         }
@@ -70,11 +70,11 @@
                     <small>New Booking- Walk In</small>
 
                 </h4>
-                
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
-                            </div>
+            </div>
             <div class="modal-body pt-0 pb-0 steps-w">
                 <div class=" step-item active">
                     <div class="row">
@@ -83,12 +83,12 @@
                                 <div class="col-md-12 p-class">
                                     <label>Property</label>
                                     <select class="form-control" id="properties-w">
-                                    <?php echo $propertyOptions;?>
-                                </select>
+                                        <?php echo $propertyOptions;?>
+                                    </select>
 
                                 </div>
 
-                               
+
 
                                 <div class="col-md-12">
                                     <label>Check In</label>
@@ -101,86 +101,86 @@
                                 </div>
 
 
-                               
+
                             </div>
                         </div>
 
-                    <div class="col-md-9 p-3 c-body" style="height:70vh; overflow-x:hidden">
-                        <div class="row">
-                           
-
-                            <div class="col-md-3">
-                                <label>Booking name</label>
-                                <input class="form-control" id="booking-name-w" onfocus="bookingNameFocus()" data-placement="right" />
-
-                            </div>
+                        <div class="col-md-9 p-3 c-body" style="height:70vh; overflow-x:hidden">
+                            <div class="row">
 
 
-                            <div class="col-md-3">
+                                <div class="col-md-3">
+                                    <label>Booking name</label>
+                                    <input class="form-control" id="booking-name-w" onfocus="bookingNameFocus()" data-placement="right" />
 
-                                <label>Expected Guests</label>
-                                <input class="form-control" data-placement="right" value="1" id='exp-num-guests-w' type="number" min='1' />
+                                </div>
 
-                                
 
-                                
-                             
+                                <div class="col-md-3">
 
-                            </div>
+                                    <label>Expected Guests</label>
+                                    <input class="form-control" data-placement="right" value="1" id='exp-num-guests-w' type="number" min='1' />
 
 
 
-                            <div class="col-md-12 pt-2">
-                                <hr/>
 
 
-                                <div class=" row">
-                                   
-                                    <div class="col-md-6">
 
-                                        <h5>Guests Details</h5>
-                                        <p><input value="1" id='num-guests-w' type="number" class="form-control tiny" style="width:60px" min='1' />
-                                            <button class="btn btn-35 btn-secondary" onclick="addGuests_w(this)">Add Guests Details</button></p>
-                                    </div>
                                 </div>
 
 
 
+                                <div class="col-md-12 pt-2">
+                                    <hr />
 
 
-                                <br/>
-                                <table class="table table-bordered table-editable" id="tb-guests-w">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th style="width:60px">Age</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Passport/Id Number</th>
+                                    <div class=" row">
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr id="guest-details-w">
-                                            <td><input value="" style="text-transform: capitalize;" /></td>
-                                            <td><input value="" type="number" /></td>
-                                            <td><input value="" type="email" data-input='email' data-invalid-message='invalid email' /></td>
-                                            <td><input value="" type="number" /></td>
-                                            <td><input value="" /></td>
-                                            <td style="width:30px" title="remove row" onclick="remove(this)">
-                                                <a class="fa fa-times btn-circle"></a>
-                                            </td>
-                                        </tr>
+                                        <div class="col-md-6">
+
+                                            <h5>Guests Details</h5>
+                                            <p><input value="1" id='num-guests-w' type="number" class="form-control tiny" style="width:60px" min='1' />
+                                                <button class="btn btn-35 btn-secondary" onclick="addGuests_w(this)">Add Guests Details</button></p>
+                                        </div>
+                                    </div>
 
 
-                                    </tbody>
-                                </table>
-                                <br>
-                                <br>
-                                <a class="btn btn-primary btn-md next hide " onclick="setGuests_w()">Next</a>
+
+
+
+                                    <br />
+                                    <table class="table table-bordered table-editable" id="tb-guests-w">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th style="width:60px">Age</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Passport/Id Number</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id="guest-details-w">
+                                                <td><input value="" style="text-transform: capitalize;" /></td>
+                                                <td><input value="" type="number" /></td>
+                                                <td><input value="" type="email" data-input='email' data-invalid-message='invalid email' /></td>
+                                                <td><input value="" type="number" /></td>
+                                                <td><input value="" /></td>
+                                                <td style="width:30px" title="remove row" onclick="remove(this)">
+                                                    <a class="fa fa-times btn-circle"></a>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-primary btn-md next hide " onclick="setGuests_w()">Next</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
 
@@ -192,7 +192,7 @@
 
                     </div>
 
-                    
+
                 </div>
 
 
@@ -257,9 +257,9 @@
                                 <div class="row">
                                     <label><b>Reservation Status</b></label>
                                     <select class="form-control" id="s-status-w">
-                             <option value="unconfirmed">Not Confirmed</option>
-                             <option value="confirmed">Confirmed</option>
-                            </select>
+                                        <option value="unconfirmed">Not Confirmed</option>
+                                        <option value="confirmed">Confirmed</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -315,7 +315,7 @@
                 </div>
 
 
-               
+
 
 
                 <div class="step-item">
@@ -336,7 +336,10 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" onkeyup="change_discount_w(value,this)" onkeypress="return isNumber(event)" aria-label="Text input with dropdown button" placeholder="0">
                                             <!--                                            <div class="input-group-btn">-->
-                                            <select class="form-control input-group-addon discount-type" style="width:10px!important;"><option value="1">% (Percent)</option><option value="2">Block Amount</option></select>
+                                            <select class="form-control input-group-addon discount-type" style="width:10px!important;">
+                                                <option value="1">% (Percent)</option>
+                                                <option value="2">Block Amount</option>
+                                            </select>
 
                                         </div>
                                     </div>
@@ -372,14 +375,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <select class="form-control" id="paymemt_mtd-w">
-                                             <option value="Cash">Select Payment Method</option>
-                                             <option value="Cash">Cash</option>
-                                             <option value="EFT">EFT</option>
-                                             <option value="Cheque">Cheque</option>
-                                             <option value="RTGS">RTGS</option>
-                                             <option value="Creditcard">Credit Card</option>
+                                                        <option value="Cash">Select Payment Method</option>
+                                                        <option value="Cash">Cash</option>
+                                                        <option value="EFT">EFT</option>
+                                                        <option value="Cheque">Cheque</option>
+                                                        <option value="RTGS">RTGS</option>
+                                                        <option value="Creditcard">Credit Card</option>
 
-                                            </select>
+                                                    </select>
                                                 </div>
 
                                             </div>
@@ -548,14 +551,14 @@
                     </div>
 
                 </div>
-                
+
             </div>
             <div class="modal-footer">
                 <!--                <button type="button" class="btn btn-danger btn-sm " style="" id="email-not" onclick="email_not()"> email not</button>-->
-                <button type="button" class="btn btn-danger btn-sm " style="" data-toggle="modal" data-target="#preview-invoice-w" onclick=" setInvoiceClient()" id="btn-preview-invoice-w"> preview invoice</button>
-                <button type="button" class="btn btn-primary pull-left btn-sm" style="" onclick="gotoStep_w(-1)"><i class="fa fa-angle-left"></i> Back</button>
-                <button type="button" class="btn btn-secondary pull-left btn-sm " style="" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-next-w btn-sm" onclick="clickNext_w(1)">Next <i class="fa fa-angle-right"></i></button>
+                <button type="button" class="btn btn-danger " style="" data-toggle="modal" data-target="#preview-invoice-w" onclick=" setInvoiceClient()" id="btn-preview-invoice-w"> preview invoice</button>
+                <button type="button" class="btn btn-primary pull-left" style="" onclick="gotoStep_w(-1)"><i class="fa fa-angle-left"></i> Back</button>
+                <button type="button" class="btn btn-secondary pull-left  " style="" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-next-w " onclick="clickNext_w(1)">Next <i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -570,13 +573,13 @@
 
 
 <script>
- $('#btn-preview-invoice-w').hide();
+    $('#btn-preview-invoice-w').hide();
     $('#email-not-w').hide();
     $("#reference-number-w").hide();
     getAllExtras_w();
 
-   
-   function gettoday() {
+
+    function gettoday() {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth() + 1; //January is 0!
@@ -594,182 +597,183 @@
     }
 
     function gotoStep_w(num) {
-    //    alert(num)
-    
-    if(!isNaN(num)){
-    var targetNext = $('.steps-w .step-item.active').next();
-    var targetPrev = $('.steps-w .step-item.active').prev();
+        //    alert(num)
 
-    var nextB = $('.steps-w .step-control.next');
-    var prevB = $('.steps-w .step-control.prev');
+        if (!isNaN(num)) {
+            var targetNext = $('.steps-w .step-item.active').next();
+            var targetPrev = $('.steps-w .step-item.active').prev();
 
-    if (num == -1) {
-        $('#btn-preview-invoice-w').hide();
-        $('.btn-next-w').html('Next <i class="fa fa-angle-right"></i>');
-    }
+            var nextB = $('.steps-w .step-control.next');
+            var prevB = $('.steps-w .step-control.prev');
 
-    currStep = currStep + num;
+            if (num == -1) {
+                $('#btn-preview-invoice-w').hide();
+                $('.btn-next-w').html('Next <i class="fa fa-angle-right"></i>');
+            }
 
-    if (currStep < 0) {
-        currStep = 0;
-    } else if (currStep > 3) {
-        currStep = 3
-    }
-    if ($('.steps-w .step-item:eq(' + currStep + ')').length > 0) {
-        //alert(currStep)
-        $('.steps-w .step-item').removeClass('active');
-        $('.steps-w .step-item:eq(' + currStep + ')').addClass('active');
-    }
+            currStep = currStep + num;
 
-
-
-    var i = $('.steps-w .step-item.active').index();
-
-    var title = "";
-
-    switch (i) {
-        case 0:
-            title = "Select Room"
-            break;
-        case 1:
-            title = "Guest Info"
+            if (currStep < 0) {
+                currStep = 0;
+            } else if (currStep > 3) {
+                currStep = 3
+            }
+            if ($('.steps-w .step-item:eq(' + currStep + ')').length > 0) {
+                //alert(currStep)
+                $('.steps-w .step-item').removeClass('active');
+                $('.steps-w .step-item:eq(' + currStep + ')').addClass('active');
+            }
 
 
-            break;
-        case 2:
-            title = "Reservation Summary"
-            break;
-        case 3:
-            title = "Finish Reservation"
-            break;
+
+            var i = $('.steps-w .step-item.active').index();
+
+            var title = "";
+
+            switch (i) {
+                case 0:
+                    title = "Select Room"
+                    break;
+                case 1:
+                    title = "Guest Info"
 
 
-    }
-        
-    }
-    else{
-        $('.steps-w .step-item').removeClass('active');
-        $('.steps-w .step-item' + num ).addClass('active');
-        
-        if(num == "#done-w"){
-           $("#new-walk-in .modal-footer *").hide();
-           }
-    }
-
-}
+                    break;
+                case 2:
+                    title = "Reservation Summary"
+                    break;
+                case 3:
+                    title = "Finish Reservation"
+                    break;
 
 
-function clickNext_w(i) {
-            $('.steps-w .step-item.active .next').trigger('click');
-            //gotoStep(i)
+            }
+
+        } else {
+            $('.steps-w .step-item').removeClass('active');
+            $('.steps-w .step-item' + num).addClass('active');
+
+            if (num == "#done-w") {
+                $("#new-walk-in .modal-footer *").hide();
+            }
         }
 
-guestsArray_=new Array();
-function getGuests() {
+    }
+
+
+    function clickNext_w(i) {
+        $('.steps-w .step-item.active .next').trigger('click');
+        //gotoStep(i)
+    }
+
+    guestsArray_ = new Array();
+
+    function getGuests() {
         return guestsArray_;
     }
- function setGuests_w(){
-   
-    // $('#email-not').show();
-    if (!inputsEmpty("#form-load-rooms-w")) {
-        var checkIn = $("#check-in-w").val();
-        var checkOut = $("#check-out-w").val();
-        var pId = $("#properties-w option:selected").val();
+
+    function setGuests_w() {
+
+        // $('#email-not').show();
+        if (!inputsEmpty("#form-load-rooms-w")) {
+            var checkIn = $("#check-in-w").val();
+            var checkOut = $("#check-out-w").val();
+            var pId = $("#properties-w option:selected").val();
 
 
 
-        var nights = new Date(checkOut) - new Date(checkIn);
+            var nights = new Date(checkOut) - new Date(checkIn);
             nights = nights / 1000 / 3600 / 24;
 
-        var ddd = new Date(checkIn) - new Date(gettoday())
-        
-        if (ddd < 0) {
-            errorMSG("#check-in-w", "this date should start from today to the future");
-           
-        }else if(nights <= 0){
-        errorMSG("#check-out-w", "This date should be greater than check-in");
-        
-        }else{
+            var ddd = new Date(checkIn) - new Date(gettoday())
 
-            
+            if (ddd < 0) {
+                errorMSG("#check-in-w", "this date should start from today to the future");
 
-            setNights(nights);
-            setPropertyId(pId);
-            setCheckIn(checkIn);
-            setCheckOut(checkOut);
+            } else if (nights <= 0) {
+                errorMSG("#check-out-w", "This date should be greater than check-in");
+
+            } else {
 
 
-            var c = new Array();
 
-            $("#tb-guests-w tbody tr").each(function(i, tr) {
-                var name = $(tr).find("td:eq(0) input").val();
-                var age = $(tr).find("td:eq(1) input").val(),
-                    yearOfBirth = <?php echo date('Y')?> - age;
-                var email = $(tr).find("td:eq(2) input").val();
-                var phone = $(tr).find("td:eq(3) input").val();
-                var idNumber = $(tr).find("td:eq(4) input").val();
+                setNights(nights);
+                setPropertyId(pId);
+                setCheckIn(checkIn);
+                setCheckOut(checkOut);
 
-                if (name != "") {
-                    c[i] = {
-                        name: name,
-                        year_of_birth: yearOfBirth,
-                        email: email,
-                        phone: phone,
-                        id_number: idNumber
-                    };
-                }
+
+                var c = new Array();
+
+                $("#tb-guests-w tbody tr").each(function(i, tr) {
+                    var name = $(tr).find("td:eq(0) input").val();
+                    var age = $(tr).find("td:eq(1) input").val(),
+                        yearOfBirth = <?php echo date('Y')?> - age;
+                    var email = $(tr).find("td:eq(2) input").val();
+                    var phone = $(tr).find("td:eq(3) input").val();
+                    var idNumber = $(tr).find("td:eq(4) input").val();
+
+                    if (name != "") {
+                        c[i] = {
+                            name: name,
+                            year_of_birth: yearOfBirth,
+                            email: email,
+                            phone: phone,
+                            id_number: idNumber
+                        };
+                    }
 
                 })
-            guestsArray_ = c;
+                guestsArray_ = c;
 
-            if ($('#booking-name-w').val() == "") {
-                errorMSG('#booking-name-w', "Can not be empty for Walk in booking");
-            }else if(pId=='0'){
-                errorMSG('#properties-w', "Please choose a property");
-            }else if (c.length < 1) {
-                alertify.error("<i class='fa fa-times-circle'></i> Add 1 or more guests to coninue");
+                if ($('#booking-name-w').val() == "") {
+                    errorMSG('#booking-name-w', "Can not be empty for Walk in booking");
+                } else if (pId == '0') {
+                    errorMSG('#properties-w', "Please choose a property");
+                } else if (c.length < 1) {
+                    alertify.error("<i class='fa fa-times-circle'></i> Add 1 or more guests to coninue");
 
-            }  else {
-                 setSummary_w();
-                gotoStep_w(1);
+                } else {
+                    setSummary_w();
+                    gotoStep_w(1);
+                }
             }
         }
     }
-}
 
 
-  var gRow = $("#tb-guests-w tbody").html();
+    var gRow = $("#tb-guests-w tbody").html();
 
-function addGuests_w(btn) {
+    function addGuests_w(btn) {
 
-    var p = $(btn).parent(),
-        count = p.find('input').val();
-    var ag = $("#tb-guests-w tbody tr").length;
-    var tg = parseInt(ag) + parseInt(count);
-    var exp_guest = $('#exp-num-guests-w').val();
+        var p = $(btn).parent(),
+            count = p.find('input').val();
+        var ag = $("#tb-guests-w tbody tr").length;
+        var tg = parseInt(ag) + parseInt(count);
+        var exp_guest = $('#exp-num-guests-w').val();
 
 
 
-    if (tg > exp_guest) {
-        alertify.error("<i class='fa fa-times-circle'></i> You Can only add " + parseInt(exp_guest) + " expected guests details");
+        if (tg > exp_guest) {
+            alertify.error("<i class='fa fa-times-circle'></i> You Can only add " + parseInt(exp_guest) + " expected guests details");
 
-    } else {
+        } else {
 
-        var rows = "";
-        // alert(gRow)
-        for (var i = 0; i < count; i++) {
-            rows += gRow;
+            var rows = "";
+            // alert(gRow)
+            for (var i = 0; i < count; i++) {
+                rows += gRow;
+            }
+            $("#tb-guests-w tbody").append(rows);
         }
-        $("#tb-guests-w tbody").append(rows);
+
+
     }
-
-
-}
 
     function setSummary_w() {
         var exp_guest = $('#exp-num-guests-w').val();
         var guestPrefix = "";
-      
+
 
         $("#s-check-in-w").html(getCheckIn())
 
@@ -783,7 +787,7 @@ function addGuests_w(btn) {
         }
         $("#s-guests-w").html(getGuests()[0]["name"] + guestPrefix);
 
-        
+
 
         $("#ds-check-in-w").html(getCheckIn())
         $("#ds-check-out-w").html(getCheckOut())
@@ -807,12 +811,12 @@ function addGuests_w(btn) {
 
         });
 
-     
-        
+
+
 
     }
 
-    
+
     ///load all extras
     function getAllExtras_w() {
         $.post('src/get_data.php', {
@@ -834,7 +838,7 @@ function addGuests_w(btn) {
 
             });
 
-            
+
             $("#tb-extras-w tbody").html(rows);
         })
     }
@@ -859,19 +863,19 @@ function addGuests_w(btn) {
 
         totalAllBox.text(totalAll);
         $('#ds-total-cost-all-w').text(totalAll);
-        
+
 
     }
 
 
- function gotoStepAnother_w() {
+    function gotoStepAnother_w() {
         $('#ds-booking-status-w').text($("#s-status option:selected").val());
         // $('#btn-preview-invoice').show();
         $('.btn-next-w').html('finish <i class="fa fa-check"></i>');
         gotoStep_w(1);
     }
 
-       function change_discount_w(d, sel) {
+    function change_discount_w(d, sel) {
         $('.error-alert').remove();
         d = d == "" ? 0 : d;
         var ltp = $('#ds-total-paid-w').text();
@@ -923,57 +927,58 @@ function addGuests_w(btn) {
 
     });
 
-        getTaxes2_w();
+    getTaxes2_w();
 
-function getTaxes2_w() {
+    function getTaxes2_w() {
 
-    $.post("src/get_data.php", {
-        token: "get_taxes_4_selection"
-    }, function(response) {
+        $.post("src/get_data.php", {
+            token: "get_taxes_4_selection"
+        }, function(response) {
 
 
-        var taxes_obj = JSON.parse(response);
+            var taxes_obj = JSON.parse(response);
 
-        var rows = "";
-        $.each(taxes_obj, function(i, taxes) {
+            var rows = "";
+            $.each(taxes_obj, function(i, taxes) {
 
-            //alert(JSON.stringify(taxes));////
-            rows += '<div class="form-check form-check-inline">';
-            rows += '<input id=' + taxes.taxname + ' onclick="ExcludeTax_w(this)" class="form-check-input" type="checkbox"  value="option1">';
-            rows += '<label class="form-check-label" for="inlineCheckbox1">' + taxes.taxname + '(' + taxes.taxamount + '%)</label>';
-            rows += '</div>';
+                //alert(JSON.stringify(taxes));////
+                rows += '<div class="form-check form-check-inline">';
+                rows += '<input id=' + taxes.taxname + ' onclick="ExcludeTax_w(this)" class="form-check-input" type="checkbox"  value="option1">';
+                rows += '<label class="form-check-label" for="inlineCheckbox1">' + taxes.taxname + '(' + taxes.taxamount + '%)</label>';
+                rows += '</div>';
+
+            });
+
+            $("#taxes_list-w").html(rows);
 
         });
 
-        $("#taxes_list-w").html(rows);
+    }
 
-    });
+    var excluded_taxes_w = [];
 
-}
+    function ExcludeTax_w(context) {
 
- var excluded_taxes_w = [];
-function ExcludeTax_w(context) {
-    
-    var tax = $(context).attr("id");
-    if ($(context).prop("checked")) {
+        var tax = $(context).attr("id");
+        if ($(context).prop("checked")) {
 
-        if (excluded_taxes_w.indexOf(tax) == -1) {
+            if (excluded_taxes_w.indexOf(tax) == -1) {
 
-            excluded_taxes_w.push(tax);
-            //                 alert(1)
-            x0p('Notice', 'This tax will be excluded', 'ok', 'false');
+                excluded_taxes_w.push(tax);
+                //                 alert(1)
+                x0p('Notice', 'This tax will be excluded', 'ok', 'false');
+            }
+
+
+        } else {
+
+            var index = excluded_taxes_w.indexOf(tax);
+            excluded_taxes_w.splice(index, 1);
         }
 
 
-    } else {
 
-        var index = excluded_taxes_w.indexOf(tax);
-        excluded_taxes_w.splice(index, 1);
     }
-
-   
-
-}
 
     function getExtras_w() {
         extrasArray_ = new Array();
@@ -992,7 +997,7 @@ function ExcludeTax_w(context) {
 
     }
 
-function addReservation_w(btns) {
+    function addReservation_w(btns) {
         var btn = $(".btn-next");
         btn.html("<i class='fa fa-spin fa-spinner'></i> Saving reservation...");
         btn.prop("disabled", true);
@@ -1007,7 +1012,7 @@ function addReservation_w(btns) {
             bookingStatus = $("#s-status-w option:selected").val(),
             message = $("#s-message-w").val();
 
-   
+
         //        $('#btn-preview-invoice').click();
         var exp_guest = $('#exp-num-guests-w').val();
 
@@ -1020,7 +1025,7 @@ function addReservation_w(btns) {
             no_guests: exp_guest,
             booking_status: bookingStatus,
             description: message,
-            booking_source:  "Walk in",
+            booking_source: "Walk in",
             booking_name: $('#booking-name-w').val(),
 
             agent_id: "0",
@@ -1035,7 +1040,7 @@ function addReservation_w(btns) {
         var g = JSON.stringify(getGuests());
         var e = JSON.stringify(getExtras_w());
 
-    
+
         var excluded_tx = JSON.stringify(excluded_taxes_w);
 
 
@@ -1058,16 +1063,17 @@ function addReservation_w(btns) {
             btn.html("<i class='fa fa-check'></i> Finish");
             btn.prop("disabled", false);
 
-        
+
 
             x0p('Booking Saved', 'Your new Booking has been recorded.', 'ok', function() {
                 location.reload();
                 $("#new-walk-in").modal("hide");
             });
 
-            
+
 
         });
 
     }
-    </script>
+
+</script>

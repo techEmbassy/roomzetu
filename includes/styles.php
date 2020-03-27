@@ -11,7 +11,7 @@
 
 <link href="css/animate.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
-<link href="css/custom.css?v=<?php echo time(23)?>" rel="stylesheet" type="text/css" />
+<link href="css/custom.css?v=<?php echo time()?>" rel="stylesheet" type="text/css" />
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="css/text-color.css" rel="stylesheet" type="text/css" />
 <link href="css/animate.css" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
 <link href="datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
 <link href="fullcalendar/css/fullcalendar.css" rel="stylesheet" type="text/css" />
 <link href="calendar/css/calendar.css" rel="stylesheet" type="text/css" />
-<link href="css/settings.css?v=<?php echo time(23)?>" rel="stylesheet" type="text/css" />
+<link href="css/settings.css?v=<?php echo time()?>" rel="stylesheet" type="text/css" />
 <link href="css/loader.css" rel="stylesheet" type="text/css" />
 <link href="css/validate.css?v=99" rel="stylesheet" type="text/css" />
 <link href="alertifyjs/css/alertify.min.css?v=345789" rel="stylesheet" type="text/css" />

@@ -1,3 +1,46 @@
+@font-face {
+    font-family: 'appfont';
+    src: url(../fonts/product-sans/ProductSansRegular.ttf);
+}
+
+@font-face {
+    font-family: 'psans-thin';
+    src: url(../fonts/product-sans/ProductSans-Thin.ttf);
+}
+
+
+@font-face {
+    font-family: 'psans-light';
+    src: url(../fonts/product-sans/ProductSans-Light.ttf);
+}
+
+
+
+body {
+    /*    font-family: 'appfont', sans-serif !important;*/
+    /*    font-family: 'psans-thin', sans-serif !important;*/
+    font-family: 'psans-light', sans-serif !important;
+}
+
+.font-g-b {
+    font-family: 'appfont', sans-serif !important;
+}
+
+
+.font-g-l {
+    font-family: 'psans-light', sans-serif !important;
+}
+
+
+
+.font-g-t {
+    font-family: 'psans-thin', sans-serif !important;
+}
+
+
+
+
+
 body {
     background-color: #fff;
 
@@ -50,9 +93,10 @@ legend {
     border-radius: 0px !important;
 }
 
+/*
 .form-control {
     border-color: #aaa;
-}
+}*/
 
 .form-control:focus {
     border-color: #db6d0c !important;
@@ -574,10 +618,10 @@ a[href] {
     vertical-align: bottom;
     text-shadow: 0 0 2px #fff;
     background: #f0f0f0 !important;
-    /* 
+    /*
     //background-images: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0));
     */
-    border-bottom: solid 1px #eee!important;
+    border-bottom: solid 1px #eee !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
     color: #444;
 }
@@ -601,7 +645,7 @@ a[href] {
 }
 
 .table-calendar tr td.on {
-    background-color: #ec971f!important;
+    background-color: #ec971f !important;
     border-color: rgba(89, 0, 0, 0.1) !important;
 }
 
@@ -635,7 +679,7 @@ input.tiny {
     height: auto;
     font-size: 10pt;
     padding: 0 10px;
-    height: 35px !important;
+    min-height: 40px !important;
 }
 
 .input-group-addon.tiny {
@@ -648,14 +692,25 @@ input.tiny {
     width: 100% !important
 }
 
-.modal input.form-control,
+.modal input.form-control {
+    display: inline-block;
+    height: auto;
+    font-size: 10pt;
+    padding: 0 10px;
+    min-height: 50px !important;
+}
+
+
+
 .modal select.form-control {
     display: inline-block;
     height: auto;
     font-size: 10pt;
     padding: 0 10px;
-    height: 35px !important;
+    min-height: 50px !important;
 }
+
+
 
 .modal .input-group .input-group-addon {
     height: 35px !important;
@@ -955,34 +1010,92 @@ p span {
     background: cadetblue;
 }
 
+
+.btn-primary {
+    background: #f85f03;
+    color: #fff !important;
+    border-color: #f85f03 !important;
+    border-radius: 4px !important;
+}
+
+
+
 .btn-secondary {
-    /*    color: #495057 !important;*/
-    background-color: #fff !important;
-    border-color: rgba(0, 40, 100, 0.12) !important;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05) !important;
+    background-color: transparent;
+    color: #611f69 !important;
+    fill: #611f69;
+    border: 1px solid #611f69;
+    border-radius: 4px !important;
+    /*    box-shadow: inset 0 0 0 1px #611f69;*/
+    border-color: none;
+
+
 }
 
 .btn-secondary:hover {
     color: orangered !important;
     background-color: #fff !important;
     cursor: pointer;
+    border: 2px solid #611f69;
     border-color: orangered !important;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
+
+
+
+/*
 .form-control {
     display: block;
     width: 100%;
     padding: 0.5rem 0.75rem !important;
     font-size: 0.9375rem;
     line-height: 1.6 !important;
+    color: red;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.82);
+    border-radius: 3px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}*/
+
+
+
+
+.form-control {
+    padding: .75rem;
+    min-height: 50px;
+    max-width: 550px;
+    border-radius: 4px !important;
+    /*    border: solid 1px #ececec;*/
+    border: solid 1px #868686;
+
+}
+
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    /* padding: .375rem .75rem; */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 40, 100, 0.12);
-    border-radius: 3px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    /* border: 1px solid #ced4da; */
+    /* border-radius: .25rem; */
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.38rem + 2px);
+}
+
+
+
 
 .tooltip.right.top {
     background-color: beige !important;
@@ -999,8 +1112,8 @@ p span {
 }
 
 .btn-35 {
-    height: 35px !important;
-    font-size: 15px;
+    min-height: 40px !important;
+    font-size: 16px;
 }
 
 .table-primary td .btn {

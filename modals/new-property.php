@@ -1,6 +1,6 @@
-<div class="modal animated bounceInDown" id="new-property">
+<div class="modal " id="new-property">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
                 <h4 class="modal-title"><i class="fa fa-plus"></i> New Property</h4>
@@ -92,9 +92,9 @@
 <!-- /.modal -->
 
 
-<div class="modal animated bounceInDown" id="edit-property">
+<div class="modal" id="edit-property">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
                 <h4 class="modal-title"><i class="fa fa-plus"></i> Edit Property</h4>

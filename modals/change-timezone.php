@@ -1,6 +1,6 @@
-<div class="modal animated bounceInDown" id="new-timezone">
+<div class="modal" id="new-timezone">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated fadeIn">
             <div class="modal-header">
 
                 <h4 class="modal-title"><i class="fa fa-clock"></i> Change Timezone - <small id="property_tz" class="text-disabled"></small></h4>

@@ -1,6 +1,6 @@
-<div class="modal animated bounceInDown" id="new-currency">
+<div class="modal " id="new-currency">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
                 <h4 class="modal-title"><i class="fa fa-money"></i> New Currency </h4>

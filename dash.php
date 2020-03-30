@@ -259,7 +259,7 @@
                                         <input type="button" value="Check Room Availability" class="btn-secondary tiny" style="cursor:pointer" href="#room-availability" data-toggle="modal" />
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" id="properties" onchange="dosomething()">
+                                        <select class="form-control py-0" id="properties" onchange="dosomething()">
                                             <?php echo $propertyOptions;?>
                                         </select>
                                     </div>

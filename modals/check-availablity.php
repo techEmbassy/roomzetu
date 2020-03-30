@@ -25,9 +25,9 @@
 </style>
 
 
-<div class="modal animated FadeIn" id="room-availability">
+<div class="modal " id="room-availability">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated fadeIn">
             <div class="modal-header">
 
                 <h4 class="modal-title">

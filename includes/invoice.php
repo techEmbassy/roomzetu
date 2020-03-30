@@ -188,7 +188,7 @@ font-size:10pt;
 </style>";
 
 session_start();
-
+error_reporting(0);
 $parent_folder = "../";
 //if(isset($preview)){
 if(isset($_POST['preview'])){

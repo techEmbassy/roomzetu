@@ -504,7 +504,7 @@ function getAllBookings() {
 
     var pId = $("#properties option:selected").val();
     var rtId = $("#room_types option:selected").val();
-    lazyload();
+    //lazyload();
     $.post("src/get_data.php", {
         token: "reservations",
         filter: filter,

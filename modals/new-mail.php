@@ -30,10 +30,10 @@
 
 
 
-<div class="modal animated bounceInDown" id="mail-modal">
+<div class="modal" id="mail-modal">
 
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated fadeIn">
             <div class="modal-header">
 
                 <h4 class="modal-title"><i class="fa fa-envelope"></i> Send Mail</h4>

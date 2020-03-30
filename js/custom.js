@@ -27,7 +27,20 @@ function disable(el) {
     //    alert(9);
 }
 
+refreshHeight();
+ function refreshHeight() {
+        if ($(".table").length) {
+            var table = $(".table");
+            var top = table.offset().top;
+            var h = $(window).height() - top - 20;
+            table.parents(".c-body").css({
+                
+            })
+        }
+     
+//     alert("99")
 
+    }
 
 function showDetails() {
     $('#booking-details').modal('show');

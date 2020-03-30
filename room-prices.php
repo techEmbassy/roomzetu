@@ -77,9 +77,9 @@
     </div>
 </body>
 
-<div class="modal animated bounceInDown" id="new-px">
+<div class="modal " id="new-px">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
                 <h4 class="modal-title">New Room Price</h4>

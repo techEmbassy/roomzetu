@@ -27,7 +27,7 @@
                     <th>Contact</th>
                     <th>Manager</th>
                     <th style=" width:5px"></th>
-                    <th style=" width:5px"></th>
+                 
 
 
                 </tr>

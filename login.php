@@ -26,7 +26,7 @@ function redirect_to( $location = NULL ) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Roomzetu | Hotel Management System</title>
+    <title>Login | Roomzetu</title>
     <link href="css/animate.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
     <!--    <link href="css/custom.css" rel="stylesheet" type="text/css" />-->

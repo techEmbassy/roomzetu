@@ -379,9 +379,9 @@ The field Object type makes sure that the object is described correctly in the b
 
 
 
-    <div class="modal animated fadeIn" id="new-px">
+    <div class="modal" id="new-px">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <h4 class="modal-title">New Room Type</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">

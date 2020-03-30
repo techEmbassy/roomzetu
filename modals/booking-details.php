@@ -332,6 +332,9 @@ $payment_options="<option>Select</option>";
 $p = json_decode($po['payments'], true);
 //echo "<script>console.log(".$po.");alert(".print_r($p[0]).")</script>";
 
+if(!isset($p['bank_name'])){
+    $p = array();
+}
 foreach($p as $o){
     $payment_options.="<option>". $o['bank_name']."</option>";
 }

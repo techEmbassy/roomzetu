@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="c-body p-0" id="bookingsprint">
-                                <table class="table table-bordered table-primary mt-0 table-hover border-bottom-0 p-3" id="tb-reservations">
+                                <table class="table h table-bordered table-primary mt-0 table-hover border-bottom-0 p-3" id="tb-reservations">
                                     <thead>
                                         <tr>
                                             <th style="width:5px; padding:0"></th>
@@ -173,7 +173,7 @@
     var filter = "<?php echo isset($_GET['v']) ? $_GET['v'] : 'today'?>";
 
 </script>
-<script src="js/pages/bookings.js?v=<?php echo time();?>"></script>
+<script src="js/pages/bookings.js?v=33"></script>
 
 <script>
     $("#tb-reservations tbody").html("<tr><td colspan=12>" + loaderBig + "</tr>");

@@ -10,8 +10,8 @@
 -->
 
 <link href="css/animate.css" rel="stylesheet" type="text/css" />
-<link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />
-<!--<link href="assets/vendors/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />-->
+<!--<link href="css/bootstrap.css?v=999" rel="stylesheet" type="text/css" />-->
+<link href="assets/vendors/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="css/custom.css?v=<?php echo time()?>" rel="stylesheet" type="text/css" />
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css" />
@@ -53,7 +53,7 @@
 <!--<script src="js/loader.js?v=7777"></script>-->
 <script src="js/tether.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!--<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>-->
+<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
 <script src="js/fixedtablehead.js?v=24"></script>
 <script src="js/validate.js?v=23"></script>
 <script src="alertifyjs/alertify.min.js"></script>

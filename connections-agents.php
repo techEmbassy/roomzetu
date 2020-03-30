@@ -107,11 +107,11 @@
         </div>
     </div>
 
-    <div class="modal animated zoomIn" id="agent-bookings">
+    <div class="modal" id="agent-bookings">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content animated fadeIn">
                 <div class="modal-header">
-                    <h5 class="modal-title"> All Reservations by <strong class="agent-name"></strong> </h5><a class="close" data-dismiss="modal">x</a>
+                    <h5 class="modal-title"> All Reservations by <strong class="agent-name"></strong> </h5><a class="close fe fe-x" data-dismiss="modal">x</a>
                 </div>
 
                 <div class="modal-body">

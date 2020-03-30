@@ -1,6 +1,6 @@
-<div class="modal animated bounceInDown" id="new-agent">
+<div class="modal" id="new-agent">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
                 <h4 class="modal-title"><i class="zmdi zmdi-account-add"></i> New Agent</h4>

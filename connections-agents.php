@@ -34,7 +34,7 @@
                 <div class="col-md-2 mt-2 pr-0">
 
                     <p><small>Manage connections, agents and previous guests</small> </p>
-                    <hr/>
+                    <hr />
                     <div class="sub-menu ">
                         <?php $sbPos = 1; include 'includes/connections-menu.php'; ?>
                     </div>
@@ -133,8 +133,8 @@
 
 
 
-<!--<?php 
-//include 'modals/new-mail.php' 
+<!--<?php
+//include 'modals/new-mail.php'
 ?>-->
 <?php include 'modals/new-agent.php' ?>
 <?php include 'includes/footer.php' ?>
@@ -208,8 +208,8 @@
                 //                "<td>" + ac + "</td>" +
                 "<td>" + aa + "</td>" +
                 "<td><a onclick='showReservations(\"" + aid + "\", \"" + an + "\")' class='btn btn-secondary p-1 btn-sm btn-block center'>View All</a></td>" +
-                "<td class='text-center br-0'><a class='fa fa-eyedropper btn-circle' style='color:#000' title='Edit " + an + "' onclick='edit_agent(\"" + i + "\")'></a></td>" +
-                "<td class='text-center br-0'><a class='fa fa-trash btn-circle' title='Delete " + an + "' onclick='delete_agent(\"" + aid + "\", \"" + an + "\")'></a></td>" +
+                "<td class='text-center br-0'><a class='zmdi zmdi-edit text-info btn-circle' style='color:#000' title='Edit " + an + "' onclick='edit_agent(\"" + i + "\")'></a></td>" +
+                "<td class='text-center br-0'><a class='zmdi zmdi-delete text-danger btn-circle' title='Delete " + an + "' onclick='delete_agent(\"" + aid + "\", \"" + an + "\")'></a></td>" +
                 "</td>" +
                 "</tr>";
 
@@ -234,7 +234,7 @@
         m.find("#a-phone ").val("");
         //        m.find("#a-country").val(agent.country);
         m.find("#a-address").val("");
-        m.find('.modal-title').html("<i class='fa fa-user'></i> New Agent");
+        m.find('.modal-title').html("<i class='zmdi zmdi-account-add'></i> New Agent");
     }
 
     function edit_agent(index) {
@@ -458,7 +458,7 @@
             document.body.appendChild(dummy);
             // Set its ID
             dummy.setAttribute("id", "dummy_id");
-            // Output the array into it  
+            // Output the array into it
             document.getElementById("dummy_id").value = email_agent.join('; ');
             // Select it
             dummy.select();
@@ -481,7 +481,7 @@
         //
         //            emaillist = emaillist + "<span class='tag' >" + agent + " <i class='fa fa-close ' id='" + r + "' onclick='del_receipient(\"" + r + "\")' > </i></span > ";
         //            r = r + 1;
-        // 
+        //
 
         //        $("#emails_list").html(emaillist);
         //        $("#receipients").html($('.checkSingle:checked').length + ' receipients');
@@ -613,24 +613,24 @@
 
     <?php
 //if(isset($_POST['emailForm'])){
-// 
-//  
-//        if(  isset($_POST['emailList']) && $_POST['emailList']!="" 
-//             && isset($_POST['subject']) && $_POST['subject']!="" 
-//            &&isset($_POST['message']) && $_POST['message']!=""){ 
-//            
-//            
+//
+//
+//        if(  isset($_POST['emailList']) && $_POST['emailList']!=""
+//             && isset($_POST['subject']) && $_POST['subject']!=""
+//            &&isset($_POST['message']) && $_POST['message']!=""){
+//
+//
 //         $emailList= $_POST['emailList'];
 //         $template= $_POST['template'];
 //         $subject= $_POST['subject'];
 //         $attachements= $_POST['attachements'];
 //         $message= $_POST['message'];
-//            
-//           foreach ($_FILES['file']['name'] as $filename) { 
-//                echo $filename.'<br/>'; 
+//
+//           foreach ($_FILES['file']['name'] as $filename) {
+//                echo $filename.'<br/>';
 //                }
-//        
-//           
+//
+//
 // $cell1='width:200px; padding:5px;font-weight:bold;border:1px solid #AAA'; $cell2='width:300px; padding:5px;border:1px solid #AAA; border-left:none'; //send mails here. //to admin $headers = 'From: $name
 //<$email> '."\r\n"; $headers .= 'Reply-to: '. $name.'
 //    < '.$email.'> '."\r\n"; $headers .= 'MIME-Version: 1.0' . "\r\n"; $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; $admin_body = "
@@ -686,7 +686,7 @@
 //        </html>
 //        </body>"; mail($main_company_email, $subject, $admin_body, $headers); //to customer if($email != ""){ } } else{ $msg = "emptyparams"; }
 //}
-//        
+//
 ?>
 
 </script>

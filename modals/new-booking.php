@@ -67,9 +67,9 @@
                     </div>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
-                            </div>
+            </div>
             <div class="modal-body pt-0 pb-0 steps">
                 <div class=" step-item active">
                     <div class="row">
@@ -78,17 +78,17 @@
                                 <div class="col-md-12 p-class">
                                     <label>Property</label>
                                     <select class="form-control" id="properties" onchange="getRoomTypes()">
-                                    <?php echo $propertyOptions;?>
-                                </select>
+                                        <?php echo $propertyOptions;?>
+                                    </select>
 
                                 </div>
 
                                 <div class="col-md-12">
                                     <p><label>Room Type</label> <span class="" id="room-loader"></span></p>
                                     <select class="form-control" id="roomtypes">
-<!--                   <option value="0">All Room types</option>-->
+                                        <!--                   <option value="0">All Room types</option>-->
 
-       </select>
+                                    </select>
 
                                 </div>
 
@@ -162,9 +162,9 @@
                             <div class="col-md-3 border-right">
                                 <label>Booking Source:</label>
                                 <select class="form-control" id="booking-source">
-                 <option value="Direct Booking">Direct Booking</option>
-                 <option value="2">Agent</option>
-                </select>
+                                    <option value="Direct Booking">Direct Booking</option>
+                                    <option value="2">Agent</option>
+                                </select>
                             </div>
 
 
@@ -184,7 +184,7 @@
 
                                 <select class="form-control" id="agents">
 
-                      </select>
+                                </select>
 
                             </div>
 
@@ -206,8 +206,8 @@
 
                                 <div class="btn-group">
                                     <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor:pointer">
-                            Add
-                        </button>
+                                        Add
+                                    </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#" data-target="#addkids" data-toggle="modal">Kids/Child</a>
                                         <div class="dropdown-divider"></div>
@@ -247,8 +247,8 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Add Kids to this booking</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
                                             <div class="modal-body">
                                                 <table class="table">
@@ -382,7 +382,7 @@
 
 
                             <div class="col-md-12 pt-2">
-                                <hr/>
+                                <hr />
 
 
                                 <div class=" row">
@@ -405,7 +405,7 @@
 
 
 
-                                <br/>
+                                <br />
                                 <table class="table table-bordered table-editable" id="tb-guests">
                                     <thead>
                                         <tr>
@@ -501,9 +501,9 @@
                                 <div class="row">
                                     <label><b>Reservation Status</b></label>
                                     <select class="form-control" id="s-status">
-                             <option value="unconfirmed">Not Confirmed</option>
-                             <option value="confirmed">Confirmed</option>
-                            </select>
+                                        <option value="unconfirmed">Not Confirmed</option>
+                                        <option value="confirmed">Confirmed</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -550,11 +550,11 @@
                                 </span>
                             </p>
 
-                             <p class="mt-2"><span style="font-size:14px">Cost of Extra Beds: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>$<span id="s-total-cost-beds">0</span></b>
+                            <p class="mt-2"><span style="font-size:14px">Cost of Extra Beds: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>$<span id="s-total-cost-beds">0</span></b>
                                 </span>
                             </p>
 
-                             <p class="mt-2"><span style="font-size:14px">Cost of Extra Children: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<b>$<span id="s-total-cost-kids">0</span></b>
+                            <p class="mt-2"><span style="font-size:14px">Cost of Extra Children: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<b>$<span id="s-total-cost-kids">0</span></b>
                                 </span>
                             </p>
 
@@ -579,8 +579,8 @@
 
                                 <!--                                discount-->
 
-                        
-                          
+
+
                                 <div class="row mt-3">
                                     <div class="col-md-3">
                                         <label>Discount <span><small>(if any)</small></span></label>
@@ -591,7 +591,10 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" onkeyup="change_discount(value,this)" onkeypress="return isNumber(event)" aria-label="Text input with dropdown button" placeholder="0">
                                             <!--                                            <div class="input-group-btn">-->
-                                            <select class="form-control input-group-addon discount-type" style="width:10px!important;"><option value="1">% (Percent)</option><option value="2">Block Amount</option></select>
+                                            <select class="form-control input-group-addon discount-type" style="width:10px!important;">
+                                                <option value="1">% (Percent)</option>
+                                                <option value="2">Block Amount</option>
+                                            </select>
 
                                         </div>
                                     </div>
@@ -600,8 +603,8 @@
                                 <br>
                                 <!--payment-->
                                 <?php
-                                    $input_disable=""; 
-                                    if($role ==7){ 
+                                    $input_disable="";
+                                    if($role ==7){
                                         $input_disable="disabled";
                                     }?>
                                 <div class="row">
@@ -611,7 +614,7 @@
                                     <div class="col-lg-8">
                                         <div class="input-group">
                                             <span class="input-group-addon">$</span>
-                                            <input type="text" class="form-control" onkeyup="change_total_paid(value)" onkeypress="return isNumber(event)" aria-label="Amount (to the nearest dollar)" placeholder="0"  <?php echo $input_disable; ?> >
+                                            <input type="text" class="form-control" onkeyup="change_total_paid(value)" onkeypress="return isNumber(event)" aria-label="Amount (to the nearest dollar)" placeholder="0" <?php echo $input_disable; ?> >
                                             <span class="input-group-addon">.00</span>
                                         </div>
                                     </div>
@@ -628,21 +631,21 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="paymemt_mtd"  <?php echo $input_disable; ?>>
-                                             <option value="Cash">Select Payment Method</option>
-                                             <option value="Cash">Cash</option>
-                                             <option value="EFT">EFT</option>
-                                             <option value="Cheque">Cheque</option>
-                                             <option value="RTGS">RTGS</option>
-                                             <option value="Creditcard">Credit Card</option>
+                                                    <select class="form-control" id="paymemt_mtd" <?php echo $input_disable; ?>>
+                                                        <option value="Cash">Select Payment Method</option>
+                                                        <option value="Cash">Cash</option>
+                                                        <option value="EFT">EFT</option>
+                                                        <option value="Cheque">Cheque</option>
+                                                        <option value="RTGS">RTGS</option>
+                                                        <option value="Creditcard">Credit Card</option>
 
-                                            </select>
+                                                    </select>
                                                 </div>
 
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control " placeholder="enter Reference #" id="reference-number"  <?php echo $input_disable; ?>>
+                                                <input type="text" class="form-control " placeholder="enter Reference #" id="reference-number" <?php echo $input_disable; ?>>
                                             </div>
 
                                         </div>
@@ -883,7 +886,7 @@
                 <button type="button" class="btn btn-danger btn-sm " style="" data-toggle="modal" data-target="#preview-invoice" onclick=" setInvoiceClient()" id="btn-preview-invoice"> preview invoice</button>
                 <button type="button" class="btn btn-primary pull-left btn-sm" style="" onclick="gotoStep(-1)"><i class="fa fa-angle-left"></i> Back</button>
                 <button type="button" class="btn btn-secondary pull-left btn-sm " style="" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-next btn-sm" onclick="clickNext(1)">Next <i class="fa fa-angle-right"></i></button>
+                <button type="button" class="btn btn-primary btn-next" onclick="clickNext(1)">Next <i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -905,8 +908,8 @@
                     <small>Choose Room(s)</small>
                 </h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
 
             <div class="modal-body">
@@ -937,8 +940,8 @@
             <div class="modal-header" style="background-color:#2cc185;">
                 <h5 class="modal-title text-white">Create custom Meal plan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
 
@@ -1149,8 +1152,8 @@
             <div class="modal-header">
                 <h5 class="modal-title">Add an Extra Bed</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <table class="table table-bordered">
@@ -1192,8 +1195,8 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Add Extra Bed</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Add Extra Bed</button>
             </div>
         </div>
     </div>
@@ -1362,7 +1365,7 @@
     ////            getKidsRates();
     //        });
     //
-    //    } 
+    //    }
 
 
     function getKidsRates() {
@@ -1578,7 +1581,7 @@
                     unit_price: unit_price_,
                     children: qty_,
                     amount: ttl,
-                    nights:nights
+                    nights: nights
                 };
 
 
@@ -1658,7 +1661,7 @@
 
     $("#paymemt_mtd").on("change", function() {
         var option = $(this).find("option:selected").val();
-        if (option == "Cheque" || option == "EFT" || option == "RTGS"  || option == "Creditcard") {
+        if (option == "Cheque" || option == "EFT" || option == "RTGS" || option == "Creditcard") {
             $("#reference-number").show();
 
             //            alert(pay)
@@ -1692,7 +1695,7 @@
 
     $("#tb-free-rooms,#ar_tb-free-rooms").html("<tr><td>Please Select Check-in and Check-out dates to Load Free Rooms</td></tr>");
 
-   function gettoday() {
+    function gettoday() {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth() + 1; //January is 0!
@@ -1725,36 +1728,36 @@
             var ddd = new Date(checkIn) - new Date(gettoday())
 
             //if (ddd < 0) {
-              // errorMSG("#check-in", "this date should start from today to the future");
+            // errorMSG("#check-in", "this date should start from today to the future");
             //} else {
-                if (nights > 0) {
-                    $(btn).html("<i class='fa fa-spin fa-spinner'></i> Checking free rooms...");
+            if (nights > 0) {
+                $(btn).html("<i class='fa fa-spin fa-spinner'></i> Checking free rooms...");
 
-                    setNights(nights);
-                    setPropertyId(pId);
-                    setCheckIn(checkIn);
-                    setCheckOut(checkOut);
+                setNights(nights);
+                setPropertyId(pId);
+                setCheckIn(checkIn);
+                setCheckOut(checkOut);
 
-                    //                alert(checkIn);
+                //                alert(checkIn);
 
-                    // alert(getNights())
-                    $.post('src/get_data.php', {
-                        token: "free rooms",
-                        property_id: pId,
-                        room_type_id: rtId,
-                        check_in: checkIn,
-                        check_out: checkOut
-                    }, function(data) {
-                        //  alert(data);
-                        $(btn).html("<i class='fa fa-refresh'></i> Load Rooms")
+                // alert(getNights())
+                $.post('src/get_data.php', {
+                    token: "free rooms",
+                    property_id: pId,
+                    room_type_id: rtId,
+                    check_in: checkIn,
+                    check_out: checkOut
+                }, function(data) {
+                    //  alert(data);
+                    $(btn).html("<i class='fa fa-refresh'></i> Load Rooms")
 
-                        setFreeRooms(data);
-                        $(".nights_number").text(nights);
+                    setFreeRooms(data);
+                    $(".nights_number").text(nights);
 
-                    })
-                } else {
-                    errorMSG("#check-out", "This date should be greater than check-in");
-                }
+                })
+            } else {
+                errorMSG("#check-out", "This date should be greater than check-in");
+            }
             //}
         }
 
@@ -1789,7 +1792,7 @@
 
         var _id = $(el).attr("data-room_type_id");
 
-    // alert(id+" "+_id)
+        // alert(id+" "+_id)
 
         meal_selector_context = el;
 
@@ -1853,7 +1856,7 @@
             // $("#custom_id" + id).click();
             openMealPlanModal();
 
-            
+
             loadCustomMealPlan(property_id, id);
 
             var o = "<option>Custom</option>";
@@ -1882,10 +1885,9 @@
     }
 
     function openMealPlanModal() {
-        if(isNewBooking()){
-         $("#custom-rate").modal('show');
-        }
-        else{
+        if (isNewBooking()) {
+            $("#custom-rate").modal('show');
+        } else {
             $("#custom-rate-ar").modal('show');
         }
     }
@@ -1924,7 +1926,7 @@
 
     function loadCustomMealPlan(property_id, id) {
         var nights = getNights();
-        var tr_html = "";        
+        var tr_html = "";
         for (i = 0; i < nights; i++) {
             var counter = i + 1;
             var dat = new Date(getCheckIn());
@@ -1960,12 +1962,11 @@
 
 
         }
-        if(isNewBooking()){
+        if (isNewBooking()) {
             $("#custom_meal_plan_tb").html(tr_html);
-        }
-        else{
+        } else {
             $("#custom_meal_plan_tb_ar").html(tr_html);
-        }      
+        }
 
 
     }
@@ -1985,20 +1986,19 @@
         select_ = tr.find(".custom_meal_prices");
         meal_plan = $(context).val();
 
-        if(isNewBooking()){
+        if (isNewBooking()) {
             var checkIn = $("#check-in").val();
             var checkOut = $("#check-out").val();
-        }
-        else{
+        } else {
             var checkIn = $("#ar_check-in").val();
             var checkOut = $("#ar_check-in").val();
         }
-      
+
 
         var checkIn_ = checkIn.split("/");
         checkIn = checkIn_[2] + "-" + checkIn_[0] + "-" + checkIn_[1];
 
-       
+
 
         var checkOut_ = checkOut.split("/");
         checkOut = checkOut_[2] + "-" + checkOut_[0] + "-" + checkOut_[1];
@@ -2067,11 +2067,10 @@
         var array_temp = [];
 
         var room_type_id = "";
-        if(isNewBooking()){
-         var tb_r ="#custom_meal_plan_tb_0 tbody tr";
-        }
-        else{
-            var tb_r ="#custom_meal_plan_tb_0_ar tbody tr";
+        if (isNewBooking()) {
+            var tb_r = "#custom_meal_plan_tb_0 tbody tr";
+        } else {
+            var tb_r = "#custom_meal_plan_tb_0_ar tbody tr";
         }
         $(tb_r).each(function(i, tr) {
 
@@ -2080,11 +2079,11 @@
 
             property_id = $(tr).attr("data-property_id");
 
-           // id = $(tr).attr("id");
+            // id = $(tr).attr("id");
 
             room_type_id = $(tr).attr("data-room_type_id");
 
-           // alert(id+" "+room_type_id)
+            // alert(id+" "+room_type_id)
 
             select_ = $(tr).find(".meal-plan");
 
@@ -2284,15 +2283,14 @@
     function setFreeRooms(data) {
         //        console.log(data);
         setFreeRoomsData(data);
-        
+
         // alert(data);
         $("#tb-free-rooms,#ar_tb-free-rooms").html("<tr><td>Please Select Check-in and Check-out dates to Load Free Rooms</td></tr>");
 
-        if(isNewBooking()){
+        if (isNewBooking()) {
             var table = $("#tb-free-rooms");
-           
-        }
-        else{
+
+        } else {
             var table = $("#ar_tb-free-rooms");
         }
 
@@ -2419,11 +2417,11 @@
             rows = "<tr><td><h5 class='text-light'>No Free Rooms Available for the selected dates</h5></td></tr>";
 
         }
-        
+
         //rows = rows == "" ? "<tr><td><h5 class='text-light'>No Free Rooms Available for the selected dates</h5></td></tr>" : rows;
         // console.log(rows);
         table.html(rows);
-      
+
 
         $(".chosen").chosen({
             width: "110%",
@@ -2438,7 +2436,7 @@
 
         var id = $(context).attr("data-used_as");
 
-        id='u_'+id;
+        id = 'u_' + id;
 
         var current_html = $(context).parents("tr.room-row");
 
@@ -2725,9 +2723,9 @@
     function changeUnitPrice(sel) {
 
         var opt = $(sel);
-        var s = opt.attr("id");     
+        var s = opt.attr("id");
         s = s.split("s");
-       
+
 
         var priceBox = $("#" + s[0] + "unit-price");
 
@@ -2813,7 +2811,7 @@
         btn.prop("disabled", true);
 
         var paymentMethod = $("#paymemt_mtd").val();
-        
+
         paymentMethod = paymentMethod == "Cheque" ? "Cheque(" + $("#reference-number").val() + ")" : paymentMethod;
 
         var totalCost = parseFloat($("#s-total-cost-all").text()) - parseFloat($("#s-total-cost-extras").text()) - parseFloat($("#s-total-cost-beds").text()) - parseFloat($("#s-total-cost-kids").text()),
@@ -2850,7 +2848,7 @@
             discount: discount,
             invoice_payment_options: "[]"
         });
-          //        alert(r)       
+        //        alert(r)
 
         var g = JSON.stringify(getGuests());
         var e = JSON.stringify(getExtras());
@@ -2933,7 +2931,7 @@
 
         meal_plan_per_day = JSON.stringify(meal_plan_tracker_days);
 
-       
+
 
 
         $.post("src/xhr.php", {
@@ -2954,7 +2952,7 @@
             btn.html("<i class='fa fa-check'></i> Finish");
             btn.prop("disabled", false);
 
-           //alert(data);
+            //alert(data);
 
             x0p('Booking Saved', 'Your new Booking has been recorded.', 'ok', function() {
                 location.reload();
@@ -3073,7 +3071,7 @@
             //alert(JSON.stringify(rooms))
             setPropertyId(propid)
             //=[];
-            room_type_id_=room_type_id_.replace('u_','');
+            room_type_id_ = room_type_id_.replace('u_', '');
             //get room equal to the selected rooms
             for (var r = 0; r < rms; r++) {
 
@@ -3288,7 +3286,7 @@
 
         roomsArray_ = c;
 
-            //        alert(JSON.stringify(roomsArray_));
+        //        alert(JSON.stringify(roomsArray_));
         if (c.length < 1) {
             alertify.error("<i class='fa fa-times-circle'></i> Select one or more rooms first");
 
@@ -3601,14 +3599,14 @@
         totalExtrasBox.text(totalExtras);
 
         var total_kid_amount = 0;
-        $.each(json_children_obj, function (index, item) {
+        $.each(json_children_obj, function(index, item) {
             total_kid_amount += parseFloat(item.amount);
-            
+
         });
         $('#s-total-cost-kids').text(total_kid_amount);
 
-         var total_extra_bed = 0;
-        $.each(json_extra_bed_obj, function (index, item) {
+        var total_extra_bed = 0;
+        $.each(json_extra_bed_obj, function(index, item) {
             total_extra_bed += parseFloat(item.amount);
         });
         $('#s-total-cost-beds').text(total_extra_bed);
@@ -3851,32 +3849,31 @@
     function setSelectedRooms() {
 
 
-       var room_c = 0;
-       var row = "";
-       var rms = 0;
-        
-        if(isNewBooking()){
+        var room_c = 0;
+        var row = "";
+        var rms = 0;
+
+        if (isNewBooking()) {
             var bubble = $("#selected-room-count");
-         var tb_r ="#tb-free-rooms tr.selected";
-        }
-        else{
+            var tb_r = "#tb-free-rooms tr.selected";
+        } else {
             var bubble = $("#ar_selected-room-count");
-        
-            var tb_r ="#ar_tb-free-rooms tr.selected";
+
+            var tb_r = "#ar_tb-free-rooms tr.selected";
             $("#ar_tb-free-rooms tr.selected").each(function(j, tr) {
 
-            var ttl = parseFloat($(tr).find(".sub-total").text());
+                var ttl = parseFloat($(tr).find(".sub-total").text());
 
-            room_c = room_c + ttl;
+                room_c = room_c + ttl;
 
             });
-            $("#t-rooms-c").text('$'+room_c);
+            $("#t-rooms-c").text('$' + room_c);
         }
-        
 
 
 
-       
+
+
         $(tb_r).each(function(i, tr) {
             row += "<tr>";
             var name = $(tr).find(".room-type-name").text();

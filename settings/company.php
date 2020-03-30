@@ -1,4 +1,5 @@
 <style>
+    /*
     .form-control {
         border-radius: 3px !important;
     }
@@ -8,6 +9,7 @@
 
         border: 1px solid #EBF5FB;
     }
+*/
 
 </style>
 
@@ -33,8 +35,8 @@
             <div class="row" id="form-company">
 
 
-                <div class="col-md-6 p-4" style="border-right:1px solid #F2F4F4">
-                    <div class="card p-4 border-0">
+                <div class="col-md-6 p-3">
+                    <div class="card p-4" style="border:1px solid #868686">
 
                         <!--                    <div class="card p-3" style="background-color:rgb(249, 251, 253);">-->
                         <div class="form-group m-0">
@@ -66,7 +68,7 @@
                                 <div class="form-group col-md-6 m-0">
                                     <label class="">Email Address</label>
                                     <div class="">
-                                        <input class="form-control" id="c-email" type="email" data-input='email' data-invalid-message='invalid email' required/>
+                                        <input class="form-control" id="c-email" type="email" data-input='email' data-invalid-message='invalid email' required />
                                     </div>
                                 </div>
 
@@ -82,7 +84,7 @@
 
                         <div class="form-group m-0">
                             <label for="">Address</label>
-                            <input class="form-control" id="c-address" style="text-transform: capitalize;" required/>
+                            <input class="form-control" id="c-address" style="text-transform: capitalize;" required />
                         </div>
 
 
@@ -149,7 +151,8 @@
                                                 Current Plan
                                             </h6>
                                             <!-- Heading -->
-                                            <span class="h6 mb-0" style="font-size:20px"><?php echo $currentBillingPlan; ?></span>
+                                            <span class="h6 mb-0" style="font-size:20px">
+                                                <?php echo $currentBillingPlan; ?></span>
 
                                         </div>
 
@@ -173,7 +176,8 @@
                             <!--                            <br>-->
 
                             <p style="color:#A93226; font-size:14px;">Plan Expires on
-                                <span style="font-weight:700"><?php echo $expiry_date; ?></span>
+                                <span style="font-weight:700">
+                                    <?php echo $expiry_date; ?></span>
                             </p>
 
                         </div>

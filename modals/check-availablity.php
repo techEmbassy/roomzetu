@@ -26,7 +26,7 @@
 
 
 <div class="modal animated FadeIn" id="room-availability">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
 
@@ -37,12 +37,12 @@
                 <!--
                 <select class="form-control tiny" id="roomsproperties" onchange="chosenProperty()">
                                         <?php //echo $propertyOptions; ?>
-    
+
                                     </select>
 -->
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body pt-0 pb-0 ">
 
@@ -60,12 +60,12 @@
                         </div>
                         <div class="col-md-5 text-right">
                             <select class="form-control tiny" id="roomsproperties" onchange="chosenProperty()">
-                                        <?php echo $propertyOptions; ?>
-    
-                                    </select>
+                                <?php echo $propertyOptions; ?>
+
+                            </select>
 
                             <a class="btn btn-secondary btn-35" onclick="resetChart();">
-                                            This Month</a>
+                                This Month</a>
 
                         </div>
                     </div>

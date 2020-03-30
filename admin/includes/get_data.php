@@ -8,7 +8,7 @@ switch($token){
    c.*, IFNULL(b.title,'N/A') as bill_name,
     (select COUNT(id) from users_tb where company_id=c.id) as user_count,
     (select license from billing_tb where company_id=c.id limit 1) as license
-   from company_tb c LEFT JOIN billing_plan_tb b on b.id=c.billing_plan LIMIT 20");
+   from company_tb c LEFT JOIN billing_plan_tb b on b.id=c.billing_plan LIMIT 200");
 
    $cc=array();
    foreach($companies as $c){

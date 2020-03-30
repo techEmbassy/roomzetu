@@ -10,7 +10,7 @@
                 <select class="form-control tiny" id="property">
                     <?php echo $propertyOptions;?></select>
                 <!--                <span class="border"></span>-->|
-                <a class="btn btn-sm btn-secondary btn-35" data-toggle="modal" data-target="#new-user" onclick="adduser()"><i class="fa fa-plus"></i> Create New User</a>
+                <a class="btn btn-secondary btn-35" data-toggle="modal" data-target="#new-user" onclick="adduser()"><i class="fa fa-plus"></i> Create New User</a>
             </div>
 
         </div>
@@ -219,11 +219,11 @@
                         role = "Sales Consultant";
                         break;
                     case "6":
-                    role = "Accountant";
-                    break;
+                        role = "Accountant";
+                        break;
                     case "7":
-                    role = "Reservations";
-                    break;
+                        role = "Reservations";
+                        break;
                     default:
                         role = "No Role Assigned";
 
@@ -378,7 +378,7 @@
         }
 
         /**  function setLockedUsers(data) {
-          
+
               var users = JSON.parse(data);
               var grid = "";
               $.each(users, function(i, user) {
@@ -406,15 +406,15 @@
                   grid += '</div>';
                   grid += '</div>';
                   grid += '</div>';
-                  
+
                   grid +='<div class="overlay"><div class="content"><h4><i class="fa fa-lock"></i> <small>user locked</small></h4><a class="btn btn-primary btn-sm"><i class="fa fa-unlock"></i> unlock user</a></div></div>';
                   grid += '</div>';
                   grid += '</div>';
                   grid += '</div>';
               });
-              
+
              $("#locked-users-count").text(total_users);
-             $("#grid-locked-users").html(grid); 
+             $("#grid-locked-users").html(grid);
           } **/
 
 

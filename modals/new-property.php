@@ -1,18 +1,18 @@
 <div class="modal animated bounceInDown" id="new-property">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
 
                 <h4 class="modal-title"><i class="fa fa-plus"></i> New Property</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body" id="form-new-property">
                 <div class="row form-group">
                     <label class="col-md-3">Name: </label>
                     <div class="col-md-9">
-                        <input class="form-control" placeholder="" id="p-name" style="text-transform: capitalize;" required/>
+                        <input class="form-control" placeholder="" id="p-name" style="text-transform: capitalize;" required />
                         <input id="p-name" type="hidden" placeholder="" id="p-id" style="text-transform: capitalize;" />
                     </div>
 
@@ -21,7 +21,7 @@
                 <div class="row form-group">
                     <label class="col-md-3">Email: </label>
                     <div class="col-md-9">
-                        <input id="p-email" class="form-control" placeholder="" id="p-email" type="email" data-input='email' data-invalid-message='invalid email' required/>
+                        <input id="p-email" class="form-control" placeholder="" id="p-email" type="email" data-input='email' data-invalid-message='invalid email' required />
                     </div>
 
                 </div>
@@ -46,7 +46,7 @@
 
                     <div class="col-md-9">
                         <select class="form-control" id="p-country" required>
-                        <!--<option value="">Select</option>
+                            <!--<option value="">Select</option>
                          <option id="ug">Uganda</option>
                          <option id="ky">Kenya</option>
                          <option id="tz">Tanzania</option>-->
@@ -61,7 +61,7 @@
 
                     <div class="col-md-9">
                         <select class="form-control" id="p-manager">
-                         
+
                         </select>
 
                     </div>
@@ -70,19 +70,19 @@
 
 
                 <div class="row mt-2">
-                        <label class="col-md-3">Logo</label>
-                        <div class="col-md-9">
-                            <img src="" width="85px" id="p-img-logo">
-                            <a class="btn btn-secondary btn-sm ml-5" data-toggle="file" data-target="#plogo"><i class="fa fa-camera"></i> Change logo</a>
-                            <input name="p-logo" type="file" id="plogo" class="hide" accept="images/*" />
-                        </div>
+                    <label class="col-md-3">Logo</label>
+                    <div class="col-md-9">
+                        <img src="" width="85px" id="p-img-logo">
+                        <a class="btn btn-secondary btn-sm ml-5" data-toggle="file" data-target="#plogo"><i class="fa fa-camera"></i> Change logo</a>
+                        <input name="p-logo" type="file" id="plogo" class="hide" accept="images/*" />
+                    </div>
                 </div>
 
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button onclick="save_property();" type="button" class="btn btn-primary btn-sm savebtn"><i class="fa fa-check-circle"></i> Save Property</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button onclick="save_property();" type="button" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Save Property</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -99,14 +99,14 @@
 
                 <h4 class="modal-title"><i class="fa fa-plus"></i> Edit Property</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body" id="form-edit-property">
                 <div class="row form-group">
                     <label class="col-md-3">Name: </label>
                     <div class="col-md-9">
-                        <input class="form-control" placeholder="" id="p-name-e" style="text-transform: capitalize;" required/>
+                        <input class="form-control" placeholder="" id="p-name-e" style="text-transform: capitalize;" required />
                         <input type="hidden" placeholder="" id="p-id-e" style="text-transform: capitalize;" />
                     </div>
 
@@ -115,7 +115,7 @@
                 <div class="row form-group">
                     <label class="col-md-3">Email: </label>
                     <div class="col-md-9">
-                        <input class="form-control" placeholder="" id="p-email-e" type="email" data-input='email' data-invalid-message='invalid email' required/>
+                        <input class="form-control" placeholder="" id="p-email-e" type="email" data-input='email' data-invalid-message='invalid email' required />
                     </div>
 
                 </div>
@@ -140,7 +140,7 @@
 
                     <div class="col-md-9">
                         <select class="form-control" id="p-country-e">
-                        <!--<option value="">Select</option>
+                            <!--<option value="">Select</option>
                          <option id="ug">Uganda</option>
                          <option id="ky">Kenya</option>
                          <option id="tz">Tanzania</option>-->
@@ -155,7 +155,7 @@
 
                     <div class="col-md-9">
                         <select class="form-control" id="p-manager-e">
-                         
+
                         </select>
 
                     </div>
@@ -163,19 +163,19 @@
                 </div>
 
                 <div class="row mt-2">
-                        <label class="col-md-3">Logo</label>
-                        <div class="col-md-9">
-                            <img src="" width="85px" id="p-img-logo-e">
-                            <a class="btn btn-secondary btn-sm ml-5" data-toggle="file" data-target="#plogo-e"><i class="fa fa-camera"></i> Change logo</a>
-                            <input name="p-logo-e" type="file" id="plogo-e" class="hide" accept="images/*" />
-                        </div>
+                    <label class="col-md-3">Logo</label>
+                    <div class="col-md-9">
+                        <img src="" width="85px" id="p-img-logo-e">
+                        <a class="btn btn-secondary btn-sm ml-5" data-toggle="file" data-target="#plogo-e"><i class="fa fa-camera"></i> Change logo</a>
+                        <input name="p-logo-e" type="file" id="plogo-e" class="hide" accept="images/*" />
                     </div>
+                </div>
 
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button onclick="update_property()" type="button" class="btn btn-primary btn-sm savebtn"><i class="fa fa-check-circle"></i> Edit Property</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button onclick="update_property()" type="button" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Edit Property</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -184,7 +184,6 @@
 </div>
 <!-- /.modal -->
 <script>
-
     var company_id = 1; //get from session during production
     var new_logo;
 
@@ -231,7 +230,7 @@
             // them on the server until the user's session ends.
         }
     }
-    var edited_logo="";
+    var edited_logo = "";
     document.getElementById('plogo-e').onchange = function(evt) {
         var tgt = evt.target || window.event.srcElement,
             files = tgt.files;
@@ -254,7 +253,7 @@
                         if (response != "failed") {
                             edited_logo = response;
                             console.log(edited_logo);
-                           // alert(edited_logo)
+                            // alert(edited_logo)
                         } else {
                             upload_error = 1;
                         }
@@ -273,6 +272,7 @@
             // them on the server until the user's session ends.
         }
     }
+
     function save_property() {
 
         if (!(inputsEmpty("#form-new-property"))) {
@@ -330,35 +330,35 @@
 
             var property_id = parseInt($("#p-id-e").val());
             // alert(property_id);
-        var data ; 
-          if(edited_logo!=""){
+            var data;
+            if (edited_logo != "") {
 
 
 
-             data = {
-                "property_name": name,
-                "phone": phone,
-                "email": email,
-                "country": country,
-                "address": address,
-                "manager_id": manager_id,
-                "property_image": edited_logo
+                data = {
+                    "property_name": name,
+                    "phone": phone,
+                    "email": email,
+                    "country": country,
+                    "address": address,
+                    "manager_id": manager_id,
+                    "property_image": edited_logo
+                }
+
+
+            } else {
+
+                data = {
+                    "property_name": name,
+                    "phone": phone,
+                    "email": email,
+                    "country": country,
+                    "address": address,
+                    "manager_id": manager_id
+                }
             }
+            //alert(JSON.stringify(data));
 
-
-          }else{
-
-            data = {
-                "property_name": name,
-                "phone": phone,
-                "email": email,
-                "country": country,
-                "address": address,
-                "manager_id": manager_id
-            }
-          }
-          //alert(JSON.stringify(data));
-            
 
             $.post("src/update.php", {
                 page: "new-property",
@@ -366,7 +366,7 @@
                 "col_name": "id",
                 result: JSON.stringify(data)
             }, function(response) {
-               // alert(response);
+                // alert(response);
                 alertify
                     .alert("Property Updated", name + " Property Details updated Succesfully", function() {
                         // alertify.message('OK');

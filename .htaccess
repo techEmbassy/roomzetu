@@ -47,5 +47,6 @@ RewriteRule ^invoice/([0-9]+)$ dompdf/export_pdf.php?id=$1
      RewriteCond %{HTTPS} off
    #RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301]
    #RewriteRule ^(.*)$ https://app.roomzetu.com/$1 [R=301,L]
-  
+
 </IfModule>
+

@@ -1,8 +1,8 @@
 <?php
 require_once 'meekrodb.php';
 DB::$user = 'root';
-DB::$password = '';
-DB::$dbName = 'roomzetu';
+DB::$password = 'root';
+DB::$dbName = 'roomzetu_db';
 
 
 //some constants
@@ -36,52 +36,52 @@ function get_booking_source($b_id,$s, $a_id){
             $a = DB::query("select * from agent_tb where id=%i", $a_id);
             return $a[0]['name'];
         }
-        
+
         else{
           $a = DB::query("select * from guests_tb where booking_id=%s", $b_id);
             $names = array();
-                
+
             foreach($a as $g){
                 $fname = explode(" ",$g['name'])[0];
                 array_push($names, $fname);
-                
+
             }
-            return implode(',',$names);  
+            return implode(',',$names);
         }
-        
+
     }
 //echo makeEmail("Hello, thank you for booking with us", "Awesome lodges Uganda", "al@gmai.com","0783928773","", "4th street, some building");
 
 function makeEmail($body, $name, $email, $phone,$logo,$address){
-    
+
     $border_bottom = 'border-bottom:1px solid #ddd';
     $border_top = 'border-top:1px solid #ddd';
     $font = "";//'font-family:"Catamaran",Helvetica, Arial,sans-serif !important';
     $html ="<html><head><link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet' type='text/css'></head><body>";
-   
+
     $html .= "<br><div style='background-color:#fff; border:1px solid #aaa; width:100%; max-width:688px; margin:auto;'>";
     //$html .='<span style="">';
     $html .= "<table style='border-spacing:0 !important; width:100%'>";
     $html .= "<tr>";
     $html .= "<td style='color:#999; $border_bottom; padding:30px;'>";
-    $html .= "<img src='https://app.roomzetu.com/img/settings/$logo' height='50px' style='max-height:100px'>";   
+    $html .= "<img src='https://app.roomzetu.com/img/settings/$logo' height='50px' style='max-height:100px'>";
 
 //    $html .= "<p>Online RPM System</p>";
     $html .= "</td>";
-   
+
     $html .= "</tr>";
     $html .= "<tr>";
     $html .= "<td style='padding:30px;'>";
     $html .= $body;
     $html .= "</td>";
-    
-    //company contacts 
+
+    //company contacts
    //$company = DB::query("select * from company wher")
-    
+
     $html .= "</tr>";
 
     $html .= "</table>";
-    
+
     $html .="<table style='width:100%'>";
     $html.="<tr>";
     $html.="<td style='padding:30px; $border_top;' >";
@@ -100,12 +100,12 @@ function makeEmail($body, $name, $email, $phone,$logo,$address){
 
        $html .= "<table style='width:100%'>";
 
-    
+
     $html .= "<td style='width:1px; padding:30px 0px; '>";
-    $html .= "<img src='https://app.roomzetu.com/img/logo.png' height='50px'>";   
-//    $html .= "<img src='http://192.168.88.2/reservation/img/logo.png' height='50px'>";   
+    $html .= "<img src='https://app.roomzetu.com/img/logo.png' height='50px'>";
+//    $html .= "<img src='http://192.168.88.2/reservation/img/logo.png' height='50px'>";
     $html .= "</td>";
-    
+
 
     $html .= "<td style='color:#999; padding:30px;'>";
     $html .= "<p style='color:#555;  font-size:10pt'>info@laceltech.com.</p>";
@@ -116,18 +116,18 @@ function makeEmail($body, $name, $email, $phone,$logo,$address){
     $html .= "</table>";
     $html .= "</div>";
     $html .= "</body></html>";
-    
-    
+
+
     return $html;
 }
 
 function makeGenericEmail($body){
-    
+
     $border_bottom = 'border-bottom:1px solid #ddd';
     $border_top = 'border-top:1px solid #ddd';
     $font = "";//'font-family:"Catamaran",Helvetica, Arial,sans-serif !important';
     $html ="<html><head><link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet' type='text/css'></head><body>";
-   
+
     $html .= "<br><div style='background-color:#fff; border:1px solid #aaa; width:100%; max-width:688px; margin:auto;'>";
     //$html .='<span style="">';
     $html .= "<table style='border-spacing:0 !important; width:100%'>";
@@ -136,17 +136,17 @@ function makeGenericEmail($body){
     $html .= "<h4><b>Roomzetu</b></h4>";
     $html .= "<p>Online RPM System</p>";
     $html .= "</td>";
-    
-    
+
+
     $html .= "</tr>";
     $html .= "<tr>";
     $html .= "<td style='padding:30px;'>";
     $html .= $body;
     $html .= "</td>";
-    
-    //company contacts 
+
+    //company contacts
 //    $company = DB::query("select * from company wher")
-    
+
     $html .= "</tr>";
 
     $html .= "</table>";
@@ -160,17 +160,17 @@ function makeGenericEmail($body){
 //    $html .= "</td>";
    // $html .= "</table>";
     $html .= "</a>";
-    
+
     $html .= "</td>";
     $html .= "</tr>";
     $html .= "<tr>";
-    
-    
+
+
     $html .= "<td style='width:1px; $border_top; padding:30px;'>";
-    $html .= "<img src='https://app.roomzetu.com/img/logo.png' height='50px'>";   
-//    $html .= "<img src='http://192.168.88.2/reservation/img/logo.png' height='50px'>";   
+    $html .= "<img src='https://app.roomzetu.com/img/logo.png' height='50px'>";
+//    $html .= "<img src='http://192.168.88.2/reservation/img/logo.png' height='50px'>";
     $html .= "</td>";
-    
+
 
     $html .= "<td style='color:#999; $border_top; padding:30px;'>";
     $html .= "<p style='color:#555'>support@laceltech.com.</p>";
@@ -181,10 +181,10 @@ function makeGenericEmail($body){
     $html .= "</table>";
    // $html .="</span>";
     $html .= "</div><br>";
-   
+
     $html .= "</body></html>";
-    
-    
+
+
     return $html;
- 
+
 }

@@ -1,5 +1,5 @@
 <div class="modal animated bounceInDown" id="new-extra">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
 

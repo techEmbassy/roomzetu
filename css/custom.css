@@ -14,6 +14,11 @@
     src: url(../fonts/product-sans/ProductSans-Light.ttf);
 }
 
+@font-face {
+    font-family: 'productsans-bold';
+    src: url(../fonts/product-sans/ProductSans-Bold.ttf);
+}
+
 
 
 body {
@@ -35,6 +40,10 @@ body {
 
 .font-g-t {
     font-family: 'psans-thin', sans-serif !important;
+}
+
+.font-ps-bold {
+    font-family: 'productsans-bold', sans-serif !important;
 }
 
 
@@ -276,8 +285,8 @@ label {
     font-size: 10pt;
     font-weight: 500;
     color: #2C3E50;
-    font-family: 'Lato', sans-serif;
-
+    font-family: 'productsans-bold', sans-serif !important;
+    letter-spacing: 0.45pt;
 }
 
 .navbar .navmenu li a {
@@ -299,7 +308,26 @@ label {
     border-color: #fd4b0d;
     color: #333;
     background-image: linear-gradient(to top, rgba(67, 2, 2, .04), transparent);
+
 }
+
+
+.navbar .navmenu li.active a::after {
+    content: '';
+    position: absolute;
+    left: 42%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 18px solid #fd4b0d;
+    clear: both;
+    z-index: 100;
+}
+
+
+
 
 .navbar .brand {
     float: left;
@@ -1400,5 +1428,40 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .element-white:hover {
-    /*    background-color: #EBEDEF;*/
+    background-color: #f7f7f7;
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0.5);
+    /*    padding: 2em 3em;*/
+    border-radius: .5em;
+
+}
+
+
+
+
+.modal-content {
+    border-radius: 5px !important;
+    border: 0px;
+}
+
+.modal-header {
+    /*    background-color: rgba(210, 94, 3, 0.9) !important;*/
+    background-color: #f85f03 !important;
+    color: #fff;
+}
+
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close span {
+    font-size: 32px;
+
 }

@@ -1,11 +1,11 @@
 <div class="modal animated bounceInDown" id="new-agent">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
 
-                <h4 class="modal-title"><i class="fa fa-user"></i> New Agent</h4>
+                <h4 class="modal-title"><i class="zmdi zmdi-account-add"></i> New Agent</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true" class="zmdi zmdi-close-circle"></span>
                 </button>
             </div>
             <div class="modal-body" id="form-new-agent">

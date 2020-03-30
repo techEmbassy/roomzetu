@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
 <?php
 
 session_start();
-
 if(isset($_GET['logout'])&& $_GET['logout']==1){
 
         $_SESSION['flag']["first_time"]=null;
-        $_SESSION['login']=null;
+        unset($_SESSION['login']);
 
 
   }else{
@@ -23,7 +20,8 @@ function redirect_to( $location = NULL ) {
 }
 
 ?>
-
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Login | Roomzetu</title>

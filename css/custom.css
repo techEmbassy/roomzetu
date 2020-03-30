@@ -793,7 +793,10 @@ input.tiny {
     height: 50px;
 }
 
-.table-primary {
+.table-primary td {
+    background-color: #fff;
+	border-color: #aaa
+}.table-primary {
     margin-top: 10px
 }
 

@@ -55,7 +55,7 @@
 
                                 <div class="col-md-9 text-right">
                                     <input class="form-control tiny" placeholder="search" oninput="searchAgent(value)" />
-                                    <a class="btn btn-secondary btn-35" data-target="#new-agent" data-toggle="modal" onclick="new_agent()"><i class="fa fa-plus"></i> New Agent</a>
+                                    <a class="btn btn-secondary btn-35" data-tareget="#new-agent" data-toggle="modal" ><i class="fa fa-plus"></i> New Agent</a>
                                 </div>
                             </div>
                         </div>

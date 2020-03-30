@@ -52,7 +52,7 @@
 
 <!--<script src="js/loader.js?v=7777"></script>-->
 <script src="js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
 <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
 <script src="js/fixedtablehead.js?v=24"></script>
 <script src="js/validate.js?v=23"></script>

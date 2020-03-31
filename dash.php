@@ -346,7 +346,7 @@
                                                     <div class="col-auto mr-2">
 
                                                         <!-- Icon -->
-                                                        <span class="h2 fa fa-check text-muted mb-0"></span>
+                                                        <span class="h2 zmdi zmdi-check text-muted mb-0"></span>
 
                                                     </div>
                                                 </div>
@@ -506,14 +506,14 @@
 
     var bookings = "[]";
     if (welcome == 1) {
-        alertify.success("<i class='fa fa-check-circle'></i> Welcome to Roomzetu");
+        alertify.success("<i class='zmdi zmdi-check-circle'></i> Welcome to Roomzetu");
 
     }
 
-    // alertify.success("<i class='fa fa-check-circle'></i> Welcome to Reservations System");
+    // alertify.success("<i class='zmdi zmdi-check-circle'></i> Welcome to Reservations System");
 
     // $(document).one('ready', function(){
-    //      alertify.success("<i class='fa fa-check-circle'></i> Welcome to Reservations System")
+    //      alertify.success("<i class='zmdi zmdi-check-circle'></i> Welcome to Reservations System")
     //  });
 
     $(function() {
@@ -723,7 +723,7 @@
             rows += '<tr><td><div class="row " style="border-bottom:1px# FAFAFA solid;">' +
                 '<div class="col-md-8" style="font-size:12px "><a>' + notice.note + ' <br><small>Pinned by<span>~ ' + notice.name + '</span></small></a></div>' +
                 '<div class="col-md-3 pull-right "><small><a>' + d + '</a></small></div>' +
-                '<div class="col-md-1 pull-right "><a onclick="removeNotice(' + notice.id + ')"><i class="fa fa-close "></i></a></div></div></td></tr>';
+                '<div class="col-md-1 pull-right "><a onclick="removeNotice(' + notice.id + ')"><i class="zmdi zmdi-close "></i></a></div></div></td></tr>';
 
 
 

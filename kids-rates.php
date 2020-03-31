@@ -26,14 +26,14 @@
                 <div class="col-md-2 mt-2">
 
                     <p><small>Manage room rates, agent rates and kids rates</small> </p>
-                    <hr/>
+                    <hr />
                     <div class="sub-menu">
                         <?php $sbPos=4; include 'includes/rates-menu.php';?>
 
 
                     </div>
                     <div class="foot pt-4 pl-2 text-left ">
-                        <a class="btn btn-sm btn-secondary" data-target="#newkidsrate-modal" data-toggle="modal"><i class="fa fa-plus"></i> New Kids rate</a>
+                        <a class="btn btn-sm btn-secondary" data-target="#newkidsrate-modal" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Kids rate</a>
                     </div>
 
                 </div>
@@ -55,11 +55,11 @@
 
                                     <!--<select class="form-control tiny hide" id="properties" onchange="getKidsRates()">
                                          <?php echo $propertyOptions0; ?>
-    
+
                                      </select>-->
 
 
-                                    <a class="btn btn-secondary btn-35" href="" data-target="#newkidsrate-modal" data-toggle="modal"><i class="fa fa-plus"></i> New Kids rates</a>
+                                    <a class="btn btn-secondary btn-35" href="" data-target="#newkidsrate-modal" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Kids rates</a>
 
 
 
@@ -111,7 +111,7 @@
       <td>10</td>
       <td>12</td>
       <td>140</td>
-     
+
       <td class="text-right"><a href="#" class="btn btn-secondary btn-sm">Edit</a> <a href="#" class="btn btn-danger text-white btn-sm">Delete</a></td>
     </tr>
 
@@ -120,7 +120,7 @@
       <td>10</td>
       <td>12</td>
       <td>140</td>
-     
+
       <td class="text-right"><a href="#" class="btn btn-secondary btn-sm">Edit</a> <a href="#" class="btn btn-danger text-white btn-sm">Delete</a></td>
     </tr>
     <tr>
@@ -128,7 +128,7 @@
       <td>10</td>
       <td>12</td>
       <td>140</td>
-     
+
       <td class="text-right"><a href="#" class="btn btn-secondary btn-sm">Edit</a> <a href="#" class="btn btn-danger text-white btn-sm">Delete</a></td>
     </tr>-->
                                     </tbody>
@@ -140,13 +140,13 @@
 
                             <!-- Modal -->
                             <div class="modal fadeIn" id="newkidsrate-modal" tabindex="-1" role="dialog" aria-labelledby="newkidsrate-modal" aria-hidden="true">
-                                <div class="modal-dialog vertical-align-center" role="document">
-                                    <div class="modal-content">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content animated zoomIn">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="newkidsrate-modal">New Kids Rate</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
 
@@ -205,13 +205,13 @@
 
                             <!-- Modal -->
                             <div class="modal fadeIn" id="editkidsrate-modal" tabindex="-1" role="dialog" aria-labelledby="editkidsrate-modal" aria-hidden="true">
-                                <div class="modal-dialog vertical-align-center" role="document">
-                                    <div class="modal-content">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content animated zoomIn">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="editkidsrate-modal">Edit Kids Rate</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
 
@@ -297,7 +297,7 @@
             var rates_obj = JSON.parse(response);
             json_obj = rates_obj;
 
-            //alert(response);//// 
+            //alert(response);////
 
             var rows = "";
             $.each(rates_obj, function(i, rate) {
@@ -347,7 +347,7 @@
 
                     if (response === "success") {
                         $("#editkidsrate-modal").modal("hide");
-                        alertify.success("<i class='fa fa-check-circle'></i> Kids Rate  successfully updated");
+                        alertify.success("<i class='zmdi zmdi-check-circle'></i> Kids Rate  successfully updated");
                         getKidsRates();
                     }
 
@@ -423,11 +423,11 @@
                 alert(response);
 
                 if (parseInt(response) == 1) {
-                    // alertify.success("<i class='fa fa-check-circle'></i> Agent Rate saved successfully");
+                    // alertify.success("<i class='zmdi zmdi-check-circle'></i> Agent Rate saved successfully");
                     //getAgentRates();
 
                     $("#newkidsrate-modal").modal("hide");
-                    alertify.success("<i class='fa fa-check-circle'></i> Kid Rate  successfully saved");
+                    alertify.success("<i class='zmdi zmdi-check-circle'></i> Kid Rate  successfully saved");
 
                     $('#rate_name').val("");
                     $('#rate_minimum').val("");

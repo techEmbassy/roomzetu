@@ -70,7 +70,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" onclick="save_user()" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Save User</button>
+                <button type="button" onclick="save_user()" class="btn btn-primary savebtn"><i class="zmdi zmdi-check-circle"></i> Save User</button>
             </div>
         </div>
         <!-- /.modal-content -->

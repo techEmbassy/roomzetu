@@ -28,7 +28,7 @@
             </div>
 
             <div class="col-md-9 text-right">
-                <a class=" btn btn-sm btn-secondary" href="settings.php?v=new-template"> <i class="fa fa-plus"></i> New Template</a>
+                <a class=" btn btn-sm btn-secondary" href="settings.php?v=new-template"> <i class="zmdi zmdi-plus"></i> New Template</a>
             </div>
 
         </div>

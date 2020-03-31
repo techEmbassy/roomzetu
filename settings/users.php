@@ -10,7 +10,7 @@
                 <select class="form-control tiny" id="property">
                     <?php echo $propertyOptions;?></select>
                 <!--                <span class="border"></span>-->|
-                <a class="btn btn-secondary btn-35" data-toggle="modal" data-target="#new-user" onclick="adduser()"><i class="fa fa-plus"></i> Create New User</a>
+                <a class="btn btn-secondary btn-35" data-toggle="modal" data-target="#new-user" onclick="adduser()"><i class="zmdi zmdi-plus"></i> Create New User</a>
             </div>
 
         </div>
@@ -260,7 +260,7 @@
                     grid_locked += '</div>';
                     grid_locked += '<div class="footer">';
                     grid_locked += '<button class="btn btn-simple" onclick="rotateCard(this)">';
-                    grid_locked += '<i class="fa fa-pencil btn-circle"  onclick="editUser(\'' + i + '\')"> </i>  <i class="fa fa-lock btn-circle"  title="Lock ' + user.name + '"> </i>  <i class="fa fa-times btn-circle" onclick="deleteUser(\'' + user.id + '\', \'' + user.name + '\')" title="delete ' + user.name + '"></i>';
+                    grid_locked += '<i class="zmdi zmdi-edit btn-circle"  onclick="editUser(\'' + i + '\')"> </i>  <i class="fa fa-lock btn-circle"  title="Lock ' + user.name + '"> </i>  <i class="fa fa-times btn-circle" onclick="deleteUser(\'' + user.id + '\', \'' + user.name + '\')" title="delete ' + user.name + '"></i>';
                     grid_locked += '</button>';
                     grid_locked += '</div>';
                     grid_locked += '</div>';
@@ -290,7 +290,7 @@
                     grid += '</div>';
                     grid += '<div class="footer">';
                     grid += '<button class="btn btn-simple" onclick="rotateCard(this)">';
-                    grid += '<i class="fa fa-pencil btn-circle"  onclick="editUser(\'' + i + '\')"> </i>  <i class="fa fa-lock btn-circle " ' + hidelock + ' onclick="lockUser(\'' + user.id + '\', \'' + user.name + '\')"  title="Lock ' + user.name + '"> </i>  <i class="fa fa-times btn-circle " ' + hidelock + ' onclick="deleteUser(\'' + user.id + '\', \'' + user.name + '\')" title="delete ' + user.name + '"></i>';
+                    grid += '<i class="zmdi zmdi-edit btn-circle"  onclick="editUser(\'' + i + '\')"> </i>  <i class="fa fa-lock btn-circle " ' + hidelock + ' onclick="lockUser(\'' + user.id + '\', \'' + user.name + '\')"  title="Lock ' + user.name + '"> </i>  <i class="fa fa-times btn-circle " ' + hidelock + ' onclick="deleteUser(\'' + user.id + '\', \'' + user.name + '\')" title="delete ' + user.name + '"></i>';
                     grid += '</button>';
                     grid += '</div>';
                     grid += '</div>';
@@ -401,7 +401,7 @@
                   grid += '</div>';
                   grid += '<div class="footer">';
                   grid += '<button class="btn btn-simple" onclick="rotateCard(this)">';
-                  grid += '<i class="fa fa-pencil btn-circle"  data-toggle="modal" data-target="#new-user"> </i>  <i class="fa fa-lock btn-circle"  title="Lock '+user.name+'"> </i>  <i class="fa fa-times btn-circle" onclick="deleteUser(\''+user.id+'\', \''+user.name+'\')" title="delete '+user.name+'"></i>';
+                  grid += '<i class="zmdi zmdi-edit btn-circle"  data-toggle="modal" data-target="#new-user"> </i>  <i class="fa fa-lock btn-circle"  title="Lock '+user.name+'"> </i>  <i class="fa fa-times btn-circle" onclick="deleteUser(\''+user.id+'\', \''+user.name+'\')" title="delete '+user.name+'"></i>';
                   grid += '</button>';
                   grid += '</div>';
                   grid += '</div>';
@@ -458,7 +458,7 @@
 
             // m.find('#property option[value="' + myText + '"]');.
 
-            m.find('.modal-title').html("<i class='fa fa-pencil'></i> Edit User");
+            m.find('.modal-title').html("<i class='zmdi zmdi-edit'></i> Edit User");
             m.find('.savebtn').attr('onClick', 'updateUser(' + user.id + ')');
             m.modal("show")
         }

@@ -3,7 +3,7 @@
         <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
-                <h4 class="modal-title"><i class="fa fa-plus"></i> New Property</h4>
+                <h4 class="modal-title"><i class="zmdi zmdi-plus"></i> New Property</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -82,7 +82,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button onclick="save_property();" type="button" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Save Property</button>
+                <button onclick="save_property();" type="button" class="btn btn-primary savebtn"><i class="zmdi zmdi-check-circle"></i> Save Property</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -97,7 +97,7 @@
         <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
-                <h4 class="modal-title"><i class="fa fa-plus"></i> Edit Property</h4>
+                <h4 class="modal-title"><i class="zmdi zmdi-plus"></i> Edit Property</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -175,7 +175,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button onclick="update_property()" type="button" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Edit Property</button>
+                <button onclick="update_property()" type="button" class="btn btn-primary savebtn"><i class="zmdi zmdi-check-circle"></i> Edit Property</button>
             </div>
         </div>
         <!-- /.modal-content -->

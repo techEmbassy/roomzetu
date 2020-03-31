@@ -74,7 +74,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check-circle"></i> Save Template</button>
+                <button type="button" class="btn btn-primary btn-sm"><i class="zmdi zmdi-check-circle"></i> Save Template</button>
             </div>
         </div>
         <!-- /.modal-content -->

@@ -48,7 +48,7 @@
                         <?php $sbPos = 2; include 'includes/connections-menu.php'; ?>
                     </div>
                     <div class="foot pt-4 pl-2 text-left">
-                        <!--                             <a class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> New Room type</a>-->
+                        <!--                             <a class="btn btn-sm btn-secondary"><i class="zmdi zmdi-plus"></i> New Room type</a>-->
 
                     </div>
 
@@ -65,7 +65,7 @@
 
                                 <div class="col-md-9 text-right">
                                     <input class="form-control tiny" placeholder="search" oninput="searchGuest(value)" />
-                                    <!--                                    <a class="btn btn-secondary btn-sm" data-target="#new-agent" data-toggle="modal"><i class="fa fa-plus"></i> New Agent</a>-->
+                                    <!--                                    <a class="btn btn-secondary btn-sm" data-target="#new-agent" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Agent</a>-->
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                 //                "<td>" + ac + "</td>" +
                 "<td>" + ayob + "</td>" +
                 //                "<td><a href='' onclick='showReservations(\"" + aid + "\")'>view (" + aid + ")</a></td>" +
-                //                "<td class='text-center br-0'><a class='fa fa-close btn-circle' title='Delete " + an + "' onclick='delete_guest(\"" + aid + "\", \"" + an + "\")'></a></td>" +
+                //                "<td class='text-center br-0'><a class='zmdi zmdi-close btn-circle' title='Delete " + an + "' onclick='delete_guest(\"" + aid + "\", \"" + an + "\")'></a></td>" +
                 //                "</td>" +
                 "</tr>";
 
@@ -286,7 +286,7 @@
             document.body.appendChild(dummy);
             // Set its ID
             dummy.setAttribute("id", "dummy_id");
-            // Output the array into it  
+            // Output the array into it
             document.getElementById("dummy_id").value = email_guest.join('; ');
             // Select it
             dummy.select();

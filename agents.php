@@ -23,7 +23,7 @@
                         <a href="" class="active">Guest List</a>
                     </div>
                     <div class="foot pt-4 pl-2 text-left">
-<!--                             <a class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> New Room type</a>-->
+<!--                             <a class="btn btn-sm btn-secondary"><i class="zmdi zmdi-plus"></i> New Room type</a>-->
 
                         </div>
 
@@ -38,7 +38,7 @@
                                 </div>
 
                                 <div class="col-md-9 text-right">
-<!--                                    <a class="btn btn-secondary btn-sm" href="" data-target="#new-px" data-toggle="modal"><i class="fa fa-plus"></i> New room type</a>-->
+<!--                                    <a class="btn btn-secondary btn-sm" href="" data-target="#new-px" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New room type</a>-->
                                 </div>
                             </div>
                         </div>

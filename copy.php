@@ -61,8 +61,8 @@
                     </div>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body pt-0 pb-0 steps">
                 <div class=" step-item active">
@@ -72,17 +72,17 @@
                                 <div class="col-md-12 p-class">
                                     <label>Property</label>
                                     <select class="form-control" id="properties" onchange="getRoomTypes()">
-          <?php echo $propertyOptions;?>
-                                </select>
+                                        <?php echo $propertyOptions;?>
+                                    </select>
 
                                 </div>
 
                                 <div class="col-md-12">
                                     <p><label>Room Type</label> <span class="" id="room-loader"></span></p>
                                     <select class="form-control" id="roomtypes">
-<!--                   <option value="0">All Room types</option>-->
+                                        <!--                   <option value="0">All Room types</option>-->
 
-       </select>
+                                    </select>
 
                                 </div>
 
@@ -135,7 +135,7 @@
                                     <p>Total Cost: <br><span class="text-blue">$4290</span> for 1 room for 2 nights</p>
                                     <br>
 
-                                    <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="fa fa-check-circle"></i> Select</button>
+                                    <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="zmdi zmdi-check-circle"></i> Select</button>
                                 </div>
                             </td>
 -->
@@ -156,10 +156,10 @@
                             <div class="col-md-3 border-right">
                                 <label>Booking Source:</label>
                                 <select class="form-control" id="booking-source">
-                 <option value="Direct Booking">Direct Booking</option>
-                 <option value="2">Agent</option>
-                 <option value="Walk in">Walk in</option>
-                </select>
+                                    <option value="Direct Booking">Direct Booking</option>
+                                    <option value="2">Agent</option>
+                                    <option value="Walk in">Walk in</option>
+                                </select>
                             </div>
 
 
@@ -179,7 +179,7 @@
 
                                 <select class="form-control" id="agents">
 
-                      </select>
+                                </select>
 
                             </div>
 
@@ -195,14 +195,14 @@
                                 <label>Expected Guests</label>
                                 <input class="form-control" data-placement="right" value="1" id='exp-num-guests' type="number" min='1' />
 
-                                <!-- <a href="#" data-target="#addkids" data-toggle="modal" style="color:red; font-size:11px"><i class="fa fa-plus"></i> Add Kids</a> -->
+                                <!-- <a href="#" data-target="#addkids" data-toggle="modal" style="color:red; font-size:11px"><i class="zmdi zmdi-plus"></i> Add Kids</a> -->
 
 
 
                                 <div class="btn-group">
                                     <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor:pointer">
-                            Add
-                        </button>
+                                        Add
+                                    </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#" data-target="#addkids" data-toggle="modal">Kids/Child</a>
                                         <div class="dropdown-divider"></div>
@@ -215,7 +215,7 @@
 
                                 <!--<div class="dropdown-divider"></div>
 
-                         <a href="#" data-target="#add-bed" data-toggle="modal" style="color:red; font-size:11px"><i class="fa fa-plus"></i> Extra Bed</a>
+                         <a href="#" data-target="#add-bed" data-toggle="modal" style="color:red; font-size:11px"><i class="zmdi zmdi-plus"></i> Extra Bed</a>
 
                         <p class="tag"><span class="added_beds"></span></p>-->
 
@@ -241,8 +241,8 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Add Kids to this booking</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
                                             <div class="modal-body">
                                                 <table class="table">
@@ -339,7 +339,7 @@
 
 
                             <div class="col-md-12 pt-2">
-                                <hr/>
+                                <hr />
 
 
                                 <div class=" row">
@@ -362,7 +362,7 @@
 
 
 
-                                <br/>
+                                <br />
                                 <table class="table table-bordered table-editable" id="tb-guests">
                                     <thead>
                                         <tr>
@@ -458,9 +458,9 @@
                                 <div class="row">
                                     <label><b>Reservation Status</b></label>
                                     <select class="form-control" id="s-status">
-                             <option value="unconfirmed">Not Confirmed</option>
-                             <option value="confirmed">Confirmed</option>
-                            </select>
+                                        <option value="unconfirmed">Not Confirmed</option>
+                                        <option value="confirmed">Confirmed</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -538,7 +538,10 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" onkeyup="change_discount(value,this)" onkeypress="return isNumber(event)" aria-label="Text input with dropdown button" placeholder="0">
                                             <!--                                            <div class="input-group-btn">-->
-                                            <select class="form-control input-group-addon discount-type" style="width:10px!important;"><option value="1">% (Percent)</option><option value="2">Block Amount</option></select>
+                                            <select class="form-control input-group-addon discount-type" style="width:10px!important;">
+                                                <option value="1">% (Percent)</option>
+                                                <option value="2">Block Amount</option>
+                                            </select>
 
                                         </div>
                                     </div>
@@ -574,14 +577,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <select class="form-control" id="paymemt_mtd">
-                                             <option value="Cash">Select Payment Method</option>
-                                             <option value="Cash">Cash</option>
-                                             <option value="EFT">EFT</option>
-                                             <option value="Cheque">Cheque</option>
-                                             <option value="RTGS">RTGS</option>
-                                             <option value="Creditcard">Credit Card</option>
+                                                        <option value="Cash">Select Payment Method</option>
+                                                        <option value="Cash">Cash</option>
+                                                        <option value="EFT">EFT</option>
+                                                        <option value="Cheque">Cheque</option>
+                                                        <option value="RTGS">RTGS</option>
+                                                        <option value="Creditcard">Credit Card</option>
 
-                                            </select>
+                                                    </select>
                                                 </div>
 
                                             </div>
@@ -622,7 +625,7 @@
                                 <div class="row p-0">
                                     <div class="col-md-4">
                                         <div class="form-group form-check">
-                                            
+
                                             <label class="form-check-label" for="exampleCheck1">Include Taxes</label>
                                         </div>
                                     </div>
@@ -803,7 +806,7 @@
                             <br>
                             <div class="p-5">
 
-                                <h5> <i class="fa fa-check text-success"></i> Reservation Created</h5>
+                                <h5> <i class="zmdi zmdi-check text-success"></i> Reservation Created</h5>
                                 <p class="m-4">Reservation has been created successfully. <br><b>Booking Name</b>: <span id="booking-name">---</span></p>
                             </div>
                         </div>
@@ -849,8 +852,8 @@
                     <small>Choose Room(s)</small>
                 </h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
 
             <div class="modal-body">
@@ -864,7 +867,7 @@
 
             <!--<div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="fa fa-check-circle"></i> Submit</button>
+        <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="zmdi zmdi-check-circle"></i> Submit</button>
     </div>-->
 
         </div>
@@ -881,8 +884,8 @@
             <div class="modal-header" style="background-color:#2cc185;">
                 <h5 class="modal-title text-white">Create custom Meal plan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
 
@@ -1092,8 +1095,8 @@
             <div class="modal-header">
                 <h5 class="modal-title">Add an Extra Bed</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <table class="table table-bordered">
@@ -1206,51 +1209,51 @@
 
     var json_extra_bed_obj = [];
 
-    function getTaxes2(){
+    function getTaxes2() {
 
-         $.post("src/get_data.php", {
+        $.post("src/get_data.php", {
             token: "get_taxes_4_selection"
         }, function(response) {
 
 
-        var taxes_obj = JSON.parse(response);
+            var taxes_obj = JSON.parse(response);
 
-        var rows = "";
-        $.each(taxes_obj, function(i, taxes) {
-            
-            //alert(JSON.stringify(taxes));////
-            rows+='<div class="form-check form-check-inline">';
-            rows+='<input id='+taxes.taxname+' onclick="ExcludeTax(this)" class="form-check-input" type="checkbox"  value="option1">';
-            rows+='<label class="form-check-label" for="inlineCheckbox1">'+taxes.taxname+'('+taxes.taxamount+'%)</label>';
-            rows+='</div>';
+            var rows = "";
+            $.each(taxes_obj, function(i, taxes) {
+
+                //alert(JSON.stringify(taxes));////
+                rows += '<div class="form-check form-check-inline">';
+                rows += '<input id=' + taxes.taxname + ' onclick="ExcludeTax(this)" class="form-check-input" type="checkbox"  value="option1">';
+                rows += '<label class="form-check-label" for="inlineCheckbox1">' + taxes.taxname + '(' + taxes.taxamount + '%)</label>';
+                rows += '</div>';
+
+            });
+
+            $("#taxes_list").html(rows);
+
 
         });
-
-         $("#taxes_list").html(rows);
-              
-
-       });
 
     }
 
 
-    function ExcludeTax(context){
-         var tax= $(context).attr("id");
-        if($(context).prop("checked")){
-            
-             if(excluded_taxes.indexOf(tax)==-1){
+    function ExcludeTax(context) {
+        var tax = $(context).attr("id");
+        if ($(context).prop("checked")) {
+
+            if (excluded_taxes.indexOf(tax) == -1) {
 
                 excluded_taxes.push(tax);
-             }
-             
+            }
 
-        }else{
-            
-             var index= excluded_taxes.indexOf(tax);
-             excluded_taxes.splice(index,1);
+
+        } else {
+
+            var index = excluded_taxes.indexOf(tax);
+            excluded_taxes.splice(index, 1);
         }
 
-       // alert(JSON.stringify(excluded_taxes))
+        // alert(JSON.stringify(excluded_taxes))
 
 
 
@@ -1597,7 +1600,7 @@
     function gotoStepAnother() {
         $('#ds-booking-status').text($("#s-status option:selected").val());
         // $('#btn-preview-invoice').show();
-        $('.btn-next').html('finish <i class="fa fa-check"></i>');
+        $('.btn-next').html('finish <i class="zmdi zmdi-check"></i>');
         gotoStep(1);
     }
 
@@ -2286,9 +2289,9 @@
                 rows += "<h5>Total Cost: <span class='text-orange'>$<span class='sub-total'>" + 0 /*subTotal*/ + "</span></span></h5><h6><span class='selected-rooms'>1 room</span> for <span class='selected-nights'>" + selNights + "<span></h6>";
                 rows += "<input type='hidden' class='subtotal'/><br>";
 
-                //rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='fa fa-check-circle fa-2x'></i></button>";
+                //rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='zmdi zmdi-check-circle fa-2x'></i></button>";
 
-                rows += "<button  type='button' onclick='select(this)' class='btn btn-labeled btn-default' data-toggle='modal' data-target='#sel-room'> <span class = 'btn-label-default'> <i class = 'fa fa-check'></i></span> Select </button>";
+                rows += "<button  type='button' onclick='select(this)' class='btn btn-labeled btn-default' data-toggle='modal' data-target='#sel-room'> <span class = 'btn-label-default'> <i class = 'zmdi zmdi-check'></i></span> Select </button>";
 
                 rows += "</div>";
                 rows += "</td>";
@@ -2455,7 +2458,7 @@
                 tr = $(btn).parents("tr.room-row");
 
                 tr.addClass('selected');
-                alertify.success("<i class='fa fa-check-circle'></i> Added to list")
+                alertify.success("<i class='zmdi zmdi-check-circle'></i> Added to list")
                 setSelectedRooms();
             }
 
@@ -2527,7 +2530,7 @@
                         // alert(JSON.stringify(manaul_room_allocation));
 
                         tr.addClass('selected');
-                        alertify.success("<i class='fa fa-check-circle'></i> Added to list")
+                        alertify.success("<i class='zmdi zmdi-check-circle'></i> Added to list")
 
                         $("#select_rooms__").click();
 
@@ -2565,7 +2568,7 @@
 
                     // alert(JSON.stringify(manaul_room_allocation));
                     tr.addClass('selected');
-                    alertify.success("<i class='fa fa-check-circle'></i> Added to list")
+                    alertify.success("<i class='zmdi zmdi-check-circle'></i> Added to list")
                     $("#select_rooms__").click();
 
                 }
@@ -2769,7 +2772,7 @@
 
         var rms = JSON.stringify(getRooms());
 
-        var excluded_tx= JSON.stringify(excluded_taxes);
+        var excluded_tx = JSON.stringify(excluded_taxes);
 
         alert(rms);
 
@@ -3728,7 +3731,7 @@
             row += "<td><b>" + name + "</b></td>";
             row += "<td>" + rooms + "</td>";
             // row+="<td>"+mealPlan+"</td>";
-            row += "<td class='text-right'><a class='fa fa-remove btn-circle' title='remove from list' onclick='unselectRoom(" + index + ", this)'></td>";
+            row += "<td class='text-right'><a class='zmdi zmdi-close btn-circle' title='remove from list' onclick='unselectRoom(" + index + ", this)'></td>";
             row += "</tr>";
 
 

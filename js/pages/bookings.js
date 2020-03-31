@@ -83,25 +83,25 @@ function showDetails(i) {
     p.find("#d-name").val(b.source);
 //     var x_email = b.agent == null || b.agent.length < 1 ? b.guests[0]['email'] : b.agent['email'];
 //     var x_phone = b.agent == null || b.agent.length < 1 ? b.guests[0]['phone'] : b.agent['phone'];
-    
+
     var x_email = "";// b.agent == null || b.agent == undefined || b.agent.length < 1 ? b.guests[0]['email'] : b.agent['email'];
     var x_phone = "";// b.agent == null || b.agent == undefined || b.agent.length < 1 ? b.guests[0]['phone'] : b.agent['phone'];
-    
+
     if(b.agent == null || b.agent == undefined || b.agent.length < 1){
-    
+
        if(b.guests[0] !=undefined){
         x_email = b.guests[0]['email'];
     x_phone = b.guests[0]['phone'];
-       
+
        }
-       
-       
+
+
     }
     else{
     x_email = b.agent['email'];
     x_phone = b.agent['phone'];
     }
-    
+
     p.find("#d-email").val(x_email);
     p.find("#d-discount").val(b.discount);
     p.find("#d-taxes-includes").html(b.taxes);
@@ -154,9 +154,9 @@ function showDetails(i) {
         gRows += "<td>" + g.email + "</td>";
         gRows += "<td>" + g.phone + "  </td>";
         gRows += "<td>" + g.id_number + "  </td>";
-        gRows += "<td class='print-hide text-right' onclick='openGuestModal(" + JSON.stringify(g) + ")'><button class='fa fa-pencil btn btn-circle'></button></td>";
+        gRows += "<td class='print-hide text-right' onclick='openGuestModal(" + JSON.stringify(g) + ")'><button class='zmdi zmdi-edit btn btn-circle'></button></td>";
 
-        gRows += "<td class='print-hide text-right' onclick='removeGuest(" + g.guest_id + ", this)'><button class='fa fa-remove btn btn-circle'></button></td>";
+        gRows += "<td class='print-hide text-right' onclick='removeGuest(" + g.guest_id + ", this)'><button class='zmdi zmdi-close btn btn-circle'></button></td>";
         gRows += "</tr>";
 
 
@@ -261,7 +261,7 @@ function showDetails(i) {
             gRows += "<td>" + g.payment_method + "</td>";
             gRows += "<td>$" + g.amount + "</td>";
             gRows += "<td>" + g.payment_comments + "</td>";
-            gRows += "<td class='text-right'>" + "<i id='edit'  onclick='openPaymentModal(" + JSON.stringify(g) + ", this)' class=\"fa fa-pencil btn-circle mr-2\"></i><i   onclick='deletePayment(\"" + g.id + "\", this)' class=\"fa fa-close btn-circle\"></i>" + "</td>";
+            gRows += "<td class='text-right'>" + "<i id='edit'  onclick='openPaymentModal(" + JSON.stringify(g) + ", this)' class=\"zmdi zmdi-edit btn-circle mr-2\"></i><i   onclick='deletePayment(\"" + g.id + "\", this)' class=\"zmdi zmdi-close btn-circle\"></i>" + "</td>";
 
             gRows += "</tr>";
 
@@ -338,7 +338,7 @@ function showDetails(i) {
 
         gRows += "<td class=\"text-right\">" + g.price_per_night + "</td>";
         gRows += "<td class=\"text-right\">" + Math.round(date_diff_indays(g.check_in_date, g.check_out_date) * parseFloat(g.price_per_night)) + "</td>";
-        gRows += "<td><a class=\"fa fa-pencil btn-circle\" onclick=\"editRoom(this)\"></a></td>";
+        gRows += "<td><a class=\"zmdi zmdi-edit btn-circle\" onclick=\"editRoom(this)\"></a></td>";
         gRows += "<td><a class=\"fa fa-times btn-circle\" onclick='removeBookedRoom(" + g.id + ")'></a></td>";
         gRows += "</tr>";
 
@@ -350,7 +350,7 @@ function showDetails(i) {
         /* gRows += "<tr>";
          gRows += "<td>" + g.room_type_name + "</td>";
          gRows += "<td>" + g.room_name + "</td>";
-         gRows += "<td class='text-center br-0 " + x_room + "'><a class='fa fa-pencil btn-circle' title='Edit Rool Allocation' onclick='change_room_allocation(\"" + g.room_id + "\", \"" + g.room_type_id + "\", \"" + g.property_id + "\")' data-toggle='modal' data-target='#edit-sel-room'></a></td>";
+         gRows += "<td class='text-center br-0 " + x_room + "'><a class='zmdi zmdi-edit btn-circle' title='Edit Rool Allocation' onclick='change_room_allocation(\"" + g.room_id + "\", \"" + g.room_type_id + "\", \"" + g.property_id + "\")' data-toggle='modal' data-target='#edit-sel-room'></a></td>";
          gRows += "</tr>";*/
 
     })
@@ -387,7 +387,7 @@ function showDetails(i) {
         gRows += "<td class='guests'>" + g.total_guests + "</td>";
         gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
         gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-        gRows += "<td width='1px'>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle mr-2\"></i></td><td width='1px'><i   onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i></td>";
+        gRows += "<td width='1px'>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle mr-2\"></i></td><td width='1px'><i   onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i></td>";
         gRows += "</tr>";
 
     })
@@ -453,7 +453,7 @@ function showDetails(i) {
         $kRows += "<td>" + rate.children + "</td>";
         $kRows += "<td>" + rate.unit_price + "</td>";
         $kRows += "<td>" + rate.amount + "</td>";
-        $kRows += "<td class='print-hide text-right' onclick='removeKidsRate(this)'><button class='fa fa-remove btn btn-circle'></button></td>";
+        $kRows += "<td class='print-hide text-right' onclick='removeKidsRate(this)'><button class='zmdi zmdi-close btn btn-circle'></button></td>";
         $kRows += "</tr>";
 
     });
@@ -464,7 +464,7 @@ function showDetails(i) {
 
 
 
-    //extra beds 
+    //extra beds
     var bedRows = '';
     var extraBeds = JSON.parse(b.extra_beds);
     // var extraBeds = b.extra_beds;
@@ -478,7 +478,7 @@ function showDetails(i) {
         bedRows += "<td>" + nights____ + "</td>";
         bedRows += "<td>" + bed.unit_price + "</td>";
         bedRows += "<td>" + bed.amount + "</td>";
-        bedRows += "<td class='print-hide text-right' onclick='removeExtraBed(this)'><button class='fa fa-remove btn btn-circle'></button></td>";
+        bedRows += "<td class='print-hide text-right' onclick='removeExtraBed(this)'><button class='zmdi zmdi-close btn btn-circle'></button></td>";
 
         bedRows += "</tr>";
     });
@@ -560,7 +560,7 @@ function setBookings(data) {
         row += "<td class='text-center'>" + b.nights + "</td>";
         row += "<td class='text-center text-blue'>" + b.no_guests + "</td>";
         row += "<td>" + b.booking_date + "</td>";
-        //rows+="<td>"+b.rooms+"</td>";            
+        //rows+="<td>"+b.rooms+"</td>";
         // row += "<td>$" + addCommas(b.cost) + "</td>";
         var temp = calculateBookingTotals(b);
         row += "<td class='text-right'>" + addCommas(temp[0]) + "</td>";
@@ -663,7 +663,7 @@ function setStatus(status) {
             $('#cancel_booking_btn').removeClass('btn-cancels');
             $('#cancel_booking_btn').addClass('b-btnx');
             //$(context).addClass('btn-danger');
-            $('#cancel_booking_btn').html('<i class="fa fa-close"></i> Cancel Booking ');
+            $('#cancel_booking_btn').html('<i class="zmdi zmdi-close"></i> Cancel Booking ');
 
             break;
         case "check-in":
@@ -671,7 +671,7 @@ function setStatus(status) {
             $('#cancel_booking_btn').removeClass('btn-cancels');
             $('#cancel_booking_btn').addClass('b-btnx');
             //$(context).addClass('btn-danger');
-            $('#cancel_booking_btn').html('<i class="fa fa-close"></i> Cancel Booking ');
+            $('#cancel_booking_btn').html('<i class="zmdi zmdi-close"></i> Cancel Booking ');
             break;
         case "cancelled":
             e.html("<i class='fa fa-circle text-red'></i> Cancelled");
@@ -679,7 +679,7 @@ function setStatus(status) {
 
             $('.b-btnx').addClass('btn-cancels');
             //$(context).addClass('btn-danger');
-            $('.b-btnx').html('<i class="fa fa-close"></i> Booking Cancelled');
+            $('.b-btnx').html('<i class="zmdi zmdi-close"></i> Booking Cancelled');
             $('.b-btnx').removeClass('b-btnx');
             break;
 
@@ -689,7 +689,7 @@ function setStatus(status) {
             $('#cancel_booking_btn').removeClass('btn-cancels');
             $('#cancel_booking_btn').addClass('b-btnx');
             //$(context).addClass('btn-danger');
-            $('#cancel_booking_btn').html('<i class="fa fa-close"></i> Cancel Booking ');
+            $('#cancel_booking_btn').html('<i class="zmdi zmdi-close"></i> Cancel Booking ');
             break;
 
 

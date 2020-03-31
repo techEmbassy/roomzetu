@@ -6,7 +6,7 @@
             </div>
 
             <div class="col-md-9 text-right">
-                <!--                                    <a class="btn btn-secondary btn-sm" data-target="#new-agent" data-toggle="modal"><i class="fa fa-plus"></i> New Agent</a>-->
+                <!--                                    <a class="btn btn-secondary btn-sm" data-target="#new-agent" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Agent</a>-->
 
                 <label class="ml-4 mr-2">Property: </label>
                 <!--

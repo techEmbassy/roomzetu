@@ -295,7 +295,7 @@
                                   if($b['id']<$currentPlan){
                       echo '<a class="btn btn-danger btn-md " href='.$cl.'><li class="fa fa-arrow-down "></li> Downgrade</a>';
                 }else if($b['id']==$currentPlan){
-                    echo '<a class="btn btn-outline-secondary btn-md text-blue "  href='.$cl.'><li class="fa fa-check "></li> Your current Plan</a>';
+                    echo '<a class="btn btn-outline-secondary btn-md text-blue "  href='.$cl.'><li class="zmdi zmdi-check "></li> Your current Plan</a>';
                     
                 }else if($b['id']>$currentPlan){
                     echo '<a class="btn btn-success btn-md " href='.$cl.'><li class="fa fa-arrow-up "></li> Upgrade</a>';

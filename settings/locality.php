@@ -16,7 +16,7 @@
                 <!--
              <h4>Africa/Kampala (GMT+3)</h4>
              <h4>5:00 am <small></small></h4>
-             
+
              <label></label>
 -->
 
@@ -54,8 +54,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <!--    
-                            <td><i class="fa fa-check-circle text-green"></i> US Dollars - <small>(primary currency)</small></td>
+                            <!--
+                            <td><i class="zmdi zmdi-check-circle text-green"></i> US Dollars - <small>(primary currency)</small></td>
                             <td>$</td>
                             <td>USD</td>
                             <td>1</td>
@@ -63,16 +63,16 @@
                         </tr>
 
                         <tr>
-                                                 
+
                             <td> <i class="fa fa-circle text-gray"></i> Uganda Shillings</td>
                             <td>UGX</td>
                             <td>/=</td>
                             <td>3600</td>
-                            <td><a class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#new-currency"><i class="fa fa-pencil"></i> change currency</a></td>
+                            <td><a class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#new-currency"><i class="zmdi zmdi-edit"></i> change currency</a></td>
                         </tr>-->
                     </tbody>
                 </table>
-                <a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#new-currency"><i class="fa fa-plus"></i> add currency</a>
+                <a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#new-currency"><i class="zmdi zmdi-plus"></i> add currency</a>
 
             </div>
         </div>
@@ -140,7 +140,7 @@
         $.get("src/get.php", {
             token: "get_currencies"
         }, function(data) {
-            //alert(data);               
+            //alert(data);
             setCurrency(data);
             // data = JSON.parse(response);
             // alert(data.company_name)
@@ -189,7 +189,7 @@
             row += "<td>" + timezone.property_name + "</td>";
             row += "<td>" + timezone.time_zone + "</td>";
             row += "<td>" + timezone.timenow + "</td>";
-            row += '<td><a class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#new-timezone" onclick="editTimeZone(\'' + i + '\')"><i class="fa fa-pencil"></i> change time zone</a></td>';
+            row += '<td><a class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#new-timezone" onclick="editTimeZone(\'' + i + '\')"><i class="zmdi zmdi-edit"></i> change time zone</a></td>';
             row += "</tr>";
 
             rows.push(row)
@@ -221,7 +221,7 @@
             $.each(currencies, function(i, currency) {
                 var currCell;
                 if (currency.primary == "yes") {
-                    currCell = '<i class="fa fa-check-circle text-green"></i> ' + currency.currency + ' <small>(primary currency)</small>';
+                    currCell = '<i class="zmdi zmdi-check-circle text-green"></i> ' + currency.currency + ' <small>(primary currency)</small>';
                 } else {
                     currCell = currency.currency;
                 }
@@ -236,7 +236,7 @@
                     hide = 'hide';
 
                 }
-                row += '<td><a class="btn btn-sm btn-secondary ' + hide + '" onclick="setCurrencyForEdit(\'' + i + '\')"><i class="fa fa-pencil"></i> Change Currency</a></td>';
+                row += '<td><a class="btn btn-sm btn-secondary ' + hide + '" onclick="setCurrencyForEdit(\'' + i + '\')"><i class="zmdi zmdi-edit"></i> Change Currency</a></td>';
                 row += "</tr>";
 
                 rows.push(row)
@@ -271,11 +271,11 @@
         m.find("#c-iso-e").val(currency.iso);
         m.find("#c-rate-e").val(currency.rate);
 
-        /** 
+        /**
         m.find("#p-address").val(branch.address);
         m.find("#p-manager").val(branch.manager_id); **/
 
-        m.find('.modal-title').html("<i class='fa fa-pencil'></i> Edit Currency");
+        m.find('.modal-title').html("<i class='zmdi zmdi-edit'></i> Edit Currency");
         m.find('.savebtn').attr('onClick', 'update_currency(' + currency_id + ')');
         m.modal("show")
 

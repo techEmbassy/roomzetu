@@ -39,7 +39,7 @@
                         <?php $sbPos = 1; include 'includes/connections-menu.php'; ?>
                     </div>
                     <div class="foot pt-4 pl-2 text-left">
-                        <!--                             <a class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> New Room type</a>-->
+                        <!--                             <a class="btn btn-sm btn-secondary"><i class="zmdi zmdi-plus"></i> New Room type</a>-->
 
                     </div>
 
@@ -55,7 +55,7 @@
 
                                 <div class="col-md-9 text-right">
                                     <input class="form-control tiny" placeholder="search" oninput="searchAgent(value)" />
-                                    <a class="btn btn-secondary btn-35" data-tareget="#new-agent" data-toggle="modal" ><i class="fa fa-plus"></i> New Agent</a>
+                                    <a class="btn btn-secondary btn-35" data-tareget="#new-agent" data-toggle="modal" ><i class="zmdi zmdi-plus"></i> New Agent</a>
                                 </div>
                             </div>
                         </div>
@@ -479,7 +479,7 @@
         //
         //
         //
-        //            emaillist = emaillist + "<span class='tag' >" + agent + " <i class='fa fa-close ' id='" + r + "' onclick='del_receipient(\"" + r + "\")' > </i></span > ";
+        //            emaillist = emaillist + "<span class='tag' >" + agent + " <i class='zmdi zmdi-close ' id='" + r + "' onclick='del_receipient(\"" + r + "\")' > </i></span > ";
         //            r = r + 1;
         //
 
@@ -591,7 +591,7 @@
     //
     //        file_array.forEach(function(item) {
     //            // do something with `item`
-    //            filelist = filelist + "<span class='tag' >" + item + " <i class='fa fa-close ' id='" + j + "' onclick='del_file(\"" + j + "\")' > </i></span > ";
+    //            filelist = filelist + "<span class='tag' >" + item + " <i class='zmdi zmdi-close ' id='" + j + "' onclick='del_file(\"" + j + "\")' > </i></span > ";
     //            j = j + 1;
     //        });
     //        $('#file_div').html(filelist);

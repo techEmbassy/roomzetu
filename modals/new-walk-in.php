@@ -871,7 +871,7 @@
     function gotoStepAnother_w() {
         $('#ds-booking-status-w').text($("#s-status option:selected").val());
         // $('#btn-preview-invoice').show();
-        $('.btn-next-w').html('finish <i class="fa fa-check"></i>');
+        $('.btn-next-w').html('finish <i class="zmdi zmdi-check"></i>');
         gotoStep_w(1);
     }
 
@@ -1060,7 +1060,7 @@
 
 
 
-            btn.html("<i class='fa fa-check'></i> Finish");
+            btn.html("<i class='zmdi zmdi-check'></i> Finish");
             btn.prop("disabled", false);
 
 

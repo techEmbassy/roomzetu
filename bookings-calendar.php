@@ -78,7 +78,7 @@
 
                         </div>
                         <div class="foot pt-4 pl-2 text-left">
-                            <a class="btn btn-sm btn-secondary" href="#choose-booking" data-toggle="modal"><i class="fa fa-plus"></i> New Booking</a>
+                            <a class="btn btn-sm btn-secondary" href="#choose-booking" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Booking</a>
 
                         </div>
 
@@ -187,25 +187,25 @@
 <!-- Modal -->
 <div class="modal fade" id="choose-booking" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
         <h6 class="modal-title">Select the type of booking</h6>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-      
+
         </div>
-        
-      
+
+
         <div class="btn-group btn-block" >
         <a class="btn btn-outline-success" href="#" onclick="openModal('#new-walk-in')">Walk In</a>
         <a class="btn btn-outline-primary" href="#" onclick="openModal('#new-booking')">Direct or Agent</a>
 
         </div>
-          
-        
+
+
       </div>
-      
+
     </div>
   </div>
 
@@ -237,7 +237,7 @@
 //    setTimeout(function(){
 //        hidelazyload()
 //    }, 1000)
-//    
+//
     (function($) {
         //        getProperties2();
         getRoomTypes2()

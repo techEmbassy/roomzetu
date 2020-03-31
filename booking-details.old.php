@@ -101,9 +101,9 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="row mt-2">
-                                    
-                                    
-                                <div class="col-md-4">
+
+
+                                    <div class="col-md-4">
                                         <label>Name</label>
                                         <input class="form-control b-period" id="d-name" style="text-transform: capitalize;" />
                                         <div id="check-in-out-form">
@@ -144,7 +144,7 @@
                                     </div>
 
 
-                                   
+
 
 
                                 </div>
@@ -156,16 +156,16 @@
                                         <tr>
                                             <th style="border-top:0px">Room type</th>
                                             <th style="border-top:0px">Room</th>
-                                          
+
                                             <th style="width:50px; border-top:0px"></th>
                                         </tr>
-                                    </thead> 
+                                    </thead>
                                     <tbody>
 
                                     </tbody>
                                 </table>
-                                     
-                    
+
+
                             </div>
                             <div class="tab-pane" id="people" role="tabpanel">
                                 <br>
@@ -174,7 +174,7 @@
                                 <button class="btn btn-sm btn-success pull-right hide" id="savebtnGuests">Save</button><br>
 
 
-                                
+
                                 <table class="table mt-2" id="d-tb-guests" border="1">
                                     <thead>
                                         <tr>
@@ -192,19 +192,19 @@
                             </div>
                             <div class="tab-pane mt-3" id="adons" role="tabpanel" id="d-tb-extras">
 
-                            <div class="jumbotron p-2 m-0 dropdown clearfix">
-                                            <!-- <span class="d-status" id="d-status"></span> -->
-                                            <a class="btn btn-sm btn-warning pull-right b-period" data-toggle='dropdown'>Add Extra Services</a>
-                                            <div class="dropdown-menu p-0 dropdown-menu-right extra" id="extras_drop" >
-                                                <!--<a class="dropdown-item" onclick="" data-status="unconfirmed"> Extra 1</a>
+                                <div class="jumbotron p-2 m-0 dropdown clearfix">
+                                    <!-- <span class="d-status" id="d-status"></span> -->
+                                    <a class="btn btn-sm btn-warning pull-right b-period" data-toggle='dropdown'>Add Extra Services</a>
+                                    <div class="dropdown-menu p-0 dropdown-menu-right extra" id="extras_drop">
+                                        <!--<a class="dropdown-item" onclick="" data-status="unconfirmed"> Extra 1</a>
                                                 <a class="dropdown-item" data-status="confirmed"> Extra 2</a>
                                                 <a class="dropdown-item" data-status="check-in"> Extra 3</a>
                                                 <a class="dropdown-item" data-status="cancelled"> Extra 4</a>-->
-                                            </div>
+                                    </div>
                                 </div>
 
 
-                            <table class="table" id="d-tb-extras">
+                                <table class="table" id="d-tb-extras">
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">Add on</th>
@@ -225,7 +225,7 @@
 
                             </div>
 
-                            
+
                             <div class="tab-pane" id="messages" role="tabpanel">
                                 <label class="mt-3">Please note the following :-</label>
                                 <textarea rows="10" class="form-control p-3 b-period mt-1" style="height:200px !important" id="d-message" onchange="changeMessage(value)"></textarea>
@@ -233,11 +233,11 @@
                             <div class="tab-pane" id="payments" role="tabpanel">
                                 <br><input id="sub_ttl" type="hidden" />
                                 <div class="row">
-                                   <style>
-                                   .text-sml{
+                                    <style>
+                                        .text-sml{
                                        font-size:13px !important;
                                    }
-                                   
+
                                    </style>
 
                                     <div class="col-md-2 text-sml">
@@ -256,11 +256,11 @@
                                         <h5 class="text-sml"><small>Total Cost:</small> $<span id="d-total-cost">0</span></h5>
                                     </div>
 
-                                
+
                                     <div class="col-md-2">
                                         <h5 class="text-sml"><small>Total Paid:</small> $<span id="d-total-paid">0</span></h5>
                                     </div>
-                                    
+
                                     <div class="col-md-2">
                                         <h5 class="text-sml"><small>Balance:</small> $<span id="d-balance">0</span></h5>
                                     </div>
@@ -272,7 +272,7 @@
                                 <div class="pt-3 pb-3 ">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <button class="btn btn-sm btn-secondary b-period" onclick="toggleInputs()"><i class="fa fa-plus"></i> Add Payment</button>
+                                            <button class="btn btn-sm btn-secondary b-period" onclick="toggleInputs()"><i class="zmdi zmdi-plus"></i> Add Payment</button>
                                         </div>
 
                                         <div class="col-md-3 input-price hide ">
@@ -282,43 +282,43 @@
                                         <div class="col-md-3 input-price hide">
                                             <div class="input-group" style="">
                                                 <span class="input-group-addon">$</span>
-                                                <input placeholder="amount paid" type="number" class="form-control" name="amount" required/>
+                                                <input placeholder="amount paid" type="number" class="form-control" name="amount" required />
 
                                             </div>
                                         </div>
                                         <div class="col-md-2 input-price hide">
 
                                             <select class="form-control" id="paymemt_mtd" required>
-                                                   <option value="Cash" >Payment Method</option> 
+                                                <option value="Cash">Payment Method</option>
                                                 <option value="Cash">Cash</option>
                                                 <option value="Cheque">Cheque</option>
                                                 <option value="Credit Card">Credit Card</option>
                                                 <option value="EFT">EFT</option>
-                                                 <option value="RTJTS">RTGS</option>
-                                                </select>
+                                                <option value="RTJTS">RTGS</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-1 input-price hide ">
-                                            <button class="btn btn-sm btn-primary ml-3" onclick="addPayment()"><i class="fa fa-check-circle"></i> Save</button>
+                                            <button class="btn btn-sm btn-primary ml-3" onclick="addPayment()"><i class="zmdi zmdi-check-circle"></i> Save</button>
                                         </div>
 
                                     </div>
                                 </div>
 
                                 <div class="scrolly" style="height:30vh">
-                                <table class="table" id="d-tb-payments">
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Payment Method</th>
-                                            <th>Amount</th>
+                                    <table class="table" id="d-tb-payments">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Payment Method</th>
+                                                <th>Amount</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
 
 
-                                </table>
+                                    </table>
                                 </div>
 
                             </div>
@@ -345,7 +345,7 @@
 
                             <a class="btn btn-sm btn-outline-info" href="#" data-trigger="focus" data-toggle="popover" data-target="popover" data-placement="top" onclick=""><i class="fa fa-envelope-o"></i> Send Email</a>
 
-                            <!-- <button class="btn btn-sm btn-info dropdown-toggle" type="button" 
+                            <!-- <button class="btn btn-sm btn-info dropdown-toggle" type="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope-o"></i> Send Emai</button>
                             <div class="dropdown-menu border-0">
                                 <div class="card" style="background-color:#fafafa">
@@ -354,7 +354,7 @@
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
-                            
+
                             <a class="dropdown-item" href="#">Separated link</a>
                             </div>
                             </div> -->
@@ -414,7 +414,7 @@
                         </div>
 
                         <div class="col-md-2 text-right">
-                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"> <i class="fa fa-close"></i> Close</button>
+                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"> <i class="zmdi zmdi-close"></i> Close</button>
                         </div>
 
                     </div>
@@ -448,14 +448,16 @@
 
                 <h4 class="modal-title"><i class="fa fa-info"></i> Choose Email Template</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body" id="form-new-user">
                 <div class="row form-group">
                     <label class="col-md-3">Email Template: </label>
                     <div class="col-md-6">
-                        <select class="form-control" id="sel-email-template"><option>Reservation template</option></select>
+                        <select class="form-control" id="sel-email-template">
+                            <option>Reservation template</option>
+                        </select>
 
                     </div>
 
@@ -464,7 +466,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button" onclick="send_mail()" class="btn btn-primary btn-sm"><i class="fa fa-check-circle"></i> Send Email</button>
+                <button type="button" onclick="send_mail()" class="btn btn-primary btn-sm"><i class="zmdi zmdi-check-circle"></i> Send Email</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -485,8 +487,8 @@
                     <small>Change Room</small>
                 </h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
 
 
@@ -505,7 +507,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="fa fa-check-circle"></i> Change</button>
+                <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="zmdi zmdi-check-circle"></i> Change</button>
             </div>
 
         </div>
@@ -516,13 +518,12 @@
 
 
 <script>
-
-    var taxes_array={};
+    var taxes_array = {};
     get_templates();
     var BOOKING_ID;
-$(document).on('click', '.open-invoice', function(){
-    previewInvoice(BOOKING_ID);
-})
+    $(document).on('click', '.open-invoice', function() {
+        previewInvoice(BOOKING_ID);
+    })
 
     function toggleInputs() {
         $(".input-price").toggleClass('hide');
@@ -614,7 +615,7 @@ $(document).on('click', '.open-invoice', function(){
                 action: "add guest",
                 guests: JSON.stringify(c)
             }, function(data) {
-                alertify.alert('<i class="fa fa-check-circle txt-green"></i> New Guests', 'Your new Guests have been added ',
+                alertify.alert('<i class="zmdi zmdi-check-circle txt-green"></i> New Guests', 'Your new Guests have been added ',
                     function() {
 
                     });
@@ -670,12 +671,12 @@ $(document).on('click', '.open-invoice', function(){
                     getBalance();
 
                     var r = "<tr><td>" + p.date + "</td><td>" + p.payment_method + "</td><td>$" + p.amount + "</td></tr>";
-                     //alert(p.payment_method)
-                     //if(p.payment_method!="method"){
+                    //alert(p.payment_method)
+                    //if(p.payment_method!="method"){
 
-                       $("#d-tb-payments").append(r);
+                    $("#d-tb-payments").append(r);
                     //}
-                    
+
                 })
             }
         }
@@ -683,42 +684,42 @@ $(document).on('click', '.open-invoice', function(){
 
     function getBalance() {
         var p = $('#booking-details');
-       /* var bal = (parseFloat($("#d-total-cost").text()) + parseFloat($("#d-taxes").text()) -parseFloat($("#d-total-paid").text()));
-        $("#d-balance").text(bal);*/
-
-     
-     cost= p.find("#d-s-total").text();//d-total-cost
-    discount= p.find("#d-discount").text();//d-total-cost
-
-   
-
-    total_paid= p.find("#d-total-paid").text();
-    
-    
-
-    total_taxes = 0;
-
-    
+        /* var bal = (parseFloat($("#d-total-cost").text()) + parseFloat($("#d-taxes").text()) -parseFloat($("#d-total-paid").text()));
+         $("#d-balance").text(bal);*/
 
 
-    
-     
-   
-     
-    total_taxes= p.find("#d-taxes").text();
+        cost = p.find("#d-s-total").text(); //d-total-cost
+        discount = p.find("#d-discount").text(); //d-total-cost
 
 
-     p.find("#d-total-cost").html(Math.round(parseInt(cost)  + parseFloat(total_taxes) - parseInt(discount)));//d-total-cost
-    //alert(discount);
 
-    var bal =parseInt(cost)  + parseFloat(total_taxes) - parseInt(total_paid)
-    p.find("#d-balance").text(bal);
-     
+        total_paid = p.find("#d-total-paid").text();
 
 
-    $('.d-balance').text(bal);
-       
-       // p.find("#d-balance").text(parseInt(b.cost) + total_taxes - parseInt(b.total_paid));
+
+        total_taxes = 0;
+
+
+
+
+
+
+
+
+        total_taxes = p.find("#d-taxes").text();
+
+
+        p.find("#d-total-cost").html(Math.round(parseInt(cost) + parseFloat(total_taxes) - parseInt(discount))); //d-total-cost
+        //alert(discount);
+
+        var bal = parseInt(cost) + parseFloat(total_taxes) - parseInt(total_paid)
+        p.find("#d-balance").text(bal);
+
+
+
+        $('.d-balance').text(bal);
+
+        // p.find("#d-balance").text(parseInt(b.cost) + total_taxes - parseInt(b.total_paid));
         return bal;
     }
 
@@ -750,7 +751,7 @@ $(document).on('click', '.open-invoice', function(){
             booking_id: getBookingId(),
             status: s
         }, function(data) {
-            
+
             if (data == 1) {
                 sb.html(h);
             } else {
@@ -760,7 +761,7 @@ $(document).on('click', '.open-invoice', function(){
         })
     }
 
-  var extras_drop_box ={};
+    var extras_drop_box = {};
     get_extras();
 
 
@@ -770,35 +771,35 @@ $(document).on('click', '.open-invoice', function(){
             token: "get_extras",
 
         }, function(data) {
-                        //alert(data)
-             try{
+            //alert(data)
+            try {
 
-               extras_drop_box = JSON.parse(data);
-             }catch(error){
+                extras_drop_box = JSON.parse(data);
+            } catch (error) {
 
 
 
-             }
+            }
 
 
         })
 
-      
+
 
     }
 
-    function calculateTotal(context){
-        
-        guests= $(context).val();
+    function calculateTotal(context) {
+
+        guests = $(context).val();
         unit_price = $(context).parent().parent().find(".unit_price").html()
 
         edit_btn = $(context).parent().parent().find("#edit");
 
-        value_=edit_btn.attr("id");
+        value_ = edit_btn.attr("id");
 
 
 
-        if(value_ !==undefined ){
+        if (value_ !== undefined) {
 
             //alert(value_);
 
@@ -806,201 +807,197 @@ $(document).on('click', '.open-invoice', function(){
             edit_btn.addClass("fa-check text-success");
 
         }
-        
-       
-        
 
-        totalbox= $(context).parent().parent().find(".total");
-       
-        if(guests!=="Set Guests"){
 
-            totalbox.html(Math.round(parseInt(guests)*parseFloat(unit_price)));
-        }else{
+
+
+        totalbox = $(context).parent().parent().find(".total");
+
+        if (guests !== "Set Guests") {
+
+            totalbox.html(Math.round(parseInt(guests) * parseFloat(unit_price)));
+        } else {
             totalbox.html(0);
 
         }
-        
+
 
     }
 
-    function saveExtra(context){
-       var tbExtras = $('#booking-details #d-tb-extras tbody');
-        tr= $(context).parent().parent().parent().find(".new_row");
+    function saveExtra(context) {
+        var tbExtras = $('#booking-details #d-tb-extras tbody');
+        tr = $(context).parent().parent().parent().find(".new_row");
 
-        
+
 
         guests = tr.find(".guests").val();
         name = tr.find(".name").html();
 
         id = tr.find(".guests").attr("id");
 
-        unit_price=tr.find(".unit_price").html();
+        unit_price = tr.find(".unit_price").html();
 
-        booking_id= getBookingId();
+        booking_id = getBookingId();
 
-       // alert(guests)
+        // alert(guests)
 
-         if(guests!=="Set Guests"){
-             
+        if (guests !== "Set Guests") {
+
             $.post('src/xhr.php', {
-            action: "add_extras",
-            id: id,
-            guests: guests,
-            unit_price : unit_price,
-            booking_id: booking_id
+                action: "add_extras",
+                id: id,
+                guests: guests,
+                unit_price: unit_price,
+                booking_id: booking_id
 
-           }, function(data) {
-
-                  
-        if(parseInt(JSON.parse(data).length)!=0){
-
-            total=0;
-                      
-             gRows="";  
-             extras_temp_array=[];        
-                        
-         $.each(JSON.parse(data), function (i, g) {
-
-        
-             extras_temp_array.push(g.extra_id);
-
-                gRows += "<tr>";
-                gRows += "<td>" + g.extra_name + "</td>";
-                gRows += "<td class='guests'>" + g.total_guests + "</td>";
-                gRows += "<td class='unit_price' >" + g.unit_price + "</td>";
-                gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests)* parseFloat(g.unit_price)) + "</td>";
-                gRows += "<td>" + "<i  id='edit' onclick='editExtra(this,\""+g.id+"\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\""+g.id+"\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
-
-                 gRows += "</tr>";
-
-                  total+= Math.round(parseInt(g.total_guests)* parseFloat(g.unit_price));
-
-           })
-            
-
-             sub_total= parseFloat($('#sub_ttl').val())+total ;
-
-              $('#booking-details').find("#d-s-total").text(Math.round(sub_total));
-
-              
-               booking_id= getBookingId();
-
-             
-           
-
-     $.post('src/get_data.php', {
-            token: "get_taxes_by_bid",
-           
-            booking_id: booking_id
-
-           }, function(data) {
-             total_taxes=0;
-
-            $.each(JSON.parse(data), function (taxes_index, tax) {
-            total_taxes = total_taxes + (parseInt(sub_total) * (parseFloat(tax.taxamount) / 100));
-        
-
-            });
-
-             total_taxes= $('#booking-details').find("#d-taxes").html(Math.round(total_taxes));
-             getBalance();
+            }, function(data) {
 
 
-    });  
+                if (parseInt(JSON.parse(data).length) != 0) {
+
+                    total = 0;
+
+                    gRows = "";
+                    extras_temp_array = [];
+
+                    $.each(JSON.parse(data), function(i, g) {
+
+
+                        extras_temp_array.push(g.extra_id);
+
+                        gRows += "<tr>";
+                        gRows += "<td>" + g.extra_name + "</td>";
+                        gRows += "<td class='guests'>" + g.total_guests + "</td>";
+                        gRows += "<td class='unit_price' >" + g.unit_price + "</td>";
+                        gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
+                        gRows += "<td>" + "<i  id='edit' onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
+
+                        gRows += "</tr>";
+
+                        total += Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price));
+
+                    })
+
+
+                    sub_total = parseFloat($('#sub_ttl').val()) + total;
+
+                    $('#booking-details').find("#d-s-total").text(Math.round(sub_total));
+
+
+                    booking_id = getBookingId();
 
 
 
 
-           tbExtras.html(gRows);
+                    $.post('src/get_data.php', {
+                        token: "get_taxes_by_bid",
 
-           var opt = "";
+                        booking_id: booking_id
 
-        $.each(extras_drop_box, function(i, item) {
-               
-                var id = item.id;
-                if(extras_temp_array.indexOf(id)==-1){
+                    }, function(data) {
+                        total_taxes = 0;
+
+                        $.each(JSON.parse(data), function(taxes_index, tax) {
+                            total_taxes = total_taxes + (parseInt(sub_total) * (parseFloat(tax.taxamount) / 100));
 
 
-                var name = item.name;
-                var price = item.price;
-                opt += " <a class=\"dropdown-item\" onclick='addSelectedExtra(this,\"" + id + "\")' data-price=\"" + price + "\" >" + name + "</a>";
+                        });
+
+                        total_taxes = $('#booking-details').find("#d-taxes").html(Math.round(total_taxes));
+                        getBalance();
+
+
+                    });
+
+
+
+
+                    tbExtras.html(gRows);
+
+                    var opt = "";
+
+                    $.each(extras_drop_box, function(i, item) {
+
+                        var id = item.id;
+                        if (extras_temp_array.indexOf(id) == -1) {
+
+
+                            var name = item.name;
+                            var price = item.price;
+                            opt += " <a class=\"dropdown-item\" onclick='addSelectedExtra(this,\"" + id + "\")' data-price=\"" + price + "\" >" + name + "</a>";
+
+                        }
+
+
+                    })
+
+                    $('#extras_drop').html(opt);
 
                 }
-               
+
 
             })
 
-         $('#extras_drop').html(opt);
-
-                    }
-            
-
-              })
-           
-         }
-         else{
-            
-         
-                       booking_id= getBookingId();
-                        $.post("src/get_data.php", {
-                    
-                         "token": "get_extras_by_bid",
-                         booking_id: booking_id
+        } else {
 
 
-                         }, function(data) {
-                    
-                            
-                            if(parseInt(JSON.parse(data).length)!=0){
-                      
-                                 gRows="";  
-                                 extras_temp_array=[];        
-                                            
-                                 $.each(JSON.parse(data), function (i, g) {
+            booking_id = getBookingId();
+            $.post("src/get_data.php", {
 
-                                 // alert(JSON.stringify(g));
-                            
-                                 extras_temp_array.push(g.extra_id);
+                "token": "get_extras_by_bid",
+                booking_id: booking_id
 
-                                    gRows += "<tr>";
-                                    gRows += "<td>" + g.extra_name + "</td>";
-                                    gRows += "<td class='guests' >" + g.total_guests + "</td>";
-                                    gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
-                                    gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests)* parseFloat(g.unit_price)) + "</td>";
-                                    gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\""+g.id+"\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\""+g.id+"\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
 
-                                     gRows += "</tr>";
+            }, function(data) {
 
-                               })
 
-                               tbExtras.html(gRows);
+                if (parseInt(JSON.parse(data).length) != 0) {
 
-                                var opt = "";
+                    gRows = "";
+                    extras_temp_array = [];
 
-                                $.each(extras_drop_box, function(i, item) {
-                                       
-                                        var id = item.id;
-                                        if(extras_temp_array.indexOf(id)==-1){
+                    $.each(JSON.parse(data), function(i, g) {
 
-                                        var name = item.name;
-                                        var price = item.price;
-                                        opt += " <a class=\"dropdown-item\" onclick='addSelectedExtra(this,\"" + id + "\")' data-price=\"" + price + "\" >" + name + "</a>";
+                        // alert(JSON.stringify(g));
 
-                                        }
-                                       
+                        extras_temp_array.push(g.extra_id);
 
-                                })
+                        gRows += "<tr>";
+                        gRows += "<td>" + g.extra_name + "</td>";
+                        gRows += "<td class='guests' >" + g.total_guests + "</td>";
+                        gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
+                        gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
+                        gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
 
-                                $('#extras_drop').html(opt);
+                        gRows += "</tr>";
 
-                             }
-            
-                         
+                    })
 
-                         })
-                        
-                        
-                    
+                    tbExtras.html(gRows);
+
+                    var opt = "";
+
+                    $.each(extras_drop_box, function(i, item) {
+
+                        var id = item.id;
+                        if (extras_temp_array.indexOf(id) == -1) {
+
+                            var name = item.name;
+                            var price = item.price;
+                            opt += " <a class=\"dropdown-item\" onclick='addSelectedExtra(this,\"" + id + "\")' data-price=\"" + price + "\" >" + name + "</a>";
+
+                        }
+
+
+                    })
+
+                    $('#extras_drop').html(opt);
+
+                }
+
+
+
+            })
 
 
 
@@ -1010,20 +1007,15 @@ $(document).on('click', '.open-invoice', function(){
 
 
 
-
-
-
-
-             
-         }
+        }
 
 
 
     }
 
 
-    function deleteExtra(id){
-      var tbExtras = $('#booking-details #d-tb-extras tbody');
+    function deleteExtra(id) {
+        var tbExtras = $('#booking-details #d-tb-extras tbody');
         alertify.confirm("Delete Extra", "Are you sure you want to delete this extra?",
             function() {
                 $.post("src/delete.php", {
@@ -1034,101 +1026,101 @@ $(document).on('click', '.open-invoice', function(){
 
                     if (response == "success") {
 
-                        booking_id= getBookingId();
+                        booking_id = getBookingId();
                         $.post("src/get_data.php", {
-                    
-                         "token": "get_extras_by_bid",
-                         booking_id: booking_id
+
+                            "token": "get_extras_by_bid",
+                            booking_id: booking_id
 
 
-                         }, function(data) {
-                    
-                            
-                           // if(parseInt(JSON.parse(data).length)!=0){
-                      
-                             gRows="";  
-                             extras_temp_array=[];    
-                             total =0;
-
-                            $.each(JSON.parse(data), function (i, g) {
-
-                           // alert(JSON.stringify(g));
-                            
-                                 extras_temp_array.push(g.extra_id);
-
-                                    gRows += "<tr>";
-                                    gRows += "<td>" + g.extra_name + "</td>";
-                                    gRows += "<td class='guests' >" + g.total_guests + "</td>";
-                                    gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
-                                    gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests)* parseFloat(g.unit_price)) + "</td>";
-                                    gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\""+g.id+"\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\""+g.id+"\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
-                                     gRows += "</tr>";
-
-                                     total+= Math.round(parseInt(g.total_guests)* parseFloat(g.unit_price));
-
-                               })
-
-                             sub_total= parseFloat($('#sub_ttl').val())+total ;
-                              $('#booking-details').find("#d-s-total").text(Math.round(sub_total));
-                                //alert(sub_total)
-                                           booking_id= getBookingId();
-                                         $.post('src/get_data.php', {
-                                                token: "get_taxes_by_bid",
-                                               
-                                                booking_id: booking_id
-
-                                               }, function(data) {
-                                                var total_taxes=0;
-
-                                                //alert(data);
-                                               var x= JSON.parse(data);
-                                              //alert(JSON.stringify(x));
+                        }, function(data) {
 
 
-                                                $.each(x, function (taxes_index, tax) {
+                            // if(parseInt(JSON.parse(data).length)!=0){
 
-                                                    
+                            gRows = "";
+                            extras_temp_array = [];
+                            total = 0;
 
-                                                 total_taxes = total_taxes + (parseInt(sub_total) * (parseFloat(tax.taxamount) / 100));
-                                                
+                            $.each(JSON.parse(data), function(i, g) {
 
-                                              });
-                                                 
-                                                 
-                                                 $('#booking-details').find("#d-taxes").html(Math.round(total_taxes));
-                                                 getBalance();
+                                // alert(JSON.stringify(g));
+
+                                extras_temp_array.push(g.extra_id);
+
+                                gRows += "<tr>";
+                                gRows += "<td>" + g.extra_name + "</td>";
+                                gRows += "<td class='guests' >" + g.total_guests + "</td>";
+                                gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
+                                gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
+                                gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
+                                gRows += "</tr>";
+
+                                total += Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price));
+
+                            })
+
+                            sub_total = parseFloat($('#sub_ttl').val()) + total;
+                            $('#booking-details').find("#d-s-total").text(Math.round(sub_total));
+                            //alert(sub_total)
+                            booking_id = getBookingId();
+                            $.post('src/get_data.php', {
+                                token: "get_taxes_by_bid",
+
+                                booking_id: booking_id
+
+                            }, function(data) {
+                                var total_taxes = 0;
+
+                                //alert(data);
+                                var x = JSON.parse(data);
+                                //alert(JSON.stringify(x));
 
 
-                                        });  
+                                $.each(x, function(taxes_index, tax) {
 
 
-                               tbExtras.html(gRows);
 
-                               var opt = "";
+                                    total_taxes = total_taxes + (parseInt(sub_total) * (parseFloat(tax.taxamount) / 100));
+
+
+                                });
+
+
+                                $('#booking-details').find("#d-taxes").html(Math.round(total_taxes));
+                                getBalance();
+
+
+                            });
+
+
+                            tbExtras.html(gRows);
+
+                            var opt = "";
 
                             $.each(extras_drop_box, function(i, item) {
-                                   
-                                    var id = item.id;
-                                    if(extras_temp_array.indexOf(id)==-1){
+
+                                var id = item.id;
+                                if (extras_temp_array.indexOf(id) == -1) {
 
                                     var name = item.name;
                                     var price = item.price;
                                     opt += " <a class=\"dropdown-item\" onclick='addSelectedExtra(this,\"" + id + "\")' data-price=\"" + price + "\" >" + name + "</a>";
 
-                                    }
-                                   
-
-                                })
-
-                             $('#extras_drop').html(opt);
-
-                   // }
-            
+                                }
 
 
-                         })
+                            })
+
+                            $('#extras_drop').html(opt);
+
+                            // }
+
+
+
+                        })
                         //window.location.reload();
-                        alertify.success( 'Extra Deleted');
+                        alertify.success('Extra Deleted');
                     } else {
                         alertify.error(response);
                     }
@@ -1141,201 +1133,203 @@ $(document).on('click', '.open-invoice', function(){
     }
 
 
-    function editExtra(context,id){
-       var tbExtras = $('#booking-details #d-tb-extras tbody');
-        tr =$(context).parent().parent();
+    function editExtra(context, id) {
+        var tbExtras = $('#booking-details #d-tb-extras tbody');
+        tr = $(context).parent().parent();
 
-         edit_btn = $(context).parent().parent().find("#edit");
+        edit_btn = $(context).parent().parent().find("#edit");
 
-        value_=edit_btn.attr("id");
-
-
-
-        if(value_ ==="edit" && edit_btn.hasClass("text-success")){
-
-            
-             guests = tr.find("td .guests").val();
-             name = tr.find(".name").html();
-
-             id = tr.find("td .guests").attr("id");
-
-             unit_price=tr.find(".unit_price").html();
-
-             booking_id= getBookingId();
-
-            
-
-              if(guests!=="Set Guests"){
-
-                     $.post("src/xhr.php", {
-                    
-                         "action": "extras_update_by_booking_id",
-                          booking_id: booking_id,
-                          guests : guests,
-                          id: id
-
-                         }, function(data) {
-                            // alert(unit_price +" "+id+" "+booking_id+ " "+guests )  
-                              //alert(data)
-                            
-                              if(parseInt(JSON.parse(data).length)!=0){
-                      
-                                gRows="";  
-                                extras_temp_array=[];  
-                                  total=0;       
-                        
-                                  $.each(JSON.parse(data), function (i, g) {
-
-                                    // alert(JSON.stringify(g));
-        
-                                     extras_temp_array.push(g.extra_id);
-
-                                     gRows += "<tr>";
-                                    gRows += "<td>" + g.extra_name + "</td>";
-                                    gRows += "<td class='guests' >" + g.total_guests + "</td>";
-                                    gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
-                                    gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests)* parseFloat(g.unit_price)) + "</td>";
-                                    gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\""+g.id+"\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\""+g.id+"\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
-
-                                     gRows += "</tr>";
-
-                                     total+= Math.round(parseInt(g.total_guests)* parseFloat(g.unit_price));
-
-                                 })
-
-                                  sub_total= parseFloat($('#sub_ttl').val())+total ;
-
-                                   $('#booking-details').find("#d-s-total").text(Math.round(sub_total));
-
-                                   
-                                     $.post('src/get_data.php', {
-                                            token: "get_taxes_by_bid",
-                                           
-                                            booking_id: booking_id
-
-                                           }, function(data) {
-
-
-                                            total_taxes=0;
-                                            $.each(JSON.parse(data), function (taxes_index, tax) {
-                                            total_taxes = total_taxes + (parseInt(sub_total) * (parseFloat(tax.taxamount) / 100));
-                                        
-
-                                          });
-
-                                             total_taxes= $('#booking-details').find("#d-taxes").html(Math.round(total_taxes));
-                                             getBalance();
-
-
-                                    });  
-
-
-                                 tbExtras.html(gRows);
-
-                                   var opt = "";
-
-                                $.each(extras_drop_box, function(i, item) {
-                                       
-                                        var id = item.id;
-                                        if(extras_temp_array.indexOf(id)==-1){
-
-                                        var name = item.name;
-                                        var price = item.price;
-                                        opt += " <a class=\"dropdown-item\" onclick='addSelectedExtra(this,\"" + id + "\")' data-price=\"" + price + "\" >" + name + "</a>";
-
-                                        }
-                                       
-
-                                    })
-
-                                 $('#extras_drop').html(opt);
-
-                                }
-
-                         });
-
-              }else{
+        value_ = edit_btn.attr("id");
 
 
 
+        if (value_ === "edit" && edit_btn.hasClass("text-success")) {
 
-              }
 
-           
+            guests = tr.find("td .guests").val();
+            name = tr.find(".name").html();
 
-        }else{
+            id = tr.find("td .guests").attr("id");
 
-             var p = $('#booking-details');
-         guest_html= tr.find(".guests");
-         guests= p.find("#d-guest-count").html();
-         guests= guests.replace("(","");
-         guests= guests.replace(")","");
-          select_html="<select  class='guests tiny' id=\""+id+"\" onchange=\"calculateTotal(this)\" >";
-         select_html+="<option>Set Guests</option>";
-         for(km=1; km< (parseInt(guests)+1) ;km++){
+            unit_price = tr.find(".unit_price").html();
 
-         select_html+="<option>"+km+"</option>";
-         }
+            booking_id = getBookingId();
 
-          select_html+="</select>";
-          guest_html.html(select_html)
+
+
+            if (guests !== "Set Guests") {
+
+                $.post("src/xhr.php", {
+
+                    "action": "extras_update_by_booking_id",
+                    booking_id: booking_id,
+                    guests: guests,
+                    id: id
+
+                }, function(data) {
+                    // alert(unit_price +" "+id+" "+booking_id+ " "+guests )
+                    //alert(data)
+
+                    if (parseInt(JSON.parse(data).length) != 0) {
+
+                        gRows = "";
+                        extras_temp_array = [];
+                        total = 0;
+
+                        $.each(JSON.parse(data), function(i, g) {
+
+                            // alert(JSON.stringify(g));
+
+                            extras_temp_array.push(g.extra_id);
+
+                            gRows += "<tr>";
+                            gRows += "<td>" + g.extra_name + "</td>";
+                            gRows += "<td class='guests' >" + g.total_guests + "</td>";
+                            gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
+                            gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
+                            gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
+
+                            gRows += "</tr>";
+
+                            total += Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price));
+
+                        })
+
+                        sub_total = parseFloat($('#sub_ttl').val()) + total;
+
+                        $('#booking-details').find("#d-s-total").text(Math.round(sub_total));
+
+
+                        $.post('src/get_data.php', {
+                            token: "get_taxes_by_bid",
+
+                            booking_id: booking_id
+
+                        }, function(data) {
+
+
+                            total_taxes = 0;
+                            $.each(JSON.parse(data), function(taxes_index, tax) {
+                                total_taxes = total_taxes + (parseInt(sub_total) * (parseFloat(tax.taxamount) / 100));
+
+
+                            });
+
+                            total_taxes = $('#booking-details').find("#d-taxes").html(Math.round(total_taxes));
+                            getBalance();
+
+
+                        });
+
+
+                        tbExtras.html(gRows);
+
+                        var opt = "";
+
+                        $.each(extras_drop_box, function(i, item) {
+
+                            var id = item.id;
+                            if (extras_temp_array.indexOf(id) == -1) {
+
+                                var name = item.name;
+                                var price = item.price;
+                                opt += " <a class=\"dropdown-item\" onclick='addSelectedExtra(this,\"" + id + "\")' data-price=\"" + price + "\" >" + name + "</a>";
+
+                            }
+
+
+                        })
+
+                        $('#extras_drop').html(opt);
+
+                    }
+
+                });
+
+            } else {
+
+
+
+
+            }
+
+
+
+        } else {
+
+            var p = $('#booking-details');
+            guest_html = tr.find(".guests");
+            guests = p.find("#d-guest-count").html();
+            guests = guests.replace("(", "");
+            guests = guests.replace(")", "");
+            select_html = "<select  class='guests tiny' id=\"" + id + "\" onchange=\"calculateTotal(this)\" >";
+            select_html += "<option>Set Guests</option>";
+            for (km = 1; km < (parseInt(guests) + 1); km++) {
+
+                select_html += "<option>" + km + "</option>";
+            }
+
+            select_html += "</select>";
+            guest_html.html(select_html)
 
         }
-        
-        
+
+
+
+
+
+
+    }
+
+    function addSelectedExtra(context, id) {
+
+
+        if ($(".new_row").html() === undefined) {
+
+            var tbExtras = $('#booking-details #d-tb-extras tbody');
+            //alert(id)
+
+            var name = $(context).html();
+            var price = $(context).attr("data-price");
+            gRows = "";
+            gRows += "<tr class='new_row'>";
+            gRows += "<td class='name' >" + name + "</td>";
+
+            select_html = "<select  class='guests tiny' id=\"" + id + "\" onchange=\"calculateTotal(this)\" >";
+            var p = $('#booking-details');
+            guests = p.find("#d-guest-count").html();
+            guests = guests.replace("(", "");
+            guests = guests.replace(")", "");
+            select_html += "<option>Set Guests</option>";
+            for (km = 1; km < (parseInt(guests) + 1); km++) {
+
+                select_html += "<option>" + km + "</option>";
+            }
+
+            select_html += "</select>";
+
+
+            gRows += "<td  >" + select_html + "</td>";
+            gRows += "<td class='unit_price'>" + price + "</td>";
+            gRows += "<td class='total'>" + 0 + "</td>";
+            gRows += "<td>" + '<i onclick="saveExtra(this)" class="zmdi zmdi-check btn-circle text-success"></i>' + "</td>";
+
+            gRows += "</tr>";
+
+            tbExtras.append(gRows);
+
+        } else {
+
+            alertify.error("<i class='fa fa-times-circle'></i> Click check button for the unsaved extra service to proceed ");
+
+
+        }
 
 
 
 
     }
-    function addSelectedExtra(context,id){
-         
 
-         if($(".new_row").html()===undefined){
-
-        var tbExtras = $('#booking-details #d-tb-extras tbody');
-         //alert(id)
-        
-         var name=$(context).html();
-         var price= $(context).attr("data-price");
-         gRows="";
-        gRows += "<tr class='new_row'>";
-        gRows += "<td class='name' >" + name + "</td>";
-
-        select_html="<select  class='guests tiny' id=\""+id+"\" onchange=\"calculateTotal(this)\" >";
-         var p = $('#booking-details');
-         guests= p.find("#d-guest-count").html();
-         guests= guests.replace("(","");
-         guests= guests.replace(")","");
-         select_html+="<option>Set Guests</option>";
-         for(km=1; km< (parseInt(guests)+1) ;km++){
-
-         select_html+="<option>"+km+"</option>";
-         }
-
-          select_html+="</select>";
-
-
-        gRows += "<td  >" + select_html  + "</td>";
-        gRows += "<td class='unit_price'>" + price + "</td>";
-        gRows += "<td class='total'>" + 0 + "</td>";
-        gRows += "<td>" + '<i onclick="saveExtra(this)" class="fa fa-check btn-circle text-success"></i>' + "</td>";
-
-        gRows += "</tr>";
-
-       tbExtras.append(gRows);
-
-         }else{
-
-               alertify.error("<i class='fa fa-times-circle'></i> Click check button for the unsaved extra service to proceed " );
-
-
-         }
-        
-        
-
-
-    }
     function get_templates() {
         $.post('src/get_data.php', {
             token: "email_template",
@@ -1611,29 +1605,29 @@ $(document).on('click', '.open-invoice', function(){
             room_type_id: rtId,
             booking_id: getBookingId()
         }, function(data) {
-            
-             var opt = "";
-            try{
 
-             var dataq = JSON.parse(data)[0]
+            var opt = "";
+            try {
 
-           
-            $.each(dataq.rooms, function(i, g) {
-
-                opt += '<div class="form-check">' +
-                    '<input class="form-check-input" onchange="radioChange()" name="roomgroup" type="radio" id="' + g.id + '" value="' + g.id + '">' +
-                    '<label class="form-check-label" for="' + g.id + '">' + g.name + '</label>' +
-                    '</div>'
-
-            })
+                var dataq = JSON.parse(data)[0]
 
 
-            }catch(error){
+                $.each(dataq.rooms, function(i, g) {
+
+                    opt += '<div class="form-check">' +
+                        '<input class="form-check-input" onchange="radioChange()" name="roomgroup" type="radio" id="' + g.id + '" value="' + g.id + '">' +
+                        '<label class="form-check-label" for="' + g.id + '">' + g.name + '</label>' +
+                        '</div>'
+
+                })
+
+
+            } catch (error) {
 
 
 
             }
-            if(opt==""){
+            if (opt == "") {
 
                 opt = '<label class="form-check-label" ">No Rooms Available !!!</label>';
             }
@@ -1690,7 +1684,7 @@ $(document).on('click', '.open-invoice', function(){
             var nights = new Date(checkout) - new Date(checkin);
             nights = nights / 1000 / 3600 / 24;
 
-           // alert(bookingId );
+            // alert(bookingId );
 
             var ddd = new Date(checkin) - new Date(gettoday())
 
@@ -1709,8 +1703,8 @@ $(document).on('click', '.open-invoice', function(){
                     }, function(result) {
 
                         //alert(result)
-                        
-                        if (parseInt(result) ==1 ) {
+
+                        if (parseInt(result) == 1) {
                             alertify
                                 .success("Check-in and Check-out dates Succesfully changed", function() {
 

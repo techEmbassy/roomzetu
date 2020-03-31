@@ -74,7 +74,7 @@ $v=$_GET['v'];
                     <div class="row">
                         <div class="col-md-2 text-center">
                             <br>
-                            <i class="fa fa-check-circle mt-5" style="font-size:100px;color:green"></i>
+                            <i class="zmdi zmdi-check-circle mt-5" style="font-size:100px;color:green"></i>
                             <P style="color:green">Success ):</P>
                         </div>
 

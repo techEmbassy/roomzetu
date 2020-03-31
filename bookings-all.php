@@ -29,7 +29,7 @@
 
                         </div>
                         <div class="foot pt-4 pl-2 text-left">
-                            <a class="btn btn-sm btn-secondary" href="#choose-booking" data-toggle="modal"><i class="fa fa-plus"></i> New Booking</a>
+                            <a class="btn btn-sm btn-secondary" href="#choose-booking" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Booking</a>
 
                         </div>
 

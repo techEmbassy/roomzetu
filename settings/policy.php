@@ -18,7 +18,7 @@
 
 
         <label class="ml-2 mr-2">Days </label>
-        <a id="save-plcy" class="btn btn-primary btn-sm pull-right"><i class="fa fa-check-circle"></i> Save</a>
+        <a id="save-plcy" class="btn btn-primary btn-sm pull-right"><i class="zmdi zmdi-check-circle"></i> Save</a>
     </div>
     <div class="c-footer pl-4 text-right">
         <?php echo $timeLeftFooter; ?>

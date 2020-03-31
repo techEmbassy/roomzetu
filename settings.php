@@ -57,7 +57,7 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <h4 class="modal-title">John Doe <br/> <small><i class="fa fa-check-circle-o text-green"></i> Reservation Confirmed</small></h4>
+                <h4 class="modal-title">John Doe <br/> <small><i class="zmdi zmdi-check-circle-o text-green"></i> Reservation Confirmed</small></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
@@ -115,7 +115,7 @@
                                         <br>
 
                                         <p>Reservation Status</p>
-                                        <p class="jumbotron p-2 m-0"><i class="fa fa-check-circle-o text-green"></i> Confirmed
+                                        <p class="jumbotron p-2 m-0"><i class="zmdi zmdi-check-circle-o text-green"></i> Confirmed
                                             <a class="btn btn-sm btn-warning pull-right">change</a>
                                         </p>
 

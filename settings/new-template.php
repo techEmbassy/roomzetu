@@ -20,8 +20,8 @@ $id = (isset($_GET['id']) ? $_GET['id'] : "");
                 </div>
                 <div class="col-9 text-right">
                 <a class="btn btn-primary btn-sm" id="update-btn" onclick="updatetemp()"><i class="fa fa-edit"></i> update Template</a>
-                <a class="btn btn-primary btn-sm" id="new-btn" onclick="addtemp()"><i class="fa fa-check-circle"></i> Save Template</a>
-                <button class="btn btn-danger btn-sm" id="del-btn" onclick="deltemp()"><i class="fa fa-remove"></i> Delete Template</button>
+                <a class="btn btn-primary btn-sm" id="new-btn" onclick="addtemp()"><i class="zmdi zmdi-check-circle"></i> Save Template</a>
+                <button class="btn btn-danger btn-sm" id="del-btn" onclick="deltemp()"><i class="zmdi zmdi-close"></i> Delete Template</button>
             </div>
 
             </div>
@@ -53,7 +53,7 @@ $id = (isset($_GET['id']) ? $_GET['id'] : "");
             <textarea rows="10" class="form-control mb-3" id="mytextarea" placeholder="Email body"></textarea>
 
             <br>
-            
+
 
 
 
@@ -204,7 +204,7 @@ function time_elapsed_string($datetime, $full = false) {
 }
 
     $time = "2017-07-12 10:36:09";
-	//echo time_elapsed_string($time, true).PHP_EOL;
+    //echo time_elapsed_string($time, true).PHP_EOL;
 
     ?>
 

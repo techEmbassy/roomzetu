@@ -17,7 +17,7 @@
             </div>
 
             <div class="col-md-10 text-right">
-                <!--                                    <a class="btn btn-secondary btn-sm" data-target="#new-agent" data-toggle="modal"><i class="fa fa-plus"></i> New Agent</a>-->
+                <!--                                    <a class="btn btn-secondary btn-sm" data-target="#new-agent" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Agent</a>-->
                 <input class="form-control tiny  mr-1 ml-1" placeholder="search" oninput="searchRevenue(value)" />
                 <label class="ml-4 mr-2">Property: </label>
                 <select class="form-control tiny" id="properties">

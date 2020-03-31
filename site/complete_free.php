@@ -31,7 +31,7 @@ include('includes/header.php');
                     <div class="col-sm-7">
 
                         <div class="jumbotron">
-                            <h3><i class="fa fa-check-circle text-green"></i> Your have successfully extended your free subscription
+                            <h3><i class="zmdi zmdi-check-circle text-green"></i> Your have successfully extended your free subscription
                             </h3>
                             <!--                        <a class="btn btn-primary">See my orders</a>-->
                         </div>

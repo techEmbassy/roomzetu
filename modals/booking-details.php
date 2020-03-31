@@ -306,16 +306,16 @@
 //    1.email templates
     $templates = DB::query("select * from email_notification_template_tb where company_id = %i",$company_id);
 //    var_dump($templates);
-    
+
 //   2.kids rates
     $w = new WhereClause('and');
     $w->add("company_id = %i",$company_id);
     $w->add("status = %s","deleted");
     $w->negateLast();
-    
+
     $kids_rates = DB::query("select * from kids_rates_tb where %l",$w);
     //var_dump($kids_rates);
-    
+
 // 2.Bed rates
     $w = new WhereClause('and');
     $w->add("company_id = %i",$company_id);
@@ -323,7 +323,7 @@
     $bed_rates = DB::query("select * from extra_beds_tb where %l",$w);
 //    var_dump($bed_rates);
 
-    
+
 
 $po = DB::queryFirstRow("select * from invoice_template_tb where company_id=%i", $company_id);
 //$po = json_decode($po['payments'], true);
@@ -360,7 +360,7 @@ foreach($p as $o){
                     <!-- by <span id="track-user">Username</span></b></span> -->
 
                     <button type="button" class="close  py-3 px-4 text-danger btn btn-secondary" data-dismiss="modal" aria-label="Close">
-             <i class="fa fa-close"></i>
+             <i class="zmdi zmdi-close"></i>
             </button>
                 </div>
 
@@ -392,7 +392,7 @@ foreach($p as $o){
                                                 <a class="dropdown-item" data-status="check-in"><i class="fa fa-circle text-green"></i> In House</a>
                                                 <a class="dropdown-item" data-status="cancelled"><i class="fa fa-circle text-red"></i> Cancelled</a>
                                             </div>
-                                           
+
                                         </div> <small class="text-red pull-right " id="b-period-message">Cannot change status for Booking in past</small>
 
                                         <div class="row mt-3 hide">
@@ -482,7 +482,7 @@ foreach($p as $o){
                                         </div>
 
                                         <div class="text-right hide">
-                                            <a class="btn-e" data-toggle="modal" data-target="#update-dates" style="color:#BDD4DC"><i class=" fa fa-pencil"></i></a>
+                                            <a class="btn-e" data-toggle="modal" data-target="#update-dates" style="color:#BDD4DC"><i class=" zmdi zmdi-edit"></i></a>
                                         </div>
 
 
@@ -529,7 +529,7 @@ foreach($p as $o){
                                         </div>
 
                                         <div class="text-right">
-                                            <a class="btn-e" data-toggle="modal" data-target="#guest-message" onclick="takeMessage()" style="color:#BDD4DC"><i class=" fa fa-pencil"></i></a>
+                                            <a class="btn-e" data-toggle="modal" data-target="#guest-message" onclick="takeMessage()" style="color:#BDD4DC"><i class=" zmdi zmdi-edit"></i></a>
                                         </div>
 
 
@@ -548,7 +548,7 @@ foreach($p as $o){
 
 
                                         <div class="text-right">
-                                            <a id="com" class="btn-e" style="color:#BDD4DC" data-toggle="modal" data-target="#internal-comments" onclick="takeComments()"><i class=" fa fa-pencil"></i></a>
+                                            <a id="com" class="btn-e" style="color:#BDD4DC" data-toggle="modal" data-target="#internal-comments" onclick="takeComments()"><i class=" zmdi zmdi-edit"></i></a>
                                         </div>
 
                                     </div>
@@ -569,7 +569,7 @@ foreach($p as $o){
 
 
                                     <div class="text-right">
-                                        <a class="btn-e" style="color:#BDD4DC" data-toggle="modal" data-target="#promo-codes"><i class=" fa fa-pencil"></i></a>
+                                        <a class="btn-e" style="color:#BDD4DC" data-toggle="modal" data-target="#promo-codes"><i class=" zmdi zmdi-edit"></i></a>
                                     </div>
 
 
@@ -594,7 +594,7 @@ foreach($p as $o){
                                                 <a class="b-btn" data-toggle="modal" title="Send Email" data-target="#send-email-modal" onclick='takeEmail()'><i class="fa fa-envelope-open-o" ></i> Send Email</a>
 
                                                 <a class="b-btn open-invoice"><i class="fa fa-bullseye"></i> Preview Invoice</a>
-                                                <a id="cancel_booking_btn" class="b-btnx" onclick='cancelBooking(this)'><i class="fa fa-close"></i> Cancel Booking</a>
+                                                <a id="cancel_booking_btn" class="b-btnx" onclick='cancelBooking(this)'><i class="zmdi zmdi-close"></i> Cancel Booking</a>
 
                                             </div>
 
@@ -635,7 +635,7 @@ foreach($p as $o){
 
                                                         </div>
                                                         <div class="foot">
-                                                            <button class="btn btn-primary " onclick="saveInvoiceOptions()"><i class="fa fa-check"></i> Save</button>
+                                                            <button class="btn btn-primary " onclick="saveInvoiceOptions()"><i class="zmdi zmdi-check"></i> Save</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -724,7 +724,7 @@ foreach($p as $o){
                                     <div class=" m-0" id="payments-added">
                                         <br>
 
-                                        <p class="b-head">Payments 
+                                        <p class="b-head">Payments
                                         <?php if($role !=7){ ?>
                                             <span class="badge badge-light print-hide" style="border-radius:4 !important;" onclick="openPaymentModal('0','')"><a>Add payment</a></span>
                                         <?php }?>
@@ -923,7 +923,7 @@ foreach($p as $o){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-sm " onclick="updateKids(this)"><i class="fa fa-check-circle"></i> Add</button>
+                    <button type="button" class="btn btn-primary btn-sm " onclick="updateKids(this)"><i class="zmdi zmdi-check-circle"></i> Add</button>
                 </div>
 
             </div>
@@ -1025,7 +1025,7 @@ foreach($p as $o){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-sm" id="changeRoom-btn" onclick="updateBeds(this)"><i class="fa fa-plus"></i> Add Extra Bed</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="changeRoom-btn" onclick="updateBeds(this)"><i class="zmdi zmdi-plus"></i> Add Extra Bed</button>
                 </div>
 
             </div>
@@ -1263,7 +1263,7 @@ foreach($p as $o){
                       <option>Credit Card</option>
                       <option>RTGS</option>
                       <option>PayPal</option>
-                      
+
                     </select>
                             </div>
 
@@ -1423,7 +1423,7 @@ foreach($p as $o){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="fa fa-check-circle"></i> Change</button>
+                    <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="zmdi zmdi-check-circle"></i> Change</button>
                 </div>
 
             </div>
@@ -1465,7 +1465,7 @@ foreach($p as $o){
                                 <select class="form-control" id="properties_edit" onchange="getRoomTypesForEdit_()" required data-empty-message="Select a property">
                            <option value="">Select</option>
                             <?php echo $propertyOptions0;?>
-                              
+
                         </select>
 
                                 <div class="room-div">
@@ -1498,7 +1498,7 @@ foreach($p as $o){
                             <div class="row">
                                 <div class="col-6">
                                     <label>Room</label>
-                                    <select class="form-control" id="free_rooms" required data-empty-message="select a room"> 
+                                    <select class="form-control" id="free_rooms" required data-empty-message="select a room">
                                     </select>
                                 </div>
                                 <div class="col-6">
@@ -1514,19 +1514,19 @@ foreach($p as $o){
                                 <div class="col-6">
                                     <label>Price Rate</label>
                                     <!-- <select class="form-control" id="price_rate" required data-empty-message="select price rate">
-                                
+
                                 </select> -->
 
-                              
-                                    <div class="input-group "> 
+
+                                    <div class="input-group ">
                                         <select class="form-control" id="price_rate" required data-empty-message="select price rate" onchange="change_price_rate(value)">
-                                        </select> 
-                                        
+                                        </select>
+
                                         <input type="number" class="form-control" id="price_rate_val" name="price_rate_val" value="0"   required>
                                         <span class="input-group-addon fa fa-dollar"></span>
 
                                     </div>
-                                
+
 
 
 
@@ -1542,7 +1542,7 @@ foreach($p as $o){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-sm " onclick="update_booked_rooms(this)" id="changRoom"><i class="fa fa-check-circle"></i> Save</button>
+                    <button type="button" class="btn btn-primary btn-sm " onclick="update_booked_rooms(this)" id="changRoom"><i class="zmdi zmdi-check-circle"></i> Save</button>
                 </div>
 
             </div>
@@ -1587,10 +1587,10 @@ foreach($p as $o){
                             <select  id="properties_add_rooms" onchange="getRoomTypes_addRooms()" class="form-control" required data-empty-message="choose a property"><?php echo $propertyOptions;?></select>
                             <label class="control-label">Room type</label>
                             <select id="roomtypes_add"  onchange="setRoomTypes()" class="form-control" required data-empty-message="select room type"><option value="all" >All</option></select>
-                            
+
                             <label class="control-label">Check-in date</label>
                             <input class="datepicker form-control" data-date-format="dd-mm-yyyy" placeholder="select a date" id="ar_check-in" required data-empty-message="Checkin date is required" />
-                            
+
                             <label class="control-label">Check out date</label>
                             <input class="datepicker form-control" data-date-format="dd-mm-yyyy" placeholder="select date" id="ar_check-out" required data-empty-message="Checkout date is required" />
 
@@ -1601,7 +1601,7 @@ foreach($p as $o){
                             <table class="table table-bordered table-bookings" id="ar_tb-free-rooms">
                             </table>
                         </div>
-                  
+
 
 
                 </div>
@@ -1616,7 +1616,7 @@ foreach($p as $o){
                         <div class="col-md-4">
 
                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-sm " onclick="add_room_book(this)" ><i class="fa fa-check-circle"></i> Save</button>
+                            <button type="button" class="btn btn-primary btn-sm " onclick="add_room_book(this)" ><i class="zmdi zmdi-check-circle"></i> Save</button>
                         </div>
                     </div>
 
@@ -1653,14 +1653,14 @@ foreach($p as $o){
                             </tr>
                         </thead>
                         <tbody id="custom_meal_plan_tb_ar">
-                    
+
 
 
                         </tbody>
                     </table>
 
                 </div>
-              
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Go Back</button>
                     <button type="button" class="btn btn-primary btn-sm"  onclick='getCustomMealCart()'>Use these Ratesm</button>
@@ -1726,7 +1726,7 @@ foreach($p as $o){
     <script>
         $(document).ready(function() {
             // alertify.set("notifier","position","top-right");
-            // alertify.success('<i class="fa fa-check mr-2"></i> New Guest Added');
+            // alertify.success('<i class="zmdi zmdi-check mr-2"></i> New Guest Added');
 
             $('[data-toggle="popover"]').popover({
                 html: true,
@@ -1955,7 +1955,7 @@ function getRoomTypes_addRooms() {
                             //                            newrow += "<td>" + p.payment_method + "</td>";
                             //                            newrow += "<td>$" + p.amount + "</td>";
                             //                            newrow += "<td>" + p.payment_comments + "</td>";
-                            //                            newrow += "<td class='text-right'>" + "<i id='edit'  onclick='openPaymentModal(" + JSON.stringify(p) + ", this)' class=\"fa fa-pencil btn-circle mr-2\"></i><i   onclick='deletePayment(\"" + p.id + "\", this)' class=\"fa fa-close btn-circle\"></i>" + "</td>";
+                            //                            newrow += "<td class='text-right'>" + "<i id='edit'  onclick='openPaymentModal(" + JSON.stringify(p) + ", this)' class=\"zmdi zmdi-edit btn-circle mr-2\"></i><i   onclick='deletePayment(\"" + p.id + "\", this)' class=\"zmdi zmdi-close btn-circle\"></i>" + "</td>";
                             //
                             //                            newrow += "</tr>";
                             //
@@ -1963,13 +1963,13 @@ function getRoomTypes_addRooms() {
                             //                            $(btn).html(btnHtml);
                             //                            $("#new-pay").modal("hide");
                             //                            if (payment_id == "0") {
-                            //                                alertify.success('<i class="fa fa-check mr-2"></i> Payment Registered');
+                            //                                alertify.success('<i class="zmdi zmdi-check mr-2"></i> Payment Registered');
                             //
                             //                                $("#d-tb-payments tbody").append(newrow);
                             //
                             //                            } else {
                             //                                $("#d-tb-payments .being-edited").replaceWith(newrow);
-                            //                                alertify.success('<i class="fa fa-check mr-2"></i> Changes Saved');
+                            //                                alertify.success('<i class="zmdi zmdi-check mr-2"></i> Changes Saved');
                             //
                             //
                             //
@@ -2027,10 +2027,10 @@ function getRoomTypes_addRooms() {
                         //                        $(btn).html(btnHtml);
                         //                        // alertify.set("notifier","position","top-right");
                         //                        if (id != "0") {
-                        //                            alertify.success('<i class="fa fa-check mr-2"></i> Reservation updated');
+                        //                            alertify.success('<i class="zmdi zmdi-check mr-2"></i> Reservation updated');
                         //
                         //                        } else {
-                        //                            alertify.success('<i class="fa fa-check mr-2"></i> New Guest Added');
+                        //                            alertify.success('<i class="zmdi zmdi-check mr-2"></i> New Guest Added');
                         //                        }
                         $("#new-guest").modal("hide");
                         $(btn).removeClass("loading");
@@ -2268,7 +2268,7 @@ function getRoomTypes_addRooms() {
                         //                            gRows += "<td class='guests'>" + g.total_guests + "</td>";
                         //                            gRows += "<td class='unit_price' >" + g.unit_price + "</td>";
                         //                            gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                        //                            gRows += "<td class='text-right'>" + "<i  id='edit' onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle mr-2\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                        //                            gRows += "<td class='text-right'>" + "<i  id='edit' onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle mr-2\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
                         //
                         //                            gRows += "</tr>";
                         //
@@ -2368,7 +2368,7 @@ function getRoomTypes_addRooms() {
                             gRows += "<td class='guests' >" + g.total_guests + "</td>";
                             gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
                             gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                            gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                            gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
 
                             gRows += "</tr>";
 
@@ -2455,7 +2455,7 @@ function getRoomTypes_addRooms() {
                                         gRows += "<td class='guests' >" + g.total_guests + "</td>";
                                         gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
                                         gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                                        gRows += "<td class='text-right'>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                                        gRows += "<td class='text-right'>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
                                         gRows += "</tr>";
 
                                         total += Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price));
@@ -2667,7 +2667,7 @@ function getRoomTypes_addRooms() {
                         id: id
 
                     }, function(data) {
-                        // alert(unit_price +" "+id+" "+booking_id+ " "+guests )  
+                        // alert(unit_price +" "+id+" "+booking_id+ " "+guests )
                         //alert(data)
 
                         if (parseInt(JSON.parse(data).length) != 0) {
@@ -2687,7 +2687,7 @@ function getRoomTypes_addRooms() {
                                 gRows += "<td class='guests' >" + g.total_guests + "</td>";
                                 gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
                                 gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                                gRows += "<td class='text-right'>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                                gRows += "<td class='text-right'>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
 
                                 gRows += "</tr>";
 
@@ -2812,7 +2812,7 @@ function getRoomTypes_addRooms() {
                 gRows += "<td  >" + select_html + "</td>";
                 gRows += "<td class='unit_price'>" + price + "</td>";
                 gRows += "<td class='total'>" + 0 + "</td>";
-                gRows += "<td>" + '<i onclick="saveExtra(this)" class="fa fa-check btn-circle text-success"></i>' + "</td>";
+                gRows += "<td>" + '<i onclick="saveExtra(this)" class="zmdi zmdi-check btn-circle text-success"></i>' + "</td>";
 
                 gRows += "</tr>";
 
@@ -2883,7 +2883,7 @@ function getRoomTypes_addRooms() {
                     $('#send-email-modal').modal("hide");
                     //                    $('#send-email-modal').append(result);
 
-                    //	alert(result);
+                    //    alert(result);
 
                 },
                 error: function(xhr, ajaxoptions, thrownerror) {
@@ -3253,7 +3253,7 @@ function getRoomTypes_addRooms() {
             $("#edit-room .modal-title small").text("Change Room Details");
             $("#edit-room .section-for-edit").show();
             $("#edit-room .section-for-new").hide();
-          
+
             $("#properties_edit").prop("required", false);
             $("#roomtypes_").prop("required", false);
 
@@ -3289,7 +3289,7 @@ function getRoomTypes_addRooms() {
             $("#edit-room .section-for-edit #property-name_").text(property_name);
 
             $("#properties_edit").val(property_id);
-            
+
             getRoomTypesForEdit(property_id, room_type_id);
 
             $("#check_in_date_").val(check_in);
@@ -3359,7 +3359,7 @@ function getRoomTypes_addRooms() {
 
                 var selected=""
                 $.each(prices, function(i, item) {
-                 
+
                     var selected= (item.label.trim()==price_rate.trim())? 'selected':'';
                     opt += "<option value='" + item.amount + "' "+selected+" >" + item.label + " </option>";
 
@@ -3684,7 +3684,7 @@ function getRoomTypes_addRooms() {
                     booking_id: bookingId,
                     kids: kids
                 }, function(data) {
-                    $(btn).html("<i class='fa fa-check-circle'></i> Add");
+                    $(btn).html("<i class='zmdi zmdi-check-circle'></i> Add");
                     $("#add-child").modal('hide');
                     //                    alertify.success("Booking has been updated");
                     //
@@ -3693,7 +3693,7 @@ function getRoomTypes_addRooms() {
                     //                    newrow += "<td>" + newKid.children + "</td>";
                     //                    newrow += "<td>" + newKid.unit_price + "</td>";
                     //                    newrow += "<td>" + newKid.amount + "</td>";
-                    //                    newrow += "<td class='print-hide text-right' onclick='removeKidsRate(this)'><button class='fa fa-remove btn btn-circle'></button></td>";
+                    //                    newrow += "<td class='print-hide text-right' onclick='removeKidsRate(this)'><button class='zmdi zmdi-close btn btn-circle'></button></td>";
                     //                    newrow += "</tr>";
                     //                    $("#d-tb-kids tbody").append(newrow);
 
@@ -3709,7 +3709,7 @@ function getRoomTypes_addRooms() {
             x0p("Delete Item?", "Are you sure you want to delete this item?", "warning",
                 function(cc) {
                     if (cc = "warning") {
-                        //alertify.confirm().close(); 
+                        //alertify.confirm().close();
                         $(btn).parents('tr').remove();
                         var kids = getKids();
                         kids = JSON.stringify(kids);
@@ -3792,7 +3792,7 @@ function getRoomTypes_addRooms() {
                     //                    newrow += "<td>" + nights + "</td>";
                     //                    newrow += "<td>" + unitPrice + "</td>";
                     //                    newrow += "<td>" + total + "</td>";
-                    //                    newrow += "<td class='print-hide text-right' onclick='removeExtraBed(this)'><button class='fa fa-remove btn btn-circle'></button></td>";
+                    //                    newrow += "<td class='print-hide text-right' onclick='removeExtraBed(this)'><button class='zmdi zmdi-close btn btn-circle'></button></td>";
                     //
                     //                    newrow += "</tr>";
                     //                    $("#d-tb-beds tbody").append(newrow);
@@ -3812,7 +3812,7 @@ function getRoomTypes_addRooms() {
             x0p("Remove Bed(s)?", "Are you sure you want to remove this item from the booking?", "warning",
                 function(cc) {
                     if (cc == "warning") {
-                        //alertify.confirm().close(); 
+                        //alertify.confirm().close();
                         $(btn).parents('tr').remove();
                         var beds = getBeds();
                         beds = JSON.stringify(beds);
@@ -4155,7 +4155,7 @@ function getRoomTypes_addRooms() {
                             setFreeRooms(data);
                             $(".nights_number").html("<b>"+nights+"</b>");
                             $(".checkIn-checkOut").text(checkIn+" to "+ checkOut);
-                            
+
 
                         })
                     } else {
@@ -4193,7 +4193,7 @@ function getRoomTypes_addRooms() {
         $("#ar_tb-free-rooms tr.selected").each(function(j, tr) {
             var position = parseInt($(tr).find(".position").val());
             var rms = $(tr).find(".rm-count option:selected").val();
-            
+
             var a = new Array();
             var rtId = freeRms[position].id //roomtype id;
             var rooms = freeRms[position].rooms;
@@ -4202,7 +4202,7 @@ function getRoomTypes_addRooms() {
             var room_type_id_ = $(tr).find(".meal-plans").attr('id');
 
             var meal_plan = $(tr).find(".meal-plans").val();
-            
+
             var price = $(tr).find("#" + room_type_id_ + "unit-price").val();
             var pricerate_ = $(tr).find(".rm-prices option:selected").text();
             room_type_id_=room_type_id_.replace('u_','');
@@ -4211,7 +4211,7 @@ function getRoomTypes_addRooms() {
 
             var id_ = rooms[r].id;
             var name__ = rooms[r].name;
-           
+
             if (rooms_tracker_per_property.hasOwnProperty(rtId)) {
                     // alert(21)
 
@@ -4404,12 +4404,12 @@ function getRoomTypes_addRooms() {
                     }
                 }
 
-               
+
 
             }
 
 
-        
+
         })
         if (c.length < 1) {
             alertify.error("<i class='fa fa-times-circle'></i> Select one or more rooms first");
@@ -4420,7 +4420,7 @@ function getRoomTypes_addRooms() {
         var meal_plan_per_day = JSON.stringify(meal_plan_tracker_days);
         var check_in_date = $("#ar_check-in").val();
          var check_out_date = $("#ar_check-out").val();
-        
+
 
         if (!($(btn).hasClass("loading"))) {
             var btnHtml = $(btn).html();
@@ -4443,12 +4443,12 @@ function getRoomTypes_addRooms() {
                 $(btn).html(btnHtml);
                 getBooking(BOOKING_ID);
                 $("#add-room").modal("hide");
-                
+
             });
 
         }
-      
-       
+
+
     }
 
 function change_price_rate(amount){

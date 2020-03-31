@@ -26,14 +26,14 @@
                 <div class="col-md-2 mt-2">
 
                     <p><small>Manage seasons, rates, agent rates and kids rates</small> </p>
-                    <hr/>
+                    <hr />
                     <div class="sub-menu">
                         <?php $sbPos=2; include 'includes/rates-menu.php';?>
 
 
                     </div>
                     <div class="foot pt-4 pl-2 text-left ">
-                        <a class="btn btn-sm btn-secondary" data-target="#new-px" data-toggle="modal"><i class="fa fa-plus"></i> New room price</a>
+                        <a class="btn btn-sm btn-secondary" data-target="#new-px" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New room price</a>
                     </div>
 
                 </div>
@@ -55,11 +55,11 @@
 
                                     <select class="form-control tiny" id="properties" onchange="getStandardRoomPrices()">
                                         <?php echo $propertyOptions0; ?>
-    
+
                                     </select>
 
 
-                                    <a class="btn btn-secondary btn-35" href="" data-target="#new-px" data-toggle="modal"><i class="fa fa-plus"></i> New room price</a>
+                                    <a class="btn btn-secondary btn-35" href="" data-target="#new-px" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New room price</a>
 
 
 
@@ -78,14 +78,14 @@
 </body>
 
 <div class="modal " id="new-px">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content animated zoomIn">
             <div class="modal-header">
 
                 <h4 class="modal-title">New Room Price</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -108,7 +108,7 @@
                             <input class="datepicker form-control" id="start_date" required data-empty-message="select start date" data-placement="right" />
 
                             <span class="input-group-append" id="basic-addon2">
-                            <span class="input-group-text px-2" style="background-color:#fafafa">to</span>
+                                <span class="input-group-text px-2" style="background-color:#fafafa">to</span>
                             </span>
 
                             <input class="datepicker form-control" id="end_date" placeholder="" required data-empty-message="select end date" data-placement="right" />
@@ -196,7 +196,7 @@
 
         var pxrows = "<tr><th>Room Type</th><th>Amount ($)</th></tr>";
 
-        rows += "<div class=\"card border-0 price-item mb-4 mt-4\">";
+        rows += "<div class=\"card price-item mb-4 mt-4\">";
         rows += "<div class=\"row m-0\">";
         rows += "<div class=\"col-md-3\">";
         rows += "<div class=\"p-2\">";
@@ -308,7 +308,7 @@
         rows += "</div>";
         rows += "</div>";
 
-    
+
 
         $("#price-container").html(rows);
         getRoomPrices();
@@ -335,7 +335,7 @@
     function setRoomPrices(data) {
 
         var rows = "";
-        
+
 
         var prices = JSON.parse(data);
 
@@ -344,7 +344,7 @@
         $.each(prices, function(i, price) {
             var pxrows = "<tr><th>Room Type</th><th>Amount ($)</th></tr>";
 
-            rows += "<div class=\"card border-0 price-item mb-4 mt-4\">";
+            rows += "<div class=\"card price-item mb-4 mt-4\">";
             rows += "<div class=\"row m-0\">";
             rows += "<div class=\"col-md-3\">";
             rows += "<div class=\"p-2\">";
@@ -461,7 +461,7 @@
             rows += "<small style='color:#888; font-size:9pt'>Period : " + price.start_date + " to " + price.end_date + "</small><br><br>";
 
             rows += "<button class=\"btn btn-circle fa fa-times\" onclick='deletePrice(" + i + ")'></button>";
-            rows += "<button class=\"btn btn-circle ml-2 fa fa-pencil\"  onclick='showDetails(" + i + ")'></button>";
+            rows += "<button class=\"btn btn-circle ml-2 zmdi zmdi-edit\"  onclick='showDetails(" + i + ")'></button>";
             rows += "</div>";
             rows += "</div>";
             rows += "<div class=\"col-md-7 \">";
@@ -666,7 +666,7 @@
 
             }, function(data) {
                 //alert(data);
-                alertify.success("<i class='fa fa-check-circle'></i> price updated");
+                alertify.success("<i class='zmdi zmdi-check-circle'></i> price updated");
                 //getRoomPrices();
                 //getStandardRoomPrices();
 
@@ -746,7 +746,7 @@
                 property_id: property_id
             }, function(data) {
                 //alert(data);
-                alertify.success("<i class='fa fa-check-circle'></i> price updated");
+                alertify.success("<i class='zmdi zmdi-check-circle'></i> price updated");
                 //getRoomPrices();
                 //getStandardRoomPrices();
 

@@ -111,7 +111,7 @@
                                             <p>Total Cost: <br><span class="text-blue"> $3737</span> for 1 room for 2 nights</p>
                                             <br>
 
-                                            <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="fa fa-check-circle"></i> Select</button>
+                                            <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="zmdi zmdi-check-circle"></i> Select</button>
                                         </div>
                                     </td>
 
@@ -159,7 +159,7 @@
                                             <p>Total Cost: <br> <span class="text-blue">$22</span> for 1 room for 2 nights</p>
                                             <br>
 
-                                            <button class="btn btn-primary btn-md" disabled><i class="fa fa-check-circle"></i> Select</button>
+                                            <button class="btn btn-primary btn-md" disabled><i class="zmdi zmdi-check-circle"></i> Select</button>
                                         </div>
                                     </td>
 
@@ -209,7 +209,7 @@
                                             <p>Total Cost: <br><span class="text-blue">$4290</span> for 1 room for 2 nights</p>
                                             <br>
 
-                                            <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="fa fa-check-circle"></i> Select</button>
+                                            <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="zmdi zmdi-check-circle"></i> Select</button>
                                         </div>
                                     </td>
 

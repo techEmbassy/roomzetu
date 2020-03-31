@@ -26,14 +26,14 @@
                 <div class="col-md-2 mt-2">
 
                     <p><small>Manage, room rates, agent rates and kids rates</small> </p>
-                    <hr/>
+                    <hr />
                     <div class="sub-menu">
                         <?php $sbPos=3; include 'includes/rates-menu.php';?>
 
 
                     </div>
                     <div class="foot pt-4 pl-2 text-left ">
-                        <a class="btn btn-sm btn-secondary" data-target="#newagent-modal" data-toggle="modal"><i class="fa fa-plus"></i> New Agent Rate</a>
+                        <a class="btn btn-sm btn-secondary" data-target="#newagent-modal" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Agent Rate</a>
                     </div>
 
                 </div>
@@ -55,11 +55,11 @@
 
                                     <select class="form-control tiny" id="properties" onchange="getAgentRates()">
                                         <?php echo $propertyOptions0; ?>
-    
+
                                     </select>
 
 
-                                    <a class="btn btn-secondary btn-35" href="" data-target="#newagent-modal" data-toggle="modal"><i class="fa fa-plus"></i> New Agent Rate</a>
+                                    <a class="btn btn-secondary btn-35" href="" data-target="#newagent-modal" data-toggle="modal"><i class="zmdi zmdi-plus"></i> New Agent Rate</a>
 
 
 
@@ -110,7 +110,7 @@
       <td>STO Agent Rate</td>
       <td>STO-25</td>
       <td>27</td>
-     
+
       <td class="text-right"><a href="#" class="btn btn-secondary btn-sm">Edit</a> <a href="#" class="btn btn-danger text-white btn-sm">Delete</a></td>
     </tr>
     <tr>
@@ -118,7 +118,7 @@
       <td>STO Agent Rate</td>
       <td>STO-25</td>
       <td>27</td>
-      
+
       <td class="text-right"><a href="#" class="btn btn-secondary btn-sm">Edit</a> <a href="#" class="btn btn-danger text-white btn-sm">Delete</a></td>
     </tr>
     <tr>
@@ -126,7 +126,7 @@
       <td>STO Agent Rate</td>
       <td>STO-25</td>
       <td>27</td>
-  
+
       <td class="text-right"><a href="#" class="btn btn-secondary btn-sm">Edit</a> <a href="#" class="btn btn-danger text-white btn-sm">Delete</a></td>
     </tr>-->
                                     </tbody>
@@ -138,13 +138,13 @@
 
                             <!-- Modal -->
                             <div class="modal fadeIn" id="newagent-modal" tabindex="-1" role="dialog" aria-labelledby="newagent-modal" aria-hidden="true">
-                                <div class="modal-dialog modal-sm vertical-align-center" role="document">
+                                <div class="modal-dialog modal-md modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="newagent-modal">New Agent Rate</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
 
@@ -179,13 +179,13 @@
 
 
                             <div class="modal fadeIn" id="editagent-modal" tabindex="-1" role="dialog" aria-labelledby="editagent-modal" aria-hidden="true">
-                                <div class="modal-dialog modal-sm vertical-align-center" role="document">
+                                <div class="modal-dialog modal-md modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="editagent-modal">Edit Agent Rate</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
 
@@ -293,11 +293,11 @@
                 // alert( response);
 
                 if (parseInt(response) == 1) {
-                    // alertify.success("<i class='fa fa-check-circle'></i> Agent Rate saved successfully");
+                    // alertify.success("<i class='zmdi zmdi-check-circle'></i> Agent Rate saved successfully");
                     //getAgentRates();
 
                     $("#newagent-modal").modal("hide");
-                    alertify.success("<i class='fa fa-check-circle'></i> Agent Rate  successfully saved");
+                    alertify.success("<i class='zmdi zmdi-check-circle'></i> Agent Rate  successfully saved");
 
                     $('#agent_rate_name').val("");
                     $('#agent_rate_code').val("");
@@ -337,7 +337,7 @@
 
                     if (response === "success") {
                         $("#editagent-modal").modal("hide");
-                        alertify.success("<i class='fa fa-check-circle'></i> Agent Rate  successfully updated");
+                        alertify.success("<i class='zmdi zmdi-check-circle'></i> Agent Rate  successfully updated");
                         getAgentRates();
                     }
 

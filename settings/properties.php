@@ -8,7 +8,7 @@
 
             <div class="col-md-9 text-right">
                 <input class="form-control tiny" placeholder="search" oninput="searchProperty(value)" />
-                <a class="btn btn-secondary btn-35" data-target="#new-property" data-toggle="modal"><i class="fa fa-plus"></i> Add Property</a>
+                <a class="btn btn-secondary btn-35" data-target="#new-property" data-toggle="modal"><i class="zmdi zmdi-plus"></i> Add Property</a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
                     <th>Contact</th>
                     <th>Manager</th>
                     <th style=" width:5px"></th>
-                 
+
 
 
                 </tr>
@@ -151,7 +151,7 @@
         // var img.src="img/profiles/allen.jpg";
         $.each(branches, function(i, branch) {
             var row = "<tr>";
-            
+
             row += "<td>" + "<img style=\"width:40px; height:30px;\" src=\"img/settings/"+ branch.property_image +"\" style=\"width:60px;\">"+" </td>";
             row += "<td>" + branch.property_name + "</td>";
             row += "<td>" + branch.country + "</td>";
@@ -159,7 +159,7 @@
             row += "<td>" + branch.email + "</td>";
             row += "<td>" + branch.phone + "</td>";
             row += "<td>" + branch.manager + "</td>";
-            row += "<td class='text-center br-0'><a class='fa fa-pencil btn-circle' title='edit " + branch.property_name + "' onclick='editProperty(\"" + i + "\")'></a></td>";
+            row += "<td class='text-center br-0'><a class='zmdi zmdi-edit btn-circle' title='edit " + branch.property_name + "' onclick='editProperty(\"" + i + "\")'></a></td>";
 
 
 
@@ -169,7 +169,7 @@
 
             }
             row += "<td class='text-center br-0 " + hide + "'>";
-            row += "<a class='fa fa-close btn-circle hide text-warning' title='Delete " + branch.property_name + "' onclick='deleteProperty(\"" + branch.id + "\", \"" + branch.property_name + "\")'></a>";
+            row += "<a class='zmdi zmdi-close btn-circle hide text-warning' title='Delete " + branch.property_name + "' onclick='deleteProperty(\"" + branch.id + "\", \"" + branch.property_name + "\")'></a>";
             row += "</td></tr>";
             rows.push(row)
 

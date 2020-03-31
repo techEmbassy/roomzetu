@@ -83,7 +83,7 @@
         border: 1px solid #eee;
     }
 
-    /*         
+    /*
         .btn:link,
         .btn:visited,
         .button-row a,
@@ -223,12 +223,12 @@
                 <div class="col-md-2 mt-2 pr-0">
 
                     <p><small>Manage rooms, room prices and view room availability</small> </p>
-                    <hr/>
+                    <hr />
                     <div class="sub-menu ">
                         <?php $sbPos=5; include 'includes/rooms-menu.php';?>
                     </div>
                     <div class="foot pt-4 pl-2 text-left">
-                        <a class="btn btn-sm btn-secondary" onclick="createNewRoom()"><i class="fa fa-plus"></i> New Room type</a>
+                        <a class="btn btn-sm btn-secondary" onclick="createNewRoom()"><i class="zmdi zmdi-plus"></i> New Room type</a>
 
                     </div>
 
@@ -239,15 +239,13 @@
                         <div class="header p-3">
                             <div class="row">
                                 <div class="col-md-3">
-                                    Room Types <span> <a href="#" data-toggle="popover" data-trigger="focus" title="Help" data-placement="bottom" 
-                                    
-                                    data-content="A room type for example can be Single room or Double room. One or more units of the same type can later be registered under this room type.
+                                    Room Types <span> <a href="#" data-toggle="popover" data-trigger="focus" title="Help" data-placement="bottom" data-content="A room type for example can be Single room or Double room. One or more units of the same type can later be registered under this room type.
 
 Please note that usually it is not a specific unit that should be described here, but rather a general type of accommodation. However, if you want to describe each unit individually, you can register one room type corresponding to each unit.
 
 The field Object type makes sure that the object is described correctly in the booking process.">
-                                    
-                                    <i class="fa fa-question-circle-o" style="color:#ECE9E9  "></i></a></span>
+
+                                            <i class="fa fa-question-circle-o" style="color:#ECE9E9  "></i></a></span>
 
                                     <script>
                                         $('.popover-dismiss').popover({
@@ -271,7 +269,7 @@ The field Object type makes sure that the object is described correctly in the b
                                         <?php echo $propertyOptions0; ?>
                                     </select>
 
-                                    <a class="btn btn-secondary btn-35" onclick="createNewRoom()"><i class="fa fa-plus"></i> New room type</a>
+                                    <a class="btn btn-secondary btn-35" onclick="createNewRoom()"><i class="zmdi zmdi-plus"></i> New room type</a>
 
 
                                 </div>
@@ -299,13 +297,13 @@ The field Object type makes sure that the object is described correctly in the b
     <!-- modal for room details -->
 
     <div class="modal fade" id="unit-details" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content animated zoomIn">
                 <div class="modal-header">
                     <h5 class="modal-title" id="">Update Room/Unit</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -320,9 +318,9 @@ The field Object type makes sure that the object is described correctly in the b
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                    <button class="btn btn-danger btn-sm" onclick="deleteRoom()">Delete</button>
-                    <button type="button" class="btn btn-info  btn-sm" onclick="updateRoom(this)">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-danger" onclick="deleteRoom()">Delete</button>
+                    <button type="button" class="btn btn-info" onclick="updateRoom(this)">Update</button>
                 </div>
             </div>
         </div>
@@ -333,13 +331,13 @@ The field Object type makes sure that the object is described correctly in the b
     <!-- modal for adding room -->
 
     <div class="modal fade" id="add-unit" tabindex="-1" role="dialog" aria-labelledby="add-unit" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content animated zoomIn">
                 <div class="modal-header">
                     <h5 class="modal-title">Add Room/Unit</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -354,9 +352,9 @@ The field Object type makes sure that the object is described correctly in the b
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                    <button type="button" class="btn btn-info btn-sm" onclick='save_new_room(this)'>Add Unit</button>
+                    <button type="button" class="btn btn-primary" onclick='save_new_room(this)'>Add Unit</button>
                 </div>
             </div>
         </div>
@@ -365,8 +363,8 @@ The field Object type makes sure that the object is described correctly in the b
 
     <section class="gray-bg p-2 mini-gallery" hidden>
         <p><b>Photos</b>
-            <a class="btn btn-sm btn-primary pull-right" onclick="getPhoto()" data-target="file"> <i class="fa fa-plus"></i> add photo</a>
-            <input type="file" value="upload" id="uploadFile" name="uploadFile" class="uploadFile" hidden/>
+            <a class="btn btn-sm btn-primary pull-right" onclick="getPhoto()" data-target="file"> <i class="zmdi zmdi-plus"></i> add photo</a>
+            <input type="file" value="upload" id="uploadFile" name="uploadFile" class="uploadFile" hidden />
         </p>
         <hr class="mt-2" />
         <div class="row" id="room_photos" style="height: 100px;">
@@ -380,13 +378,13 @@ The field Object type makes sure that the object is described correctly in the b
 
 
     <div class="modal" id="new-px">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <h4 class="modal-title">New Room Type</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body" id="form-new-roomtype">
                     <input value="0" id="room-type-id" hidden />
@@ -397,14 +395,14 @@ The field Object type makes sure that the object is described correctly in the b
                                 <div class="col-md-6">
                                     <label>Property</label>
                                     <select class="form-control" id="property" onchange='onPropertyChange(this)'>
-                   
-                        </select>
+
+                                    </select>
 
                                 </div>
 
                                 <div class="col-md-6">
                                     <label>Room type name</label>
-                                    <input class="form-control" id="name" placeholder="e.g Delux Single Bed" style="text-transform: capitalize;" required/>
+                                    <input class="form-control" id="name" placeholder="e.g Delux Single Bed" style="text-transform: capitalize;" required />
                                 </div>
 
                             </div>
@@ -458,15 +456,15 @@ The field Object type makes sure that the object is described correctly in the b
                                 <div class="col-md-6">
                                     <label>Bed size(s)</label>
                                     <select class="form-control" id="bed-size">
-                                 <option value='King Size'>King Size</option>
-                                 <option value='Queen Size'>Queen Size</option>
-                                    <option value='Normal Size'>Normal Size</option>
-                                     <option value='Kids Size'>Kids Size</option>
-                                 <option value='Delux'>Delux</option>
-                                 <option value='Double'>Double</option>
-                                 <option value='Single'>Single</option>
-                                 
-                                </select>
+                                        <option value='King Size'>King Size</option>
+                                        <option value='Queen Size'>Queen Size</option>
+                                        <option value='Normal Size'>Normal Size</option>
+                                        <option value='Kids Size'>Kids Size</option>
+                                        <option value='Delux'>Delux</option>
+                                        <option value='Double'>Double</option>
+                                        <option value='Single'>Single</option>
+
+                                    </select>
                                 </div>
                                 <!--
                             <div class="col-md-6">
@@ -498,29 +496,29 @@ The field Object type makes sure that the object is described correctly in the b
 
 
 
-                             <div class=" mb-2">
-                                 <div class="row ">
+                            <div class=" mb-2">
+                                <div class="row ">
                                     <div class="col-md-6">
-                                    <label class="" >Can be used as </label>
+                                        <label class="">Can be used as </label>
 
                                         <select class="custom-select form-control" style=" font-size:12px;" onchange="selectUsedAs(this);" id="used_as_select">
-                                        <option selected>None</option>
-                                        
+                                            <option selected>None</option>
+
                                         </select>
                                     </div>
-                                
+
                                 </div>
                                 <input class="" type="text" id="used_as" data-role="tagsinput" value="">
                             </div>
-                            
+
 
 
 
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary btn-sm btn-save" onclick="addRoomType()">Save Room type</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary btn-save" onclick="addRoomType()">Save Room type</button>
                     </div>
                 </div>
                 <!-- /.modal-content -->
@@ -557,21 +555,24 @@ The field Object type makes sure that the object is described correctly in the b
             }
 
             $("#used_as").tagsinput({
-            itemValue: 'value',
-            itemText: 'text'
-            
+                itemValue: 'value',
+                itemText: 'text'
+
             });
 
-            function selectUsedAs(select){
-                var txt= select.options[select.selectedIndex].text;
-                var valtxt=$(select).val();
-                var used_as=JSON.stringify($("#used_as").val().split(','));
+            function selectUsedAs(select) {
+                var txt = select.options[select.selectedIndex].text;
+                var valtxt = $(select).val();
+                var used_as = JSON.stringify($("#used_as").val().split(','));
 
-                if(used_as.indexOf(valtxt) <= -1 && txt !="None"){
-                    $("#used_as").tagsinput('add', { value: valtxt, text: txt });
+                if (used_as.indexOf(valtxt) <= -1 && txt != "None") {
+                    $("#used_as").tagsinput('add', {
+                        value: valtxt,
+                        text: txt
+                    });
                 }
-              
-                
+
+
             }
 
             document.getElementById('uploadFile').onchange = function(evt) {
@@ -598,7 +599,7 @@ The field Object type makes sure that the object is described correctly in the b
                                     new_logo = response;
                                     console.log(new_logo);
                                     var src_string = "img/roomtypes/" + new_logo;
-                                    var show_image = "<div class='col-md-2'><div class='thumbnail'><img src=" + src_string + "  class='img-fluid'><a class='close fa fa-close btn-circle'></a></div></div>";
+                                    var show_image = "<div class='col-md-2'><div class='thumbnail'><img src=" + src_string + "  class='img-fluid'><a class='close zmdi zmdi-close btn-circle'></a></div></div>";
 
                                     $('#room_photos').append(show_image);
 
@@ -613,7 +614,7 @@ The field Object type makes sure that the object is described correctly in the b
 
                                 } else {
                                     upload_error = 1;
-                                    x0p("","An Error Ocurred While Uploading. Please Try Again","error",false);
+                                    x0p("", "An Error Ocurred While Uploading. Please Try Again", "error", false);
                                 }
                                 // alert(response);
                             },
@@ -715,7 +716,7 @@ The field Object type makes sure that the object is described correctly in the b
                         var room_id = room.id;
                         var room_name = room.room_name;
 
-                        room_html += "<tr><td><input type='text' value='" + room_name + "'></td><td><a class='btn btn-sm btn-secondary fa fa-close ' onclick='deleteRoom(\"" + room_name + "\", \"" + room_id + "\")'></a></td></tr>";
+                        room_html += "<tr><td><input type='text' value='" + room_name + "'></td><td><a class='btn btn-sm btn-secondary zmdi zmdi-close ' onclick='deleteRoom(\"" + room_name + "\", \"" + room_id + "\")'></a></td></tr>";
 
 
                     });
@@ -737,7 +738,7 @@ The field Object type makes sure that the object is described correctly in the b
                 var options = "";
                 $.each(availableProperty, function(i, property) {
 
-                    // var property_id = property.id; 
+                    // var property_id = property.id;
 
                     options += "<option value=" + property.id + ">" + property.property_name + "</option>";
 
@@ -755,11 +756,11 @@ The field Object type makes sure that the object is described correctly in the b
             var as_room_obj = {};
 
 
-            function onPropertyChange(context) {              
+            function onPropertyChange(context) {
                 var property_id = $(context).val();
                 $("#used_as").tagsinput('removeAll');
                 setRoomTypesAS(property_id);
-                
+
             }
 
 
@@ -767,30 +768,30 @@ The field Object type makes sure that the object is described correctly in the b
                 // console.log(JSON.stringify(as_room_obj));
                 var as_rows = "<option selected>None</option>";
 
-                  $.get("src/get.php", {
+                $.get("src/get.php", {
                     token: "get_room_types",
                     property_id: property_id
                 }, function(response) {
-                    
+
                     if (response != "[]") {
                         data = JSON.parse(response);
                         $.each(data, function(i, roomType) {
                             var room_id = roomType.room_type_id;
                             // console.log(roomType.property_id+","+property_id);
                             as_rows += "<option value='" + room_id + "'>" + roomType.room_type_name + "</option>";
-                          
+
                         });
 
-                      
 
-                    } 
+
+                    }
                     // console.log(as_rows)
                     $("#used_as_select").html(as_rows);
 
                 });
-             
 
-                
+
+
             }
 
             function setRoomTypes(data) {
@@ -800,7 +801,7 @@ The field Object type makes sure that the object is described correctly in the b
                 var rows = "";
                 as_room_obj = roomTypes;
                 var property_id = $("select#properties option:selected").val();
-                
+
 
                 roomtypes = data; //global variable
                 setRoomTypesAS(property_id);
@@ -838,7 +839,7 @@ The field Object type makes sure that the object is described correctly in the b
                     row += '<div class="item">';
                     row += '<div class="label">Room Facilities:</div>';
                     $.each(specs, function(i, spec) {
-                        row += '<a class="tag"><span class="">' + spec + '</span ><!--<span class="btn-specx"><i class="fa fa-close"></i></span>--></a>';
+                        row += '<a class="tag"><span class="">' + spec + '</span ><!--<span class="btn-specx"><i class="zmdi zmdi-close"></i></span>--></a>';
 
                     });
 
@@ -850,9 +851,9 @@ The field Object type makes sure that the object is described correctly in the b
 
                     row += '<div class="button-wrapper">';
                     row += '<div class="view-button-row">';
-                    row += '<a class="btn btn-outline-info btn-sm left" style="border: 1px solid #5f8398;color: #5f8398;" data-toggle="modal" onclick="setRoomData(' + i + ', this)"><i class="fa fa-pencil fa-lg"></i> VIEW/EDIT</a>';
+                    row += '<a class="btn btn-outline-info btn-sm left" style="border: 1px solid #5f8398;color: #5f8398;" data-toggle="modal" onclick="setRoomData(' + i + ', this)"><i class="zmdi zmdi-eye"></i> VIEW/EDIT</a>';
 
-                    row += '<a id="trash_btn" class=" btn btn-outline-danger btn-sm red-btn left " onclick="delete_roomType(' + room_id + ')"><i class="fa fa-trash fa-lg"></i> Delete</a>';
+                    row += '<a id="trash_btn" class=" btn btn-outline-danger btn-sm red-btn left " onclick="delete_roomType(' + room_id + ')"><i class="zmdi zmdi-delete"></i> Delete</a>';
                     row += '</div>';
                     row += '<div style="clear: both;"></div>';
                     row += '</div>';
@@ -947,7 +948,7 @@ The field Object type makes sure that the object is described correctly in the b
                     for (var i in pictures) {
                         // console.log(specifications[j]);
                         var img_path = "img/roomtypes/" + pictures[i];
-                        room_type_pictures += "<div class='col-md-2' id='pic" + i + "'><div class='thumbnail'><img src=" + img_path + "  class='img-fluid'><a class='close fa fa-close btn-circle' onclick='deletePicture(\"" + i + "\", \"" + room_id + "\")'></a></div></div>";
+                        room_type_pictures += "<div class='col-md-2' id='pic" + i + "'><div class='thumbnail'><img src=" + img_path + "  class='img-fluid'><a class='close zmdi zmdi-close btn-circle' onclick='deletePicture(\"" + i + "\", \"" + room_id + "\")'></a></div></div>";
                     }
                     console.log(room_type_pictures)
                     $('#room_photos').html(room_type_pictures);
@@ -962,7 +963,7 @@ The field Object type makes sure that the object is described correctly in the b
                 //alert((specifications)[0]);
                 for (var j in specifications) {
                     // console.log(specifications[j]);
-                    specs += "<tr id='spec" + j + "'><td><input id='spec' value='" + specifications[j] + "''></td><td><a class='btn btn-sm btn-circle fa fa-close' onclick='remove(\"" + specifications[j] + "\", \"" + j + "\", \"" + room_id + "\")'></a></td></tr>";
+                    specs += "<tr id='spec" + j + "'><td><input id='spec' value='" + specifications[j] + "''></td><td><a class='btn btn-sm btn-circle zmdi zmdi-close' onclick='remove(\"" + specifications[j] + "\", \"" + j + "\", \"" + room_id + "\")'></a></td></tr>";
                 }
 
                 //console.log(specs);
@@ -1026,14 +1027,14 @@ The field Object type makes sure that the object is described correctly in the b
                             used_as: used_as
                         };
 
-                        
+
                     var payload = JSON.stringify(d);
                     //alert(payload)
 
                     if (!(inputsEmpty("#form-new-roomtype"))) {
                         modal.modal('hide');
 
-                        if(room_type_id>0){
+                        if (room_type_id > 0) {
 
                             $.post("src/update.php", {
                                 page: "room_types",
@@ -1041,17 +1042,16 @@ The field Object type makes sure that the object is described correctly in the b
                                 result: payload
                             }, function(response) {
                                 if (response == 'success') {
-                                    x0p("Done", "Your Changes have been Saved","ok", function() {
-                                        getRoomTypes(); 
-                                        });
-                                
-                                }
-                                else {
-                                    x0p("","An error occurred. please refresh page and try again.","error")
+                                    x0p("Done", "Your Changes have been Saved", "ok", function() {
+                                        getRoomTypes();
+                                    });
+
+                                } else {
+                                    x0p("", "An error occurred. please refresh page and try again.", "error")
                                 }
                             });
 
-                        }else{
+                        } else {
                             $.post("src/save.php", {
                                 page: "room_types",
                                 id: room_type_id,
@@ -1060,11 +1060,11 @@ The field Object type makes sure that the object is described correctly in the b
                                 //alert(response)
                                 if (response == 1) {
 
-                                x0p("New RoomType Created", rtn + " has been sucessfully created","ok", function() {
-                                            //alertify.message('OK');
-                                            // window.location.reload();
-                                            getRoomTypes();
-                                        });
+                                    x0p("New RoomType Created", rtn + " has been sucessfully created", "ok", function() {
+                                        //alertify.message('OK');
+                                        // window.location.reload();
+                                        getRoomTypes();
+                                    });
                                 }
 
                             });
@@ -1087,37 +1087,37 @@ The field Object type makes sure that the object is described correctly in the b
 
                 //  var caller = u;
                 console.log($(this))
-              x0p("Confirm ", "Remove " + name + " from the list of specifications for this room?","warning",
+                x0p("Confirm ", "Remove " + name + " from the list of specifications for this room?", "warning",
                     function(button) {
                         if (button == "warning") {
-                        
-                        $(specid).remove();
 
-                        var tbl = $('table#spec_table tr').map(function() {
-                            return $(this).find('input').map(function() {
-                                return "\"" + $(this).val() + "\"";
+                            $(specid).remove();
+
+                            var tbl = $('table#spec_table tr').map(function() {
+                                return $(this).find('input').map(function() {
+                                    return "\"" + $(this).val() + "\"";
+                                }).get();
                             }).get();
-                        }).get();
-                        //alert(tbl);
-                        spec_string = "[" + tbl + "]";
-                        console.log(spec_string);
-                        var new_specs = {
-                            "specifications": spec_string
-                        }
-                        $.post("src/update.php", {
-                            "reference": r_id,
-                            "result": new_specs,
-                            "token": "room_types_tb",
-                            "col_name": "id",
-                            "multiple": "no"
-                        }, function(response) {
-                            if (response == "success") {
-                                //  window.location.reload();
-                                alertify.success(name + ' Removed');
-                            } else {
-                                alertify.error(response);
+                            //alert(tbl);
+                            spec_string = "[" + tbl + "]";
+                            console.log(spec_string);
+                            var new_specs = {
+                                "specifications": spec_string
                             }
-                        })
+                            $.post("src/update.php", {
+                                "reference": r_id,
+                                "result": new_specs,
+                                "token": "room_types_tb",
+                                "col_name": "id",
+                                "multiple": "no"
+                            }, function(response) {
+                                if (response == "success") {
+                                    //  window.location.reload();
+                                    alertify.success(name + ' Removed');
+                                } else {
+                                    alertify.error(response);
+                                }
+                            })
 
                         }
                     });
@@ -1166,8 +1166,8 @@ The field Object type makes sure that the object is described correctly in the b
 
             function delete_roomType(id) {
                 var name = $('#type_name').text()
-                x0p('Confirm Delete', 'Completely remove the ' + name + ' room type. This action can NOT be reversed!','warning', function(button) {
-if (button == "warning") {
+                x0p('Confirm Delete', 'Completely remove the ' + name + ' room type. This action can NOT be reversed!', 'warning', function(button) {
+                    if (button == "warning") {
 
                         //console.log(id);
 
@@ -1180,16 +1180,16 @@ if (button == "warning") {
                                 // window.location.reload();
                                 getRoomTypes();
                                 //alertify.success(name + ' Deleted');
-                                 x0p("","Room deleted","ok", false);
+                                x0p("", "Room deleted", "ok", false);
                             } else {
-                                x0p("", response,"error", false);
+                                x0p("", response, "error", false);
                             }
                         })
 
                         // alertify.success('Ok')
                     }
-                    });
-                    
+                });
+
             }
 
 
@@ -1198,11 +1198,11 @@ if (button == "warning") {
                     name = modal.find("#room-name").val(),
                     id = modal.find("#room-id").val(),
                     type_name = modal.find(".r-t-name").text();
-                x0p('Confirm', 'Remove room ' + name + ' from the ' + type_name + ' category',"warning", function(button) {
+                x0p('Confirm', 'Remove room ' + name + ' from the ' + type_name + ' category', "warning", function(button) {
 
-                if (button == "warning") {
-                    //
-                      console.log(id);
+                    if (button == "warning") {
+                        //
+                        console.log(id);
 
                         $.post("src/delete.php", {
                             "reference": "id",
@@ -1214,12 +1214,12 @@ if (button == "warning") {
                                 modal.modal("hide")
                                 // window.location.reload();
                                 $('#room-id-' + id).remove();
-                                x0p('Done','Room ' + name + ' removed from the ' + type_name + ' category', "ok", false);
+                                x0p('Done', 'Room ' + name + ' removed from the ' + type_name + ' category', "ok", false);
                             } else {
-                                x0p("", response,"error", false); 
+                                x0p("", response, "error", false);
                             }
                         });
-                }
+                    }
                 });
             }
             var unitWrapper = null;
@@ -1260,7 +1260,7 @@ if (button == "warning") {
                             ///alert(response);
                             //getRooms(roomtype);
                             unitWrapper.find(".head").after("<div class='unit bg-success'><a href=\"#\" data-toggle=\"modal\" data-target=\"#unit-details\">" + room_name + "</a></div>");
-                            x0p("Unit Added", "Your Changes have been Saved","ok", function() {
+                            x0p("Unit Added", "Your Changes have been Saved", "ok", function() {
                                 // <a href="#" data-toggle="modal" data-target="#unit-details">D1</a>
 
                             });
@@ -1304,7 +1304,7 @@ if (button == "warning") {
                             $("#room-id-" + roomid).text(room_name);
 
 
-                           x0p("Done", "Your Changes have been Saved","ok", function() {
+                            x0p("Done", "Your Changes have been Saved", "ok", function() {
                                 // <a href="#" data-toggle="modal" data-target="#unit-details">D1</a>
                                 $("#room-id-" + roomid).addClass("bg-info");
                                 setTimeout(function() {
@@ -1313,7 +1313,7 @@ if (button == "warning") {
 
                             });
                         } else {
-                            x0p("","An error occurred. please refresh page and try again.","error")
+                            x0p("", "An error occurred. please refresh page and try again.", "error")
                         }
                     });
 
@@ -1383,11 +1383,11 @@ if (button == "warning") {
                     token: "roomtype"
                 }, function(data) {
 
-                    // { price_per_night: "450", …}amount_H_BB: "34"amount_H_HB: "78"amount_L_BB: "0"amount_L_FB: "67"amount_L_HB: "8"bed_dimensions: nullbed_size: "Delux"company_id: "26"id: "17"maximum_guests_adults: "9"maximum_guests_children: "7"name: "double latino"number_of_beds: "3"pictures: "[]"price_per_night: "450"property_id: "16"specifications: "["vvg","DSTV","room water"]"time_stamp: "2017-08-29 16:00:40"used_as: ""}  
+                    // { price_per_night: "450", …}amount_H_BB: "34"amount_H_HB: "78"amount_L_BB: "0"amount_L_FB: "67"amount_L_HB: "8"bed_dimensions: nullbed_size: "Delux"company_id: "26"id: "17"maximum_guests_adults: "9"maximum_guests_children: "7"name: "double latino"number_of_beds: "3"pictures: "[]"price_per_night: "450"property_id: "16"specifications: "["vvg","DSTV","room water"]"time_stamp: "2017-08-29 16:00:40"used_as: ""}
 
                     var room = JSON.parse(data);
                     console.log(room);
-                    btn.html("<i class='fa fa-pencil'></i> View/Edit");
+                    btn.html("<i class='zmdi zmdi-edit'></i> View/Edit");
 
                     if (room.length !== 0) {
                         modal.find("#room-type-id").val(room.id);
@@ -1410,27 +1410,30 @@ if (button == "warning") {
                                 modal.find("#facilities").tagsinput('add', s);
 
                             })
-                      
+
                             // modal.find("#facilities").val('refresh,helllo,iipppe');
                             // modal.find("#facilities").tagsinput('refresh');
                         }
-                        
-                        if(room.used_as != ""){
-                          
-                            
+
+                        if (room.used_as != "") {
+
+
                             $.each(JSON.parse(room.used_as), function(i, s) {
-                                
+
                                 $.each(as_room_obj, function(i, roomType) {
-                                    var name=roomType.room_type_name;
+                                    var name = roomType.room_type_name;
                                     if (s == roomType.room_type_id) {
-                                        modal.find("#used_as").tagsinput('add', { value: s, text: name });
-                                    return false;
+                                        modal.find("#used_as").tagsinput('add', {
+                                            value: s,
+                                            text: name
+                                        });
+                                        return false;
                                     }
                                 });
-                                
+
                             })
-                                
-                            
+
+
                         }
                         //  $("#facilities").tagsinput();
                         modal.modal('show');

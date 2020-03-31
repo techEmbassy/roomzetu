@@ -72,7 +72,7 @@
         alertify.dialog('doneAlert', function factory() {
             return {
                 build: function() {
-                    var h = '<span class="fa fa-check-circle fa-2x" ' +
+                    var h = '<span class="zmdi zmdi-check-circle fa-2x" ' +
                         'style="vertical-align:middle;color:#009900;">' +
                         '</span> DONE'
                     this.setHeader(h);

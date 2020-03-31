@@ -33,7 +33,7 @@
 
                 </div>
                 <!--
-                                
+
                                 <div class="foot">
                                 <a class="btn btn-secondary btn-sm pull-right" href="./bookings.php"> <i class="fa fa-circle-o"></i> All Reservations</a>
                                 </div>
@@ -120,7 +120,7 @@
         $.each(notices, function(i, notice) {
 
 
-            rows += " <tr><td><a>" + notice.note + "</a><br><small>" + notice.created + "</small></td><td><span class='circle pull-left red' onClick='delete_notice(\"" + notice.id + "\")'><i class='fa fa-close text-red btn-circle'></span></td></tr>";
+            rows += " <tr><td><a>" + notice.note + "</a><br><small>" + notice.created + "</small></td><td><span class='circle pull-left red' onClick='delete_notice(\"" + notice.id + "\")'><i class='zmdi zmdi-close text-red btn-circle'></span></td></tr>";
         });
 
 
@@ -161,7 +161,7 @@ function time_elapsed_string($datetime, $full = false) {
 
     $string = array(
         'y' => 'year',
-        'm' => 'month', 
+        'm' => 'month',
         'w' => 'week',
         'd' => 'day',
         'h' => 'hour',
@@ -181,6 +181,6 @@ function time_elapsed_string($datetime, $full = false) {
 }
 
     $time = "2017-07-12 10:36:09";
-	//echo time_elapsed_string($time, true).PHP_EOL;
+    //echo time_elapsed_string($time, true).PHP_EOL;
 
     ?>

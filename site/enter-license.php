@@ -251,7 +251,7 @@
                         </div>
                     <!-- <input type='submit' name='Submit' value='  Activate   ' style='background:url(img/but.gif); color:#FFFFFF'  \"> -->
                     <a type="submit" class="btn btn-outline btn-sm pull-left" name="emailForm" href="billing.php"><i class="fa fa-times" ></i> Cancel</a>
-                    <button type="submit" class="btn btn-success btn-sm pull-right" name="emailForm" onclick="license(this)"><i class="fa fa-check" ></i> Activate</button>
+                    <button type="submit" class="btn btn-success btn-sm pull-right" name="emailForm" onclick="license(this)"><i class="zmdi zmdi-check" ></i> Activate</button>
 
 
 </div>

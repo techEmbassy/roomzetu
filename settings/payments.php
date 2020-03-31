@@ -10,7 +10,7 @@
                     <i class="fa fa-eye"></i> preview sample
                 </a>
                 <a title="save" class="btn btn-sm btn-primary pull-right mr-2 " onclick="saveInvoince()">
-                    <i class="fa fa-check-circle"></i> save changes
+                    <i class="zmdi zmdi-check-circle"></i> save changes
                 </a>
             </div>
 
@@ -91,7 +91,7 @@
                                     <tr>
                                         <td><input value="" style="text-transform: capitalize;" required /></td>
                                         <td><input value="" required /></td>
-                                        <td><i class="btn btn-circle fa fa-remove" title="delete this tax" onclick="remove(this)"></i></td>
+                                        <td><i class="btn btn-circle zmdi zmdi-close" title="delete this tax" onclick="remove(this)"></i></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -147,8 +147,8 @@
                             <small>Main Branch</small>
                             </span>
 
-                            <span class="fa fa-pencil px-2 close" onclick="editBank(this)"></span>
-                            <span class="fa fa-remove px-2 close" onclick="deleteBank(this)"></span>
+                            <span class="zmdi zmdi-edit px-2 close" onclick="editBank(this)"></span>
+                            <span class="zmdi zmdi-close px-2 close" onclick="deleteBank(this)"></span>
                         </div>
                     </div>
 -->
@@ -277,7 +277,7 @@
 
     <!-- <div class="card-footer p-2">
                 <a title="save" class="btn btn-sm btn-primary pull-right " onclick="saveInvoince()">
-                    <i class="fa fa-check-circle"></i> save
+                    <i class="zmdi zmdi-check-circle"></i> save
                 </a>
 
             </div> -->
@@ -429,8 +429,8 @@
                             <small>` + accountName + `</small>
                             </span>
 
-                            <span class="fa fa-pencil px-2 close" onclick="editBank(this)"></span>
-                            <span class="fa fa-remove px-2 close" onclick="deleteBank(this)"></span>
+                            <span class="zmdi zmdi-edit px-2 close" onclick="editBank(this)"></span>
+                            <span class="zmdi zmdi-close px-2 close" onclick="deleteBank(this)"></span>
                         </div>
                     </div>`;
 
@@ -489,8 +489,8 @@
                             <small>` + accountName + `</small>
                             </span>
 
-                            <span class="fa fa-pencil px-2 close" onclick="editBank(this)"></span>
-                            <span class="fa fa-remove px-2 close" onclick="deleteBank(this)"></span>
+                            <span class="zmdi zmdi-edit px-2 close" onclick="editBank(this)"></span>
+                            <span class="zmdi zmdi-close px-2 close" onclick="deleteBank(this)"></span>
                         </div>
                     </div>`;
         });
@@ -543,7 +543,7 @@
                 rows_a += " <tr > " +
                     "<td> <input value='" + tn + "'/></td>" +
                     "<td> <input value='" + ta + "'/></td>" +
-                    "<td><i class='btn btn-circle fa fa-remove' title='delete this tax' onclick='remove(this)'></i> </td>" +
+                    "<td><i class='btn btn-circle zmdi zmdi-close' title='delete this tax' onclick='remove(this)'></i> </td>" +
 
                     " </tr>"
 

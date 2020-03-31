@@ -24,7 +24,7 @@
 
                     </div>
                     <div class="foot pt-4 pl-2 text-left hide">
-                        <a class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> New Room type</a>
+                        <a class="btn btn-sm btn-secondary"><i class="zmdi zmdi-plus"></i> New Room type</a>
 
                     </div>
 

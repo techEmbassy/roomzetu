@@ -6,12 +6,12 @@
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    
+
     .table-xs th{
         padding: 8px 0 !importamt;
         text-align: left;
     }
-    
+
     .tag{
         display: inline-block;
         font-size: 10pt;
@@ -28,7 +28,7 @@
         display: inline-block;
         background: #eee;
     } #d-tb-extras .btn-circle:hover{
-        
+
         background: #999;
     }
 </style>
@@ -178,10 +178,10 @@
                                         <tr>
                                             <th style="border-top:0px">Room type</th>
                                             <th style="border-top:0px">Room</th>
-                                          
+
                                             <th style="width:50px; border-top:0px"></th>
                                         </tr>
-                                    </thead> 
+                                    </thead>
                                     <tbody>
 
                                     </tbody>
@@ -204,7 +204,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+
                                         <!--<tr>
                                             <td>Main Primary</td>
                                             <td>Double Dummy</td>
@@ -215,7 +215,7 @@
                                             <td class="text-center">HB</td>
                                             <td class="text-right">78</td>
                                             <td class="text-right">78</td>
-                                            <td><a class="fa fa-pencil btn-circle" onclick="editRoom(this)"></a></td>
+                                            <td><a class="zmdi zmdi-edit btn-circle" onclick="editRoom(this)"></a></td>
                                             <td><a class="fa fa-times btn-circle"></a></td>
                                             <!--                                            <td><a>Delete</a></td>-->
                                         <!--</tr>
@@ -230,7 +230,7 @@
                                             <td class="text-center">HB</td>
                                             <td class="text-right">78</td>
                                             <td class="text-right">78</td>
-                                            <td><a class="fa fa-pencil btn-circle" onclick="editRoom(this)"></a></td>
+                                            <td><a class="zmdi zmdi-edit btn-circle" onclick="editRoom(this)"></a></td>
 
                                             <td><a class="fa fa-times btn-circle"></a></td>
                                             <!--                                            <td><a>Delete</a></td>-->
@@ -242,7 +242,7 @@
                                 </table>
 
                                 <hr/>
-                                <button class='btn btn-sm btn-light hide' onclick="createNewRoom(this)"><i class="fa fa-plus"></i> Add Accomodation</button>
+                                <button class='btn btn-sm btn-light hide' onclick="createNewRoom(this)"><i class="zmdi zmdi-plus"></i> Add Accomodation</button>
                             </div>
                             <div class="tab-pane" id="people" role="tabpanel">
                                 <br>
@@ -349,7 +349,7 @@
                                 <div class="pt-3 pb-3 ">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <button class="btn btn-sm btn-secondary b-period" onclick="toggleInputs()"><i class="fa fa-plus"></i> Add Payment</button>
+                                            <button class="btn btn-sm btn-secondary b-period" onclick="toggleInputs()"><i class="zmdi zmdi-plus"></i> Add Payment</button>
                                         </div>
 
                                         <div class="col-md-3 input-price hide ">
@@ -366,7 +366,7 @@
                                         <div class="col-md-2 input-price hide">
 
                                             <select class="form-control" id="paymemt_mtd" required>
-                                                   <option value="Cash" >Payment Method</option> 
+                                                   <option value="Cash" >Payment Method</option>
                                                 <option value="Cash">Cash</option>
                                                 <option value="Cheque">Cheque</option>
                                                 <option value="Credit Card">Credit Card</option>
@@ -375,7 +375,7 @@
                                                 </select>
                                         </div>
                                         <div class="col-md-1 input-price hide ">
-                                            <button class="btn btn-sm btn-primary ml-3" onclick="addPayment()"><i class="fa fa-check-circle"></i> Save</button>
+                                            <button class="btn btn-sm btn-primary ml-3" onclick="addPayment()"><i class="zmdi zmdi-check-circle"></i> Save</button>
                                         </div>
 
                                     </div>
@@ -422,7 +422,7 @@
 
                             <a class="btn btn-sm btn-outline-info" href="#" data-trigger="focus" data-toggle="popover" data-target="popover" data-placement="top" onclick=""><i class="fa fa-envelope-o"></i> Send Email</a>
 
-                            <!-- <button class="btn btn-sm btn-info dropdown-toggle" type="button" 
+                            <!-- <button class="btn btn-sm btn-info dropdown-toggle" type="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope-o"></i> Send Emai</button>
                             <div class="dropdown-menu border-0">
                                 <div class="card" style="background-color:#fafafa">
@@ -431,7 +431,7 @@
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
-                            
+
                             <a class="dropdown-item" href="#">Separated link</a>
                             </div>
                             </div> -->
@@ -483,7 +483,7 @@
                         </div>
 
                         <div class="col-md-2 text-right">
-                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"> <i class="fa fa-close"></i> Close</button>
+                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"> <i class="zmdi zmdi-close"></i> Close</button>
                         </div>
 
                     </div>
@@ -533,7 +533,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button" onclick="send_mail()" class="btn btn-primary btn-sm"><i class="fa fa-check-circle"></i> Send Email</button>
+                <button type="button" onclick="send_mail()" class="btn btn-primary btn-sm"><i class="zmdi zmdi-check-circle"></i> Send Email</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -574,7 +574,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="fa fa-check-circle"></i> Change</button>
+                <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="zmdi zmdi-check-circle"></i> Change</button>
             </div>
 
         </div>
@@ -606,9 +606,9 @@
 
                         <label>Property</label>
                         <select class="form-control" id="properties_edit"  onchange="getRoomTypesForEdit_()">
-                           
+
                             <?php echo $propertyOptions0;?>
-                              
+
                         </select>
                         <div class="row">
                             <div class="col-6">
@@ -633,7 +633,7 @@
                                 <div class="col-6">
                                     <label>Free Rooms</label>
                                     <select  class="form-control" id="free_rooms">
-                                        
+
                                     </select>
                                 </div>
                             </div>
@@ -665,7 +665,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-sm "  onclick="update_booked_rooms()" id="changRoom"><i class="fa fa-check-circle"></i> Save</button>
+                <button type="button" class="btn btn-primary btn-sm "  onclick="update_booked_rooms()" id="changRoom"><i class="zmdi zmdi-check-circle"></i> Save</button>
             </div>
 
         </div>
@@ -776,7 +776,7 @@
                 action: "add guest",
                 guests: JSON.stringify(c)
             }, function(data) {
-                alertify.alert('<i class="fa fa-check-circle txt-green"></i> New Guests', 'Your new Guests have been added ',
+                alertify.alert('<i class="zmdi zmdi-check-circle txt-green"></i> New Guests', 'Your new Guests have been added ',
                     function() {
 
                     });
@@ -839,7 +839,7 @@
 
 
 
-    
+
 
 
 
@@ -1054,7 +1054,7 @@
                         gRows += "<td class='guests'>" + g.total_guests + "</td>";
                         gRows += "<td class='unit_price' >" + g.unit_price + "</td>";
                         gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                        gRows += "<td>" + "<i  id='edit' onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                        gRows += "<td>" + "<i  id='edit' onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
 
                         gRows += "</tr>";
 
@@ -1151,7 +1151,7 @@
                         gRows += "<td class='guests' >" + g.total_guests + "</td>";
                         gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
                         gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                        gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                        gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
 
                         gRows += "</tr>";
 
@@ -1237,7 +1237,7 @@
                                 gRows += "<td class='guests' >" + g.total_guests + "</td>";
                                 gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
                                 gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                                gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                                gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
                                 gRows += "</tr>";
 
                                 total += Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price));
@@ -1324,9 +1324,9 @@
             if(phone.length!=0){
 
             var data = JSON.stringify({
-            phone: phone   
+            phone: phone
             });
-            
+
             $.post("src/update.php", {
                      "col_id":  "booking_id",
                     "reference":  getBookingId(),
@@ -1334,32 +1334,32 @@
                     "result": data,
                      "table": "guests_tb"
                 }, function(response) {
-                
+
 
                     if(response==="success"){
                           alertify.success('Phone successfully  updated!');
-                        
+
                     }
 
                 }
 
                 );
             }
-             
+
     }
 
 
 
     function updateEmail(context){
-             
+
             email =$(context).val();
 
             if(email.length!=0){
-               
+
                 var data = JSON.stringify({
-                email: email   
+                email: email
                 });
-            
+
                 $.post("src/update.php", {
                      "col_id":  "booking_id",
                     "reference":  getBookingId(),
@@ -1367,7 +1367,7 @@
                     "result": data,
                      "table": "guests_tb"
                 }, function(response) {
-                
+
 
                     if(response==="success"){
 
@@ -1380,19 +1380,19 @@
                 );
 
             }
-           
+
 
 
     }
 
     function updateName(context){
               name =$(context).val();
-             if(name.length!=0){   
-              
+             if(name.length!=0){
+
                var data = JSON.stringify({
-                 name: name   
+                 name: name
                });
-            
+
                $.post("src/update.php", {
                      "col_id":  "booking_id",
                     "reference":  getBookingId(),
@@ -1400,7 +1400,7 @@
                     "result": data,
                      "table": "guests_tb"
                 }, function(response) {
-                
+
 
                     if(response==="success"){
 
@@ -1412,7 +1412,7 @@
 
                 );
              }
-           
+
 
 
     }
@@ -1451,7 +1451,7 @@
                     id: id
 
                 }, function(data) {
-                    // alert(unit_price +" "+id+" "+booking_id+ " "+guests )  
+                    // alert(unit_price +" "+id+" "+booking_id+ " "+guests )
                     //alert(data)
 
                     if (parseInt(JSON.parse(data).length) != 0) {
@@ -1471,7 +1471,7 @@
                             gRows += "<td class='guests' >" + g.total_guests + "</td>";
                             gRows += "<td class='unit_price'>" + g.unit_price + "</td>";
                             gRows += "<td class='total' >" + Math.round(parseInt(g.total_guests) * parseFloat(g.unit_price)) + "</td>";
-                            gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"fa fa-pencil btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"fa fa-close btn-circle text-danger\"></i>" + "</td>";
+                            gRows += "<td>" + "<i id='edit'  onclick='editExtra(this,\"" + g.id + "\")' class=\"zmdi zmdi-edit btn-circle\"></i><i onclick='deleteExtra(\"" + g.id + "\")' class=\"zmdi zmdi-close btn-circle text-danger\"></i>" + "</td>";
 
                             gRows += "</tr>";
 
@@ -1482,7 +1482,7 @@
                         sub_total = parseFloat($('#sub_ttl').val()) + total;
 
                         $('#booking-details').find("#d-s-total").text(Math.round(sub_total));
-                        
+
                         taxable_amount= sub_total-total;
 
                         $.post('src/get_data.php', {
@@ -1597,7 +1597,7 @@
             gRows += "<td  >" + select_html + "</td>";
             gRows += "<td class='unit_price'>" + price + "</td>";
             gRows += "<td class='total'>" + 0 + "</td>";
-            gRows += "<td>" + '<i onclick="saveExtra(this)" class="fa fa-check btn-circle text-success"></i>' + "</td>";
+            gRows += "<td>" + '<i onclick="saveExtra(this)" class="zmdi zmdi-check btn-circle text-success"></i>' + "</td>";
 
             gRows += "</tr>";
 
@@ -1970,7 +1970,7 @@
     function loadprices(){
 
 
-        
+
         var property_id =$("#properties_edit").val();
 
         var room_type_id =  $("#roomtypes_").val();
@@ -1996,7 +1996,7 @@
         var opt="<option>Select</option>";
 
         $.each(prices, function(i, item) {
-    
+
         opt= opt + "<option value='"+item.amount+ "' >"+item.label+"</option>";
 
         });
@@ -2015,7 +2015,7 @@
     /*editing Rooms*/
     function editRoom(btn) {
         $("#edit-room .modal-title small").text("Edit Room Details");
-       
+
         $("#edit-room").modal("show"); //data-t_id
 
         var tr_id= $(btn).parent().parent().parent().find("#etr_id").attr("data-t_id");
@@ -2058,7 +2058,7 @@
 
             var opt="<option>Select</option>";
 
-           
+
             $.each(rooms_[0].rooms, function(i, item) {
             //"id":"50","name":"G1
 
@@ -2088,16 +2088,16 @@
             var opt="<option>Select</option>";
 
             $.each(prices, function(i, item) {
-        
+
             opt+="<option value='"+item.amount+ "' >"+item.label+"<option>";
 
             });
 
             $('#price_rate').html(opt);
-         
+
              });
            //$(".chosen").chosen({ width:"110%", disable_search_threshold:10 });
-            
+
         ///set the form elements with data
     }
 
@@ -2124,10 +2124,10 @@
 
         var record_id= $("#record_id").val();
 
-        
+
         if(meal_plan!=='Select' && price_rate !=='Select' && room_id !=="Select" && check_in.length!=0 && check_out.length!=0 ){
 
-          
+
            $.post('src/xhr.php', {
 
         action: "change_room_",
@@ -2143,22 +2143,22 @@
         meal_plan: meal_plan
 
         }, function(data) {
-       
+
          location.reload();
        // alert(data)
 
-        
+
         //showDetails(b_id);
 
        // alert(b_id);
-        
-       
+
+
 
 
         });
 
         }else{
-        
+
 
         alertify.error("<i class='fa fa-times-circle'></i> Provide all the required information ");
 
@@ -2168,9 +2168,9 @@
         /*
         alert(record_id+" "+booking_id+" "+property_id+" "+room_type_id+" "+room_id+" "+check_in+" "+check_out+" "+meal_plan+" "+price_rate +" "+price_name );
         */
-       
 
-       
+
+
 
    //$(".chosen").trigger("chosen:updated");
 
@@ -2228,7 +2228,7 @@
     }
 
     function createNewRoom(btn) {
-        
+
         $("#edit-room .modal-title small").text("Add Accomodation");
         $("#edit-room .modal-title .form-control").val("");
         $("#edit-room").modal("show");

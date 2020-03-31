@@ -39,7 +39,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button onclick="save_extra();" type="button" class="btn btn-primary savebtn"><i class="fa fa-check-circle"></i> Save Extra</button>
+                <button onclick="save_extra();" type="button" class="btn btn-primary savebtn"><i class="zmdi zmdi-check-circle"></i> Save Extra</button>
             </div>
         </div>
         <!-- /.modal-content -->

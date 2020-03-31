@@ -141,7 +141,7 @@
                                     <p>Total Cost: <br><span class="text-blue">$4290</span> for 1 room for 2 nights</p>
                                     <br>
 
-                                    <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="fa fa-check-circle"></i> Select</button>
+                                    <button class="btn btn-primary btn-md" onclick="gotoStep(1)"><i class="zmdi zmdi-check-circle"></i> Select</button>
                                 </div>
                             </td>
 -->
@@ -200,7 +200,7 @@
                                 <label>Expected Guests</label>
                                 <input class="form-control" data-placement="right" value="1" id='exp-num-guests' type="number" min='1' />
 
-                                <!-- <a href="#" data-target="#addkids" data-toggle="modal" style="color:red; font-size:11px"><i class="fa fa-plus"></i> Add Kids</a> -->
+                                <!-- <a href="#" data-target="#addkids" data-toggle="modal" style="color:red; font-size:11px"><i class="zmdi zmdi-plus"></i> Add Kids</a> -->
 
 
 
@@ -220,7 +220,7 @@
 
                                 <!--<div class="dropdown-divider"></div>
 
-                         <a href="#" data-target="#add-bed" data-toggle="modal" style="color:red; font-size:11px"><i class="fa fa-plus"></i> Extra Bed</a>
+                         <a href="#" data-target="#add-bed" data-toggle="modal" style="color:red; font-size:11px"><i class="zmdi zmdi-plus"></i> Extra Bed</a>
 
                         <p class="tag"><span class="added_beds"></span></p>-->
 
@@ -864,7 +864,7 @@
                             <br>
                             <div class="p-5">
 
-                                <h5> <i class="fa fa-check text-success"></i> Reservation Created</h5>
+                                <h5> <i class="zmdi zmdi-check text-success"></i> Reservation Created</h5>
                                 <p class="m-4">Reservation has been created successfully. <br><b>Booking Name</b>: <span id="booking-name">---</span></p>
                             </div>
                         </div>
@@ -923,7 +923,7 @@
 
             <!--<div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="fa fa-check-circle"></i> Submit</button>
+        <button type="button" class="btn btn-primary btn-sm " id="changeRoom-btn"><i class="zmdi zmdi-check-circle"></i> Submit</button>
     </div>-->
 
         </div>
@@ -1677,7 +1677,7 @@
     function gotoStepAnother() {
         $('#ds-booking-status').text($("#s-status option:selected").val());
         // $('#btn-preview-invoice').show();
-        $('.btn-next').html('finish <i class="fa fa-check"></i>');
+        $('.btn-next').html('finish <i class="zmdi zmdi-check"></i>');
         gotoStep(1);
     }
 
@@ -2403,9 +2403,9 @@
                 rows += "<h5 style=\"font-size:16px\">Total Cost: <span class='text-orange'><i class=\"fa fa-dollar\"></i><span class='sub-total'>" + 0 /*subTotal*/ + "</span></span></h5><h6><span class='selected-rooms'>1 room</span> for <span class='selected-nights'>" + selNights + "<span></h6>";
                 rows += "<input type='hidden' class='subtotal'/><br>";
 
-                //rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='fa fa-check-circle fa-2x'></i></button>";
+                //rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='zmdi zmdi-check-circle fa-2x'></i></button>";
 
-                rows += "<button  type='button' onclick='select(this)' class='btn btn-labeled btn-default' data-toggle='modal' data-target='#sel-room'> <span class = 'btn-label-default'> <i class = 'fa fa-check'></i></span> Select </button>";
+                rows += "<button  type='button' onclick='select(this)' class='btn btn-labeled btn-default' data-toggle='modal' data-target='#sel-room'> <span class = 'btn-label-default'> <i class = 'zmdi zmdi-check'></i></span> Select </button>";
 
                 rows += "</div>";
                 rows += "</td>";
@@ -2572,7 +2572,7 @@
                 tr = $(btn).parents("tr.room-row");
 
                 tr.addClass('selected');
-                alertify.success("<i class='fa fa-check-circle'></i> Added to list")
+                alertify.success("<i class='zmdi zmdi-check-circle'></i> Added to list")
                 setSelectedRooms();
             }
 
@@ -2644,7 +2644,7 @@
                         // alert(JSON.stringify(manaul_room_allocation));
 
                         tr.addClass('selected');
-                        alertify.success("<i class='fa fa-check-circle'></i> Added to list")
+                        alertify.success("<i class='zmdi zmdi-check-circle'></i> Added to list")
 
                         $("#select_rooms__").click();
 
@@ -2682,7 +2682,7 @@
 
                     // alert(JSON.stringify(manaul_room_allocation));
                     tr.addClass('selected');
-                    alertify.success("<i class='fa fa-check-circle'></i> Added to list")
+                    alertify.success("<i class='zmdi zmdi-check-circle'></i> Added to list")
                     $("#select_rooms__").click();
 
                 }
@@ -2949,7 +2949,7 @@
 
 
 
-            btn.html("<i class='fa fa-check'></i> Finish");
+            btn.html("<i class='zmdi zmdi-check'></i> Finish");
             btn.prop("disabled", false);
 
             //alert(data);
@@ -3888,7 +3888,7 @@
             row += "<td><b>" + name + "</b></td>";
             row += "<td>" + rooms + "</td>";
             // row+="<td>"+mealPlan+"</td>";
-            row += "<td class='text-right'><a class='fa fa-remove btn-circle' title='remove from list' onclick='unselectRoom(" + index + ", this)'></td>";
+            row += "<td class='text-right'><a class='zmdi zmdi-close btn-circle' title='remove from list' onclick='unselectRoom(" + index + ", this)'></td>";
             row += "</tr>";
 
 

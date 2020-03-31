@@ -31,7 +31,7 @@
 
                     </div>
                     <div class="foot pt-4 pl-2 text-left hide">
-                        <a class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> New Room type</a>
+                        <a class="btn btn-sm btn-secondary"><i class="zmdi zmdi-plus"></i> New Room type</a>
 
                     </div>
 
@@ -49,10 +49,10 @@
                                     <!--                                    <input class="tiny form-control" placeholder="search room"/>-->
                                     <select class="form-control tiny" id="properties" onchange="getRooms()">
                                         <?php echo $propertyOptions; ?>
-    
+
                                     </select>
                                     <select class="form-control tiny hide" disabled id="roomtypes">
-                                       <option value="0">All room types</option>
+                                        <option value="0">All room types</option>
                                     </select>
                                 </div>
                             </div>
@@ -82,8 +82,8 @@
     </div>
 </body>
 <div class="modal" id="edit-room-status">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content animated zoomIn">
 
             <div class="modal-header">
                 <h4 class="title"><small>Change Room Status</small> </h4>
@@ -125,8 +125,8 @@
 
             </div>
             <div class="modal-footer">
-                <a class="btn btn-sm btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Close</a>
-                <a id="change_status" href="#" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Save</a>
+                <a class="btn btn-secondary" data-dismiss="modal"><i class="zmdi zmdi-close"></i> Close</a>
+                <a id="change_status" href="#" class="btn btn-primary"><i class="zmdi zmdi-check"></i> Save</a>
             </div>
         </div>
     </div>
@@ -140,9 +140,9 @@
     var roomId__ = 0,
         DATA = "[]",
         STATUS = {
-            ready: "<i class='fa fa-square text-green'></i> Ready</a>",
-            dirty: "<i class='fa fa-square text-orange'></i> Dirty</a>",
-            broken: "<i class='fa fa-square text-red'></i> Renovation</a>"
+            ready: "<i class='zmdi zmdi-check-circle text-green'></i> Ready</a>",
+            dirty: "<i class='zmdi zmdi-alert-triangle text-orange'></i> Dirty</a>",
+            broken: "<i class='zmdi zmdi-circle text-red'></i> Renovation</a>"
         };
     var room_status = "";
 
@@ -334,7 +334,7 @@
                         "<td>" + occupiedIcon + "</td>" +
                         "<td>" + room.next_date + "</td>" +
                         "<td>" + rstatus + "</td>" +
-                        "<td><i class='fa fa-pencil btn-circle' data-toggle='modal' data-target='#edit-room-status' onclick='setRoomId(" + i + ", " + pos + ")'></i></td>" +
+                        "<td><i class='zmdi zmdi-edit btn-circle' data-toggle='modal' data-target='#edit-room-status' onclick='setRoomId(" + i + ", " + pos + ")'></i></td>" +
                         "</tr>";
                     firstcell = "";
                 });
@@ -344,13 +344,13 @@
 
             tableBody.html(rows);
             fixTableHead(".table-primary");
-            
-            if(rows==""){
-               
-            tableBody.html("<tr><td colspan='7' style='background-color:#fff'><p class='text-muted p-5'>Looks like you have no rooms set up. Go to <br><b>manage rooms</b> to set up. </p></td></tr>");
-           
 
-               }
+            if (rows == "") {
+
+                tableBody.html("<tr><td colspan='7' style='background-color:#fff'><p class='text-muted p-5'>Looks like you have no rooms set up. Go to <br><b>manage rooms</b> to set up. </p></td></tr>");
+
+
+            }
             console.log(rows)
         } catch (e) {
             console.log(e)

@@ -89,9 +89,9 @@ function setFreeRooms(data) {
         rows += "<h5>Total Cost: <span class='text-orange'>$<span class='sub-total'>" + 0/*subTotal*/ + "</span></span></h5><h6><span class='selected-rooms'>1 room</span> for <span class='selected-nights'>" + selNights + "<span></h6>";
         rows += "<input type='hidden' class='subtotal'/><br>";
 
-        //rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='fa fa-check-circle fa-2x'></i></button>";
+        //rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='zmdi zmdi-check-circle fa-2x'></i></button>";
 
-        rows += "<button  type='button' onclick='select(this)' class='btn btn-labeled btn-default' data-toggle='modal' data-target='#sel-room'> <span class = 'btn-label-default'> <i class = 'fa fa-check'></i></span> Select </button>";
+        rows += "<button  type='button' onclick='select(this)' class='btn btn-labeled btn-default' data-toggle='modal' data-target='#sel-room'> <span class = 'btn-label-default'> <i class = 'zmdi zmdi-check'></i></span> Select </button>";
 
         rows += "</div>";
         rows += "</td>";

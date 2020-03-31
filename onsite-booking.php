@@ -570,7 +570,7 @@ foreach($p as $o){
                 rows += "<br>";
                 rows += "<h5>Total Cost: <span class='text-orange'>$<span class='sub-total'>" + subTotal + "</span></span></h5><h6><span class='selected-rooms'>1 room</span> for <span class='selected-nights'>" + selNights + "<span></h6>";
                 rows += "<input type='hidden' class='subtotal'/><br>";
-                rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='fa fa-check-circle fa-2x'></i></button>";
+                rows += "<button class='btn btn-default btn-md' onclick='select(this)'><i class='zmdi zmdi-check-circle fa-2x'></i></button>";
                 rows += "</div>";
                 rows += "</td>";
 
@@ -592,7 +592,7 @@ foreach($p as $o){
                 alertify.warning("<i class='fa fa-times-circle'></i> Removed from list")
             } else {
                 tr.addClass('selected');
-                alertify.success("<i class='fa fa-check-circle'></i> Added to list")
+                alertify.success("<i class='zmdi zmdi-check-circle'></i> Added to list")
 
             }
 
@@ -693,7 +693,7 @@ foreach($p as $o){
                 rooms: rms
             }, function(data) {
                 //                alert(data)
-                alertify.alert('<i class="fa fa-check-circle txt-green"></i> DONE', 'Reservation created successfully',
+                alertify.alert('<i class="zmdi zmdi-check-circle txt-green"></i> DONE', 'Reservation created successfully',
                     function() {
                         /*load saved reservation*/
                         $("#new-booking").modal("hide")

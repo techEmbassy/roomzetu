@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-9 text-right">
                 <!--                                    <select class="form-control tiny"><option>Primary Branch</option></select>-->
-                <a id="update_company" class="btn btn-secondary btn-sm animated bounceIn" href="" data-target="#new-px" data-toggle="modal"><i class="fa fa-check-circle"></i> Update Company Details</a>
+                <a id="update_company" class="btn btn-secondary btn-sm animated bounceIn" href="" data-target="#new-px" data-toggle="modal"><i class="zmdi zmdi-check-circle"></i> Update Company Details</a>
             </div>
         </div>
     </div>
@@ -159,7 +159,7 @@
                                         <div class="col-auto">
 
                                             <!-- Icon -->
-                                            <a class="mr-3 text-success" style="font-weight:100"><span class="h2 fa fa-check mb-0 "></span><small>Active</small></a>
+                                            <a class="mr-3 text-success" style="font-weight:100"><span class="h2 zmdi zmdi-check mb-0 "></span><small>Active</small></a>
 
                                         </div>
 

@@ -8,7 +8,7 @@
 
             <div class="col-md-9 text-right">
                 <input class="form-control tiny" placeholder="search" oninput="searchExtra(value)" />
-                <a class="btn btn-secondary btn-35" data-target="#new-extra" data-toggle="modal" onclick="New_extra()"><i class="fa fa-plus"></i> Add Extra</a>
+                <a class="btn btn-secondary btn-35" data-target="#new-extra" data-toggle="modal" onclick="New_extra()"><i class="zmdi zmdi-plus"></i> Add Extra</a>
             </div>
         </div>
     </div>
@@ -104,8 +104,8 @@
             row += "<td>" + extra.description + "</td>";
             row += "<td>" + extra.price + "</td>";
 
-            row += "<td class='text-center br-0'><a class='fa fa-pencil btn-circle' title='edit " + extra.name + "' onclick='editExtra(\"" + i + "\")'></a></td>";
-            row += "<td class='text-center br-0'><a class='fa fa-close btn-circle' title='delete " + extra.name + "' onclick='deleteExtra(\"" + extra.id + "\", \"" + extra.name + "\")'></a></td>";
+            row += "<td class='text-center br-0'><a class='zmdi zmdi-edit btn-circle' title='edit " + extra.name + "' onclick='editExtra(\"" + i + "\")'></a></td>";
+            row += "<td class='text-center br-0'><a class='zmdi zmdi-close btn-circle' title='delete " + extra.name + "' onclick='deleteExtra(\"" + extra.id + "\", \"" + extra.name + "\")'></a></td>";
             row += "</tr>";
 
             rows.push(row)
@@ -144,7 +144,7 @@
         m.find("#e-amount").val(extra.price);
 
 
-        m.find('.modal-title').html("<i class='fa fa-pencil'></i> Edit " + extra.name);
+        m.find('.modal-title').html("<i class='zmdi zmdi-edit'></i> Edit " + extra.name);
         m.find('.savebtn').attr('onClick', 'update_extra(' + extra_id + ')');
         m.modal("show")
 

@@ -28,7 +28,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" onclick="update_timezone()" class="btn btn-primary "><i class="fa fa-check-circle"></i> Update Timezone</button>
+                <button type="button" onclick="update_timezone()" class="btn btn-primary "><i class="zmdi zmdi-check-circle"></i> Update Timezone</button>
             </div>
         </div>
         <!-- /.modal-content -->
